@@ -1,0 +1,586 @@
+<!doctype html>
+<html class="theme-next   use-motion ">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  
+    <link href='//fonts.lug.ustc.edu.cn/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+  
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Android,Java,Hexo,NexT,Life" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.png?v=0.4.5.2" />
+
+
+
+
+
+
+<meta name="description" content="&amp;lt;!DOCTYPE html&amp;gt;
+
+
+  
+  Translating &quot;A Visual Git Reference&quot;
+  
+
+
+  Translating A Visual Git Reference
+
+  Thanks to kindness of others, A Visual Git
+      Reference has been translated from English int">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Genment's Note">
+<meta property="og:url" content="http://tanjm.ml/visual-git-guide/translate-en.html">
+<meta property="og:site_name" content="Genment's Note">
+<meta property="og:description" content="&amp;lt;!DOCTYPE html&amp;gt;
+
+
+  
+  Translating &quot;A Visual Git Reference&quot;
+  
+
+
+  Translating A Visual Git Reference
+
+  Thanks to kindness of others, A Visual Git
+      Reference has been translated from English int">
+<meta property="og:image" content="https://i.creativecommons.org/l/by-nc-sa/3.0/us/80x15.png">
+<meta property="og:updated_time" content="2015-10-30T11:07:14.917Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Genment's Note">
+<meta name="twitter:description" content="&amp;lt;!DOCTYPE html&amp;gt;
+
+
+  
+  Translating &quot;A Visual Git Reference&quot;
+  
+
+
+  Translating A Visual Git Reference
+
+  Thanks to kindness of others, A Visual Git
+      Reference has been translated from English int">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: 'post',
+    motion: true
+  };
+</script>
+
+  <title>
+  
+
+  
+     | Genment's Note
+  
+</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+  
+
+
+
+
+
+
+  <div class="container one-column ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Genment's Note</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">生活,技术</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-git">
+          <a href="/visual-git-guide" rel="section">
+            
+              <i class="menu-item-icon fa fa-question-circle fa-fw"></i> <br />
+            
+            menu.git
+          </a>
+        </li>
+      
+
+      
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content">
+          
+
+  <div id="posts" class="posts-expand">
+    
+    
+      <!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Translating "A Visual Git Reference"</title>
+  <link rel="stylesheet" type="text/css" href="visual-git-guide.css">
+</head>
+<body>
+  <h1 id="top">Translating <em>A Visual Git Reference</em></h1>
+
+  <p>Thanks to kindness of others, <a href="index-en.html"><em>A Visual Git
+      Reference</em></a> has been translated from English into several other
+  languages.  If you would like to translate it into your native language, I
+  would be happy to receive your patch!  Please follow the below guide to get
+  you started.</p>
+
+  <ol>
+    <li>Fork <a href="https://github.com/MarkLodato/visual-git-guide" target="_blank" rel="external">MarkLodato/visual-git-guide</a>
+    on Github.</li>
+    <li>Clone your fork.</li>
+    <li>Translate the work, following the same scheme as the other languages.
+    Be sure to remember to add your name to the copyright notice in README.md
+    and index-en.html.  There are more steps, but if you don't follow them,
+    don't worry&mdash;I'll take care of the rest.</li>
+    <li>Commit and push your changes back to Github repository.</li>
+    <li>Submit a pull request via the Github website.</li>
+  </ol>
+
+  <h3>The nitty-gritty</h3>
+
+  <p>I'll take care of these details if you don't want to worry about them,
+  but here they are in case you are interested:</p>
+
+  <ol>
+    <li>Add your name to the bottom of the copyright notice in README.md and
+    index-en.html.</li>
+    <li>Add a link from index.html to index-<em>LANG</em>.html, where
+    </li><li>Add index-<em>LANG</em>.html to the <tt>HTML</tt> Makefile
+    variable.</li>
+    <li>Copy index-en.html to index-<em>LANG</em>.html.
+    </li><li>Translate the new file.  Remember to update the <tt>html lang</tt>
+    tag on line 2, remove the copyright notices for all the other languages,
+    and (if possible) link to the appropriate language Creative Commons
+    translation.</li>
+    <li>Add a link to your page on index-*.html.  Again, please keep this
+    sorted by filename.  Remember to create links on the other languages and
+    create a non-link for your language on your own page.</li>
+  </ol>
+
+  <h3>Images</h3>
+
+  <p>Unfortunately, the current setup makes it difficult to translate the
+  images.  If there is sufficient interest, I can rearrange things so that
+  each language could have its own images.  For now, they're all in English!
+
+  <hr>
+
+  </p><p>Copyright &copy; 2010,
+    <a href="mailto:lodatom@gmail.com" target="_blank" rel="external">Mark Lodato</a>.
+  </p>
+
+  <p><a rel="external" href="https://creativecommons.org/licenses/by-nc-sa/3.0/us/" target="_blank"><img alt="" src="https://i.creativecommons.org/l/by-nc-sa/3.0/us/80x15.png"></a>
+  This work is licensed under a <a rel="external" href="https://creativecommons.org/licenses/by-nc-sa/3.0/us/" target="_blank">Creative
+    Commons Attribution-Noncommercial-Share Alike 3.0 United States
+    License</a>.</p>
+
+</body>
+</html>
+
+    
+  </div>
+
+
+        </div>
+
+        
+
+
+        
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="visual-git-guide/translate-en.html"
+           data-title="" data-url="http://tanjm.ml/visual-git-guide/translate-en.html">
+      </div>
+    
+  </div>
+
+
+      </div>
+
+      
+        
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="http://tp2.sinaimg.cn/2728550353/180/5631710584/1" alt="Genment" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">Genment</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description"></p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">6</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            <a href="/categories">
+              <span class="site-state-item-count">7</span>
+              <span class="site-state-item-name">分类</span>
+              </a>
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">7</span>
+              <span class="site-state-item-name">标签</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/genment" target="_blank">
+                  
+                    <i class="fa fa-github"></i> GitHub
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/q8515620" target="_blank">
+                  
+                    <i class="fa fa-tt"></i> Twitter
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/2728550353" target="_blank">
+                  
+                    <i class="fa fa-weibo"></i> Weibo
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/genment" target="_blank">
+                  
+                    <i class="fa fa-globe"></i> ZhiHu
+                  
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="http://creativecommons.org/licenses/by-nc-sa/4.0" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            <p class="site-author-name">基链</p>
+            
+              <span class="links-of-author-item">
+                <a href="http://http://theme-next.iissnan.com/" target="_blank">Theme-NexT</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://teddysun.com/358.html" target="_blank">一键SS</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.vpser.net/security/linux-ssh-authorized-keys-login.html" target="_blank">SSH登录验证</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://gitimmersion.com/lab_01.html" target="_blank">Git Immersion</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://marklodato.github.com/visual-git-guide/" target="_blank">visual-git-guide</a>
+              </span>
+            
+          
+        </div>
+
+      </section>
+
+      
+
+    </div>
+  </aside>
+
+
+      
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2015</span>
+  <span class="with-love">
+    <i class="icon-next-heart fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Genment</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+
+  
+    
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"tanjm"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+    
+     
+
+
+    
+  
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.2"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.2"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+<script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+<script type="text/javascript" src="/js/motion.js?v=0.4.5.2" id="motion.global"></script>
+
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+
+  <script type="text/javascript" src="/js/bootstrap.js"></script>
+
+  
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+
+  
+    <script type="text/javascript" src="http://cdn.staticfile.org/mathjax/2.4.0/MathJax.js"></script>
+    <script type="text/javascript" src="http://cdn.staticfile.org/mathjax/2.4.0/config/TeX-AMS-MML_HTMLorMML.js"></script>
+  
+
+
+  
+  
+
+</body>
+</html>
