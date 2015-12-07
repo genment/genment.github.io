@@ -1,14 +1,15 @@
 <!doctype html>
 <html class="theme-next use-motion">
+
 <head>
   <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -32,9 +33,9 @@
 
 
 
-<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css">
+  <link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css">
+  <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css">
 
 
   <meta name="keywords" content="blog,guide,hexo,">
@@ -53,35 +54,41 @@
 
 
 
-<meta name="description" content="安装 Hexo安装在安装 Hexo 之前，有一点要注意的是，在 Hexo 3.0.0-rc.4 版本开始，hexo-cli 就独立出去了，所以 Hexo 其实是有两个程序的：
+  <meta name="description" content="安装 Hexo
+安装
+在安装 Hexo 之前，有一点要注意的是，在 Hexo 3.0.0-rc.4 版本开始，hexo-cli 就独立出去了，所以 Hexo 其实是有两个程序的：
 
-hexo-cli：命令行界面的 hexo，安装在 npm 的 node_modules 目录下，用于初始化 hexo 的环境，已添加到 path 环境变量，全局可用
-hexo：完整版的 hexo，安装在 hexo 博客的目">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Hexo 博客搭建指南（一）—— 开始使用">
-<meta property="og:url" content="http://tanjm.ml/201510/01/Hexo-1/index.html">
-<meta property="og:site_name" content="Genment's Note">
-<meta property="og:description" content="安装 Hexo安装在安装 Hexo 之前，有一点要注意的是，在 Hexo 3.0.0-rc.4 版本开始，hexo-cli 就独立出去了，所以 Hexo 其实是有两个程序的：
+  hexo-cli：命令行界面的 hexo，安装在 npm 的 node_modules 目录下，用于初始化 hexo 的环境，已添加到 path 环境变量，全局可用
+  hexo：完整版的 hexo，安装在 hex">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Hexo 博客搭建指南（一）—— 开始使用">
+  <meta property="og:url" content="http://tanjm.ml/201510/01/Hexo-1/index.html">
+  <meta property="og:site_name" content="Genment's Note">
+  <meta property="og:description" content="安装 Hexo
+安装
+在安装 Hexo 之前，有一点要注意的是，在 Hexo 3.0.0-rc.4 版本开始，hexo-cli 就独立出去了，所以 Hexo 其实是有两个程序的：
 
-hexo-cli：命令行界面的 hexo，安装在 npm 的 node_modules 目录下，用于初始化 hexo 的环境，已添加到 path 环境变量，全局可用
-hexo：完整版的 hexo，安装在 hexo 博客的目">
-<meta property="og:updated_time" content="2015-10-29T15:17:24.492Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo 博客搭建指南（一）—— 开始使用">
-<meta name="twitter:description" content="安装 Hexo安装在安装 Hexo 之前，有一点要注意的是，在 Hexo 3.0.0-rc.4 版本开始，hexo-cli 就独立出去了，所以 Hexo 其实是有两个程序的：
+  hexo-cli：命令行界面的 hexo，安装在 npm 的 node_modules 目录下，用于初始化 hexo 的环境，已添加到 path 环境变量，全局可用
+  hexo：完整版的 hexo，安装在 hex">
+  <meta property="og:updated_time" content="2015-10-29T15:17:24.492Z">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Hexo 博客搭建指南（一）—— 开始使用">
+  <meta name="twitter:description" content="安装 Hexo
+安装
+在安装 Hexo 之前，有一点要注意的是，在 Hexo 3.0.0-rc.4 版本开始，hexo-cli 就独立出去了，所以 Hexo 其实是有两个程序的：
 
-hexo-cli：命令行界面的 hexo，安装在 npm 的 node_modules 目录下，用于初始化 hexo 的环境，已添加到 path 环境变量，全局可用
-hexo：完整版的 hexo，安装在 hexo 博客的目">
+  hexo-cli：命令行界面的 hexo，安装在 npm 的 node_modules 目录下，用于初始化 hexo 的环境，已添加到 path 环境变量，全局可用
+  hexo：完整版的 hexo，安装在 hex">
 
 
 
-<script type="text/javascript" id="hexo.configuration">
-  var CONFIG = {
-    scheme: 'Mist',
-    sidebar: 'post',
-    motion: true
-  };
-</script>
+  <script type="text/javascript" id="hexo.configuration">
+    var CONFIG = {
+      scheme: 'Mist',
+      sidebar: 'post',
+      motion: true
+    };
+  </script>
 
   <title> Hexo 博客搭建指南（一）—— 开始使用 | Genment's Note </title>
 </head>
@@ -97,17 +104,24 @@ hexo：完整版的 hexo，安装在 hexo 博客的目">
     </a>
   </div>
 <![endif]-->
-  
 
 
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-69961767-1', 'auto');
-  ga('send', 'pageview');
-</script>
+
+  <script>
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-69961767-1', 'auto');
+    ga('send', 'pageview');
+  </script>
 
 
   <script type="text/javascript">
@@ -127,128 +141,123 @@ hexo：完整版的 hexo，安装在 hexo 博客的目">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-meta">
-  
+      <div class="header-inner">
+        <div class="site-meta">
 
-  <div class="custom-logo-site-title">
-    <a href="/" class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <span class="site-title">Genment's Note</span>
-      <span class="logo-line-after"><i></i></span>
-    </a>
-  </div>
-  <p class="site-subtitle">生活,技术</p>
-</div>
 
-<div class="site-nav-toggle">
-  <button>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-  </button>
-</div>
+          <div class="custom-logo-site-title">
+            <a href="/" class="brand" rel="start">
+              <span class="logo-line-before"><i></i></span>
+              <span class="site-title">Genment's Note</span>
+              <span class="logo-line-after"><i></i></span>
+            </a>
+          </div>
+          <p class="site-subtitle">生活,技术</p>
+        </div>
 
-<nav class="site-nav">
-  
+        <div class="site-nav-toggle">
+          <button>
+            <span class="btn-bar"></span>
+            <span class="btn-bar"></span>
+            <span class="btn-bar"></span>
+          </button>
+        </div>
 
-  
-    <ul id="menu" class="menu">
-      
-        
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-home fa-fw"></i> <br>
-            
-            首页
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives" rel="section">
-            
-              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br>
-            
-            归档
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories" rel="section">
-            
-              <i class="menu-item-icon fa fa-th fa-fw"></i> <br>
-            
-            分类
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags" rel="section">
-            
-              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br>
-            
-            标签
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-about">
-          <a href="/about" rel="section">
-            
-              <i class="menu-item-icon fa fa-user fa-fw"></i> <br>
-            
-            关于
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-git">
-          <a href="/visual-git-guide" rel="section">
-            
-              <i class="menu-item-icon fa fa-question-circle fa-fw"></i> <br>
-            
-            图解Git
-          </a>
-        </li>
-      
+        <nav class="site-nav">
 
-      
-      
-    </ul>
-  
 
-  
-</nav>
 
- </div>
+          <ul id="menu" class="menu">
+
+
+            <li class="menu-item menu-item-home">
+              <a href="/" rel="section">
+
+                <i class="menu-item-icon fa fa-home fa-fw"></i>
+                <br> 首页
+              </a>
+            </li>
+
+
+            <li class="menu-item menu-item-archives">
+              <a href="/archives" rel="section">
+
+                <i class="menu-item-icon fa fa-archive fa-fw"></i>
+                <br> 归档
+              </a>
+            </li>
+
+
+            <li class="menu-item menu-item-categories">
+              <a href="/categories" rel="section">
+
+                <i class="menu-item-icon fa fa-th fa-fw"></i>
+                <br> 分类
+              </a>
+            </li>
+
+
+            <li class="menu-item menu-item-tags">
+              <a href="/tags" rel="section">
+
+                <i class="menu-item-icon fa fa-tags fa-fw"></i>
+                <br> 标签
+              </a>
+            </li>
+
+
+            <li class="menu-item menu-item-about">
+              <a href="/about" rel="section">
+
+                <i class="menu-item-icon fa fa-user fa-fw"></i>
+                <br> 关于
+              </a>
+            </li>
+
+
+            <li class="menu-item menu-item-git">
+              <a href="/visual-git-guide" rel="section">
+
+                <i class="menu-item-icon fa fa-question-circle fa-fw"></i>
+                <br> 图解Git
+              </a>
+            </li>
+
+
+
+
+          </ul>
+
+
+
+        </nav>
+
+      </div>
     </header>
 
     <main id="main" class="main">
       <div class="main-inner">
         <div id="content" class="content">
-          
 
-  <div id="posts" class="posts-expand">
-    
 
-  
-  
+          <div id="posts" class="posts-expand">
 
-  
-  
-  
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
 
-    
-      <header class="post-header">
 
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+
+
+
+
+
+            <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+
+
+              <header class="post-header">
+
+
+
+                <h1 class="post-title" itemprop="name headline">
             
             
               
@@ -256,735 +265,1160 @@ hexo：完整版的 hexo，安装在 hexo 博客的目">
               
             
           </h1>
-        
 
-        <div class="post-meta">
-          <span class="post-time">
+
+                <div class="post-meta">
+                  <span class="post-time">
             发表于
             <time itemprop="dateCreated" datetime="2015-10-01T01:00:00+08:00" content="2015-10-01">
               2015-10-01
             </time>
           </span>
 
-          
-            <span class="post-category">
+
+                  <span class="post-category">
               &nbsp; | &nbsp; 分类于
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/guide/" itemprop="url" rel="index">
                     <span itemprop="name">guide</span>
                   </a>
-                </span>
+                  </span>
 
-                
-                
-                  ， 
-                
 
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+
+                  ，
+
+
+
+                  <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/guide/hexo/" itemprop="url" rel="index">
                     <span itemprop="name">hexo</span>
                   </a>
-                </span>
+                  </span>
 
-                
-                
 
-              
-            </span>
-          
 
-          
-            
-              <span class="post-comments-count">
+
+
+                  </span>
+
+
+
+
+                  <span class="post-comments-count">
                 &nbsp; | &nbsp;
                 <a href="/201510/01/Hexo-1/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count ds-thread-count" data-thread-key="201510/01/Hexo-1/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-        </div>
-      </header>
-    
+                  </a>
+                  </span>
 
 
-    <div class="post-body">
 
-      
-      
 
-      
-        <span itemprop="articleBody"><h1 id="安装_Hexo">安装 Hexo</h1><h2 id="安装">安装</h2><p>在安装 Hexo 之前，有一点要<strong>注意</strong>的是，在 <a href="https://github.com/hexojs/hexo/releases/tag/3.0.0-rc.4" target="_blank" rel="external">Hexo 3.0.0-rc.4</a> 版本开始，<a href="https://github.com/hexojs/hexo-cli" target="_blank" rel="external">hexo-cli</a> 就独立出去了，所以 Hexo 其实是有两个程序的：</p>
+
+                </div>
+              </header>
+
+
+
+              <div class="post-body">
+
+
+
+
+
+                <span itemprop="articleBody"><h1 id="安装_Hexo">安装 Hexo</h1>
+<h2 id="安装">安装</h2>
+<p>在安装 Hexo 之前，有一点要<strong>注意</strong>的是，在 <a href="https://github.com/hexojs/hexo/releases/tag/3.0.0-rc.4" target="_blank" rel="external">Hexo 3.0.0-rc.4</a> 版本开始，<a href="https://github.com/hexojs/hexo-cli" target="_blank" rel="external">hexo-cli</a> 就独立出去了，所以 Hexo 其实是有两个程序的：</p>
 <ul>
-<li><code>hexo-cli</code>：命令行界面的 hexo，安装在 npm 的 node_modules 目录下，用于初始化 hexo 的环境，已添加到 path 环境变量，全局可用</li>
-<li><code>hexo</code>：完整版的 hexo，安装在 hexo 博客的目录下，用于管理 hexo ，只能在 hexo 博客的目录下使用</li>
+  <li><code>hexo-cli</code>：命令行界面的 hexo，安装在 npm 的 node_modules 目录下，用于初始化 hexo 的环境，已添加到 path 环境变量，全局可用</li>
+  <li><code>hexo</code>：完整版的 hexo，安装在 hexo 博客的目录下，用于管理 hexo ，只能在 hexo 博客的目录下使用</li>
 </ul>
 <p>需要先安装 <code>hexo-cli</code>，再安装 <code>hexo</code>，在任意位置<code>打开命令行窗口</code>，输入：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
-<p>就会在 <code>C:\Users\&lt;用户名&gt;\AppData\Roaming\npm\node_modules</code> 目录安装好 <code>hexo-cli</code> 及其依赖的 packages。<br>可能会看到一个 <code>WARN</code>，但是不用担心，这不会影响 Hexo 的正常使用。</p>
-<p>在命令行中输入 <code>hexo v</code>，如果有显示 <code>hexo-cli</code> 的版本号，即表示安装成功：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">F:\&gt;hexo v</span><br><span class="line">hexo-cli: <span class="number">0.1</span>.<span class="number">8</span></span><br><span class="line">os: Windows_NT <span class="number">10.0</span>.<span class="number">10240</span> win32 x64</span><br><span class="line">http_parser: <span class="number">2.5</span>.<span class="number">0</span></span><br><span class="line">node: <span class="number">4.1</span>.<span class="number">1</span></span><br><span class="line">v8: <span class="number">4.5</span>.<span class="number">103.33</span></span><br><span class="line">uv: <span class="number">1.7</span>.<span class="number">4</span></span><br><span class="line">zlib: <span class="number">1.2</span>.<span class="number">8</span></span><br><span class="line">ares: <span class="number">1.10</span>.<span class="number">1</span>-DEV</span><br><span class="line">modules: <span class="number">46</span></span><br><span class="line">openssl: <span class="number">1.0</span>.<span class="number">2</span>d</span><br></pre></td></tr></table></figure></p>
-<h2 id="初始化">初始化</h2><p>在<strong>准备存放 hexo 博客的文件夹</strong>，执行以下命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">hexo init          <span class="comment"># 将当前目录初始化为 hexo 目录</span></span><br><span class="line">hexo init &lt;folder&gt; <span class="comment"># 将指定目录初始化为 hexo 目录</span></span><br><span class="line"></span><br><span class="line">F:\&gt; hexo init blog</span><br><span class="line">INFO  Copying data to F:\blog\</span><br><span class="line">INFO  You are almost <span class="keyword">done</span>! Don<span class="string">'t forget to run '</span>npm install<span class="string">' before you start blogging with Hexo!</span></span><br></pre></td></tr></table></figure></p>
-<p>初始化后的目录内容为：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── .gitignore</span><br><span class="line">├── _config.yml</span><br><span class="line">├── package.json</span><br><span class="line">├── scaffolds</span><br><span class="line">|   ├── draft.md</span><br><span class="line">|   ├── page.md</span><br><span class="line">|   └── post.md</span><br><span class="line">├── <span class="built_in">source</span></span><br><span class="line">|   └── _posts</span><br><span class="line">|       └── hello-world.md</span><br><span class="line">└── themes</span><br><span class="line">    └──landscape</span><br></pre></td></tr></table></figure></p>
-<p>初始化后的 <code>blog</code> 还不能使用 hexo，因为完整版的 hexo 还没安装，需要进入 blog 目录，执行 <code>npm install</code> 命令，npm 工具就会根据 <code>package.json</code> 文件中记录的 <code>dependencies</code> 去下载安装需要的依赖包（包括完整版的 hexo）：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">F:\&gt; <span class="built_in">cd</span> blog</span><br><span class="line">F:\blog&gt; npm install</span><br></pre></td></tr></table></figure></p>
-<blockquote>
-<p>P.S. 也可以只安装纯粹的 hexo，不包含任何插件，只需要在初始化后的目录，执行 <code>npm install hexo --save</code> 即可。</p>
-</blockquote>
-<p>安装完所有模块后，就可以体验 hexo 了。</p>
-<h2 id="体验">体验</h2><p>在 hexo 目录中，执行以下命令（2 个命令是一样的效果）：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo server</span><br><span class="line">hexo s      <span class="comment"># 简化命令</span></span><br></pre></td></tr></table></figure></p>
-<p>当看到 <code>INFO  Hexo is running at http://0.0.0.0:4000/. Press Ctrl+C to stop.</code> 就表示 hexo 已经运行了，只要打开浏览器，<br>在地址栏输入 <code>127.0.0.1:4000</code> 或 <code>localhost:4000</code> 即可访问了。</p>
-<p>到目前为止，hexo 在本地的基本配置已经结束了。</p>
-<h1 id="Hexo_目录_&amp;_文件">Hexo 目录 &amp; 文件</h1><p>参考：<a href="https://hexo.io/docs/setup.html" target="_blank" rel="external">官方文档</a></p>
-<h2 id="_config-yml">_config.yml</h2><p>Hexo 的全局配置文件，整个 Hexo 博客的配置都可以在这里进行配置。</p>
-<h2 id="package-json">package.json</h2><p>Hexo 应用程序的信息，包括名称、版本、所需的依赖库等等。</p>
-<h2 id="node_modules_目录">node_modules 目录</h2><p>Hexo 的依赖库，以及安装的插件都是放这里的。</p>
-<p>如果会 node，可以自己写插件来对 Hexo 进行扩展，如果写的插件很有用，希望别人也用上你写的插件，可以发布到 npm。</p>
-<blockquote>
-<p>程序比较简单的，建议写成脚本（script），相对来说比较复杂的，建议写成插件（package）。</p>
-</blockquote>
-<h2 id="scaffolds_目录">scaffolds 目录</h2><p>模版 文件夹。当您新建文章时，Hexo 会根据 scaffold 来建立文件。<br>默认提供 <code>draft.md</code>（草稿）、<code>post.md</code>（文章）、<code>page.md</code>（页面）这三种模版，可以自定义修改，也可以创建自己的模版。</p>
-<p>例如：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo <span class="keyword">new</span> post <span class="string">"Hello World"</span> <span class="preprocessor"># 使用 post.md 模版在 source\_posts 目录新建一个 <span class="string">"Hello-World.md"</span> 文件</span></span><br><span class="line">hexo <span class="keyword">new</span> draft uk           <span class="preprocessor"># 使用 draft.md 模版在 source\_drafts 目录新建一个 <span class="string">"uk.md"</span> 文件</span></span><br><span class="line">hexo <span class="keyword">new</span> page <span class="string">"page Test"</span>   <span class="preprocessor"># 使用 page.md 模版在 source\page-Test 目录新建一个 <span class="string">"index.md"</span> 文件</span></span><br></pre></td></tr></table></figure></p>
-<blockquote>
-<p>P.S. 此模版非彼模版（Template），scaffold 在词典里是“脚手架”的意思，我也不知道该怎么描述（语死早- -）相信只要看看这三个文件，以及分别用这三个文件新建出来的文章文件进行对比，一下子就懂了。<br>大概就是对该文章的一些描述，比如 Title，Date，Description，Tag，Category 等等，有了这些信息，Hexo 就可以对该文章进行分类。</p>
-<blockquote>
-<p>详情请看&gt;&gt;<a href="https://hexo.io/docs/front-matter.html" target="_blank" rel="external">Front-matter</a>。</p>
-</blockquote>
-</blockquote>
-<h2 id="scripts_目录">scripts 目录</h2><p>脚本文件夹。脚本是扩展 Hexo 最简易的方式，在此文件夹内的 JavaScript 文件会被自动执行。</p>
-<p>如果会 javascript，可以自己写插件来对 Hexo 进行扩展。</p>
-<blockquote>
-<p>程序比较简单的，建议写成脚本（script），相对来说比较复杂的，建议写成插件（package）。</p>
-</blockquote>
-<h2 id="source_目录">source 目录</h2><p>资源文件夹是存放用户资源的地方。所有的 markdown 文件（文章、草稿、页面等），以及图片、音乐、视频等，都是放在这里的。</p>
-<p>除 <code>_posts</code> 文件夹之外，其他所有以<strong> <code>_ (下划线)</code> 开头命名的文件和文件夹</strong>以及<strong>隐藏的文件</strong>，在解析成博客时将会被忽略。Markdown 和 HTML 文件会被解析并放到 public 文件夹，而其他文件会被拷贝过去。</p>
-<h2 id="public_目录">public 目录</h2><p>发布 文件夹。Hexo 生成出来的完整的博客文件（整个博客的所有文件都在这了），可以将 public 里面的文件上传到 Github、Gitcafe、VPS、Heroku、OpenShift 等服务器上，即可访问。本机可以使用 <code>hexo server -s</code> 命令，也可以直接使用浏览器打开 <code>index.html</code>（不过由于路径问题，无法加载资源）。</p>
-<h2 id="themes_目录">themes 目录</h2><p>主题 文件夹。Hexo 会根据主题来生成静态页面。可以到 <a href="https://hexo.io/themes/" target="_blank" rel="external">Hexo 主题站</a> 下载，可惜官方收录的主题比较少，目前只有 19 个。</p>
-<p>因为 hexo 主题几乎都是开源的，而主题的作者一般都会放在 github 上，这就让我们获取 hexo 的主题变得很简单，只要到<a href="https://github.com/search?utf8=%E2%9C%93&amp;q=hexo+theme" target="_blank" rel="external">搜索一下</a>就可以找到很多优秀的主题了。</p>
-<blockquote>
-<p>补充：<a href="https://github.com/hexojs/hexo/wiki/Themes" target="_blank" rel="external">Wiki 上有个 Theme 列表</a>，虽然已被标记为弃用，但收集的主题还是有相当多的。</p>
-</blockquote>
-<h2 id="其他文件">其他文件</h2><h3 id="-gitignore">.gitignore</h3><p>git 的忽略文件，可删</p>
-<h3 id="db-json">db.json</h3><p>hexo 的 json 数据库文件，可通过 <code>hexo clean</code> 命令清除数据（放心，不会删除文章内容的），也可以直接删掉，但还是会生成的。</p>
-<h1 id="Hexo_配置">Hexo 配置</h1><p>Hexo 的配置主要是通过修改 <code>_config.yml</code> 文件进行的，也可以通过使用以下命令对某一项进行设置<br><figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo config <span class="string">[name]</span> <span class="string">[value]</span></span><br></pre></td></tr></table></figure></p>
-<p><strong>一定要注意：</strong>yaml 的语法问题，在每一项的冒号后面一定要有<strong>一个空格</strong>，建议修改完配置后，使用一些 YAML 语法检查工具检查一下有没有语法错误（例如：<a href="http://www.yamllint.com/" target="_blank" rel="external">YamlLint</a>）。</p>
-<h2 id="_config-yml_介绍">_config.yml 介绍</h2><p><code>_config.yml</code> 中的配置项可以分成几个大类：</p>
-<p>网站（Site）、地址（URL）、目录（Directory）、文章（Writing）、分类 &amp; 标签（Category &amp; Tag）、日期 / 时间格式（Date / Time format）、分页（Pagination）、扩展（Extensions）、部署（Deployment）。</p>
-<h2 id="网站_(Site)">网站 (Site)</h2><table>
-<thead>
-<tr>
-<th>参数</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>title</code></td>
-<td>网站标题</td>
-</tr>
-<tr>
-<td><code>subtitle</code></td>
-<td>网站副标题</td>
-</tr>
-<tr>
-<td><code>description</code></td>
-<td>网站描述</td>
-</tr>
-<tr>
-<td><code>author</code></td>
-<td>您的名字</td>
-</tr>
-<tr>
-<td><code>language</code></td>
-<td>网站使用的语言，使用 <a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes" target="_blank" rel="external">2 个字母表示的 ISO-639-1 码</a></td>
-</tr>
-<tr>
-<td><code>timezone</code></td>
-<td>网站时区。Hexo 默认使用您电脑的时区。<a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones" target="_blank" rel="external">时区列表</a>(表中的 <code>TZ</code> 列)，例如 <code>Asia/Shanghai</code> 或 <code>PRC</code> 表示中国时区。</td>
-</tr>
-</tbody>
-</table>
-<h2 id="网址_(URL)">网址 (URL)</h2><table>
-<thead>
-<tr>
-<th>参数</th>
-<th>描述</th>
-<th>默认值</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>url</code></td>
-<td>网址</td>
-<td></td>
-</tr>
-<tr>
-<td><code>root</code></td>
-<td>网站根目录</td>
-<td></td>
-</tr>
-<tr>
-<td><code>permalink</code></td>
-<td>文章的 <a href="https://hexo.io/docs/permalinks.html" target="_blank" rel="external">永久链接</a> 格式</td>
-<td><code>:year/:month/:day/:title/</code></td>
-</tr>
-<tr>
-<td><code>permalink_default</code></td>
-<td>永久链接中各部分的默认值</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p>关于 <code>url</code> 和 <code>root</code>：如果您的网站存放在子目录中，例如 <code>http://domain.com/blog</code>，则请将您的 <code>url</code> 设为 <code>http://yoursite.com/blog</code> 并把 <code>root</code> 设为 <code>/blog/</code>。</p>
-<p>关于 <code>permalink</code>：定义文章的 URL 结构，默认的 <code>:year/:month/:day/:title/</code> 所生成的连接就是 <code>2015/10/15/文章标题</code>，详情请看&gt;&gt;<a href="https://hexo.io/docs/permalinks.html#Examples" target="_blank" rel="external">Permalink</a></p>
-<p>关于 <code>permalink_default</code>：可以设置一些自定义的用于 <code>permalink</code> 的变量（其实还可以用于其他地方，比如 <code>new_post_name</code> 等，可以自己尝试 ^_^），比如可以这样使用：<br><figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">permalink</span>: <span class="string">:year-:language-:fruit-:title.html</span></span><br><span class="line"><span class="attribute">permalink_defaults</span>: <span class="string"></span></span><br><span class="line">  <span class="attribute">fruit</span>: <span class="string">apple</span></span><br><span class="line">  <span class="attribute">language</span>: <span class="string">zh_cn</span></span><br></pre></td></tr></table></figure></p>
-<p>则生成的文章 URL 为：<code>http://your.domain.com/2015-zh_cn-apple-文章标题.html</code></p>
-</blockquote>
-<h2 id="目录_(Directory)">目录 (Directory)</h2><table>
-<thead>
-<tr>
-<th>参数</th>
-<th>描述</th>
-<th>默认值</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>source_dir</code></td>
-<td>资源文件夹，这个文件夹用来存放内容。</td>
-<td>source</td>
-</tr>
-<tr>
-<td><code>public_dir</code></td>
-<td>发布文件夹，这个文件夹用于存放生成的站点文件。</td>
-<td>public</td>
-</tr>
-<tr>
-<td><code>tag_dir</code></td>
-<td>标签文件夹</td>
-<td>tags</td>
-</tr>
-<tr>
-<td><code>archive_dir</code></td>
-<td>归档文件夹</td>
-<td>archives</td>
-</tr>
-<tr>
-<td><code>category_dir</code></td>
-<td>分类文件夹</td>
-<td>categories</td>
-</tr>
-<tr>
-<td><code>code_dir</code></td>
-<td>include code 文件夹（放在 source 文件夹内）</td>
-<td>downloads/code</td>
-</tr>
-<tr>
-<td><code>i18n_dir</code></td>
-<td>国际化（i18n）文件夹</td>
-<td>:lang</td>
-</tr>
-<tr>
-<td><code>skip_render</code></td>
-<td>指定不会被渲染的文件（夹），可使用通配符（glob expressions）来配置路径。</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p>关于 <code>skip_render</code>：以 <strong><code>source</code></strong> 文件夹为起始路径，感谢 <a href="https://xuanwo.org" target="_blank" rel="external">@xuanwo</a> 的《<a href="https://xuanwo.org/2014/08/14/hexo-usual-problem/#Hexo3-0以上支持" target="_blank" rel="external">Hexo 常见问题解决方案</a>》和《<a href="https://github.com/hexojs/hexo/issues/1146#issuecomment-88380140" target="_blank" rel="external">如何不处理 source 目录下某个子目录的所有文件，仅仅是将其 copy 到 public 目录中对应目录？</a>》：</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">skip_render: README.md   <span class="comment"># 单个文件</span></span><br><span class="line">skip_render: <span class="built_in">test</span>/*      <span class="comment"># 单个文件夹下全部文件</span></span><br><span class="line">skip_render: <span class="built_in">test</span>/*.md   <span class="comment"># 单个文件夹下指定类型文件</span></span><br><span class="line">skip_render: <span class="built_in">test</span>/**     <span class="comment"># 单个文件夹下全部文件以及子目录</span></span><br><span class="line">skip_render: **/*.html   <span class="comment"># 所有文件夹以及子目录下指定类型文件</span></span><br><span class="line"></span><br><span class="line">skip_render:             <span class="comment"># 多个文件夹以及各种复杂情况</span></span><br><span class="line">  - <span class="built_in">test</span>1/*.html</span><br><span class="line">  - <span class="built_in">test</span>2/**</span><br><span class="line">  - boot.js</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>关于 <code>code_dir</code>：<a href="https://hexo.io/docs/tag-plugins.html#Include_Code" target="_blank" rel="external">Include_Code</a>，官网的解释太简单了，<a href="http://octopress.org/docs/plugins/include-code/" target="_blank" rel="external">Octopress 官网</a>有详细的解释，大概意思就是在文章中使用这样的语法在将某个文件（代码，支持语法高亮）的内容显示在文章中：</p>
-</blockquote>
-<figure class="highlight clojure"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="collection">&#123;&amp;#37; include_code <span class="collection">[title]</span> <span class="collection">[lang:language]</span> path/to/file %&#125;</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>关于 <code>i18n_dir</code>：默认值 <code>:lang</code> 是一个变量，详情请看&gt;&gt;<a href="https://hexo.io/docs/permalinks.html#Multi-language_Support" target="_blank" rel="external">Permalink#Multi-language_Support</a>以及<a href="https://hexo.io/docs/internationalization.html" target="_blank" rel="external">i18n</a></p>
-</blockquote>
-<h2 id="文章_(Writing)">文章 (Writing)</h2><table>
-<thead>
-<tr>
-<th>参数</th>
-<th>描述</th>
-<th>默认值</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>new_post_name</code></td>
-<td>新建文章的文件名格式</td>
-<td>:title.md</td>
-</tr>
-<tr>
-<td><code>default_layout</code></td>
-<td>新建文章时的默认布局</td>
-<td>post</td>
-</tr>
-<tr>
-<td><del><code>auto_spacing</code></del></td>
-<td>在中文和英文之间加入空格</td>
-<td><del>false</del></td>
-</tr>
-<tr>
-<td><code>titlecase</code></td>
-<td>把标题转换为 title case</td>
-<td>false</td>
-</tr>
-<tr>
-<td><code>external_link</code></td>
-<td>在新标签中打开链接</td>
-<td>true</td>
-</tr>
-<tr>
-<td><code>filename_case</code></td>
-<td>把文件名称转换为 (1) 小写或 (2) 大写</td>
-<td>0</td>
-</tr>
-<tr>
-<td><code>render_drafts</code></td>
-<td>显示草稿文章</td>
-<td>false</td>
-</tr>
-<tr>
-<td><code>post_asset_folder</code></td>
-<td>开启 asset 文件夹</td>
-<td>false</td>
-</tr>
-<tr>
-<td><code>relative_link</code></td>
-<td>把链接改为与根目录相对的地址（相对路径）</td>
-<td>false</td>
-</tr>
-<tr>
-<td><code>future</code></td>
-<td>显示未来的文章</td>
-<td>true</td>
-</tr>
-<tr>
-<td><code>highlight</code></td>
-<td>代码块的高亮设置</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p>关于 <code>new_post_name</code>：自定义文件名的结构，跟 <code>permalink</code> 类似。</p>
-<p>关于 <code>auto_spacing</code>：可以增加文章内容的可读性。在 <a href="https://github.com/hexojs/hexo/releases/tag/2.8.2" target="_blank" rel="external">Hexo 2.8.2</a> 版本开始，该功能已独立成一个插件 <a href="https://github.com/hexojs/hexo-filter-auto-spacing" target="_blank" rel="external">hexo-filter-auto-spacing</a>，这个配置项也就去掉了，只要装上插件，就会自动加上空格，不想要自动空格，则删除插件即可。<strong>如果使用了这个插件，当你的标题(h1~h6)有中英文混合时，请手动加上空格，否则在生成目录(TOC)时，目录会失效</strong>，因为标题的 id 也被加上了空格。<br>效果请看 &gt;&gt; <a href="http://huei90.github.io/pangu.node/" target="_blank" rel="external">来源</a>。</p>
-<p>关于 <code>titlecase</code>：文章标题的每个单词的首字母大写（英文单词），体验一下 &gt;&gt; <a href="http://individed.com/code/to-title-case/" target="_blank" rel="external">Convert to Title Case</a></p>
-<blockquote>
-<p><strong>注意：</strong></p>
-<ol>
-<li>修改 <code>titlecase</code> 后，需要执行 <code>hexo clean</code> 清除缓存才生效。</li>
-<li><code>a|an|and|as|at|but|by|en|for|if|in|nor|of|on|or|per|the|to|vs</code> 等单词的首字母不会被转换为大写。</li>
-</ol>
-</blockquote>
-<p>关于 <code>filename_case</code>：新建文章时的文件名的大小写（仅仅是文件名，跟标题无关）。</p>
-<blockquote>
-<p><code>0</code> 表示跟输入一致，<code>1</code> 表示全部字母转换成小写，<code>2</code> 表示全部字母转化成大写：<br>例如：你真是Native，Too young，too Simple啊！<br>0：<code>你真是Native，Too-young，too-Simple啊！.md</code><br>1：<code>你真是native，too-young，too-simple啊！.md</code><br>2：<code>你真是NATIVE，TOO-YOUNG，TOO-SIMPLE啊！.md</code></p>
-</blockquote>
-<p>关于 <code>post_asset_folder</code>：请参考：<a href="https://hexo.io/zh-cn/docs/asset-folders.html" target="_blank" rel="external">官方介绍</a>。把资源放到 asset 文件夹内，使用时只需要文件名就可以了，不需要完整的路径。因为生成博客后，资源跟当前的文章是在同一目录下的（所以你的资源中不能有一个叫 <code>index.html</code> 的文件，否则会冲突，当然也没人会怎么做- -）。</p>
-<blockquote>
-<p>{&#37; asset_path filename %}：插入一个资源的路径，就仅仅是显示一个路径<br>{&#37; asset_img filename [title] %}：插入一张图片，等同于 <code>![title](filename)</code><br>{&#37; asset_link filename [title] %}：插入一个资源的链接，点击会在新标签打开</p>
-</blockquote>
-<p>关于 <code>future</code>：是否显示<strong>日期是未来</strong>的文章。如果有些文章不想马上就发布，等到某个时刻再发布，可以将<a href="https://hexo.io/docs/front-matter.html" target="_blank" rel="external">Front-matter</a>中的日期改为指定的时间，并将 <code>future</code> 设置为 <code>false</code> 即可。<strong>需要注意的是</strong>：因为是静态博客，不像 WordPress 等动态博客在到了指定时刻会自动发布，Hexo 需要再次发布才会生成文章的页面。</p>
-</blockquote>
-<h2 id="分类_&amp;_标签_(Category_&amp;_Tag)">分类 &amp; 标签 (Category &amp; Tag)</h2><table>
-<thead>
-<tr>
-<th>参数</th>
-<th>描述</th>
-<th>默认值</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>default_category</code></td>
-<td>默认分类名称</td>
-<td>uncategorized</td>
-</tr>
-<tr>
-<td><code>category_map</code></td>
-<td>分类别名</td>
-<td></td>
-</tr>
-<tr>
-<td><code>tag_map</code></td>
-<td>标签别名</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p>这 3 项配置都<strong>仅在 Hexo 拼接 URL</strong>时被使用。</p>
-<p>关于 <code>default_category</code>：在 <code>permalink</code> 中如果使用了 <code>:category</code> 变量，且当文章没有设置 <code>categories</code> 时，使用该默认分类名称。</p>
-<p>关于 <code>category_map</code> 和 <code>tag_map</code>：设置 category 和 tag 的别名，在 url 中将会使用这个“别名”来替代 category 或 tag 名称。（建议 category 或 tag 有中文字符时使用）</p>
-<blockquote>
-<p>详情请看&gt;&gt;<a href="https://github.com/hexojs/hexo/issues/908" target="_blank" rel="external">如何使用 category_map 这项配置？</a>和 <a href="https://github.com/hexojs/hexo/issues/1162" target="_blank" rel="external">Hexo 分类和标签的路径怎么设置成英文</a></p>
-</blockquote>
-</blockquote>
-<h2 id="日期_/_时间格式_(Date_/_Time_format)">日期 / 时间格式 (Date / Time format)</h2><p>Hexo 使用 <a href="http://momentjs.com/" target="_blank" rel="external">Moment.js</a> 来解析和显示时间。可以根据 <a href="http://momentjs.com/docs/#/displaying/format/" target="_blank" rel="external">Moment.js 官方文档</a> 的格式来自定义。</p>
-<table>
-<thead>
-<tr>
-<th>参数</th>
-<th>描述</th>
-<th>默认值</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>date_format</code></td>
-<td>日期格式</td>
-<td>YYYY-MM-DD</td>
-</tr>
-<tr>
-<td><code>time_format</code></td>
-<td>时间格式</td>
-<td>H:mm:ss</td>
-</tr>
-</tbody>
-</table>
-<h2 id="分页_(Pagination)">分页 (Pagination)</h2><table>
-<thead>
-<tr>
-<th>参数</th>
-<th>描述</th>
-<th>默认值</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>per_page</code></td>
-<td>每页显示的文章量（0 = 关闭分页功能）</td>
-<td>10</td>
-</tr>
-<tr>
-<td><code>pagination_dir</code></td>
-<td>分页目录（保存分页的文件夹名称）</td>
-<td>page</td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p>此分页设置是全局的，包括主页、Archives 页、Categeries 页和 Tags 页，如果只想主页进行分页，可设置全局 <code>per_page: 0</code>，主页 <code>per_page: 10</code>，其他不设置。</p>
-<p>P.S. 默认的 <code>landscape</code> 主题有个 BUG，在 <code>/archives/</code> 页面里，只显示第一页的文章，不能导航到其他分页。</p>
-</blockquote>
-<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">per_page</span>: <span class="string">3             # 全局</span></span><br><span class="line"><span class="attribute">pagination_dir</span>: <span class="string">page    # 分页目录</span></span><br><span class="line"></span><br><span class="line"><span class="cpp"><span class="preprocessor">########################################</span></span><br><span class="line"></span><br><span class="line">archive_generator:      <span class="preprocessor"># 文章列表分页设置</span></span><br><span class="line">  yearly: <span class="literal">true</span>          <span class="preprocessor"># 按年份</span></span><br><span class="line">  monthly: <span class="literal">true</span>         <span class="preprocessor"># 按月份</span></span><br><span class="line">  per_page: <span class="number">0</span></span><br><span class="line"></span><br><span class="line">index_generator:        <span class="preprocessor"># 主页分页设置</span></span><br><span class="line">  per_page: <span class="number">0</span></span><br><span class="line"></span><br><span class="line">category_generator:     <span class="preprocessor"># 分类分页设置</span></span><br><span class="line">  per_page: <span class="number">0</span></span><br><span class="line"></span><br><span class="line">tag_generator:          <span class="preprocessor"># 标签分页设置</span></span><br><span class="line">   per_page: <span class="number">0</span></span></span><br></pre></td></tr></table></figure>
-<h2 id="扩展_(Extensions)">扩展 (Extensions)</h2><table>
-<thead>
-<tr>
-<th>参数</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>theme</code></td>
-<td>当前主题名称</td>
-</tr>
-<tr>
-<td><code>deploy</code></td>
-<td>部署</td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p>关于 <code>deploy</code>：部署的配置项，配置好就可以一键（命令）部署到各种服务器环境，比如：<a href="https://github.com/" target="_blank" rel="external">github</a>、<a href="https://gitcafe.com/" target="_blank" rel="external">gitcafe</a>、<a href="https://www.heroku.com/" target="_blank" rel="external">Heroku</a>、<a href="https://www.openshift.com/" target="_blank" rel="external">OpenShift</a> 等，或通过 FTP、Rsync 等同步到远程服务器上。</p>
-<blockquote>
-<p>详情请看&gt;&gt;<a href="https://hexo.io/zh-tw/docs/deployment.html" target="_blank" rel="external">官方文档-部署</a></p>
-</blockquote>
-</blockquote>
-<h2 id="其他配置">其他配置</h2><p>还有一个 server 项是默认没有在 <code>_config.yml</code> 中的，如果不想使用默认的 <code>4000</code> 端口，又嫌每次开启服务都要输入 <code>-p 80</code> 指定端口，那么可以在 <code>_config.yml</code> 中添加（这是默认配置，可自行修改，也可只写其中一项）：<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">server</span>:</span><br><span class="line">  <span class="attribute">ip</span>: <span class="string">'0.0.0.0'</span></span><br><span class="line">  <span class="attribute">port</span>: <span class="number">4000</span></span><br><span class="line">  <span class="attribute">log</span>: false</span><br></pre></td></tr></table></figure></p>
-<h1 id="Hexo_命令">Hexo 命令</h1><p>在 blog 目录中，输入 <code>hexo</code> 命令，可以查看 <code>hexo</code> 命令的帮助信息：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">Usage: hexo &lt;<span class="built_in">command</span>&gt;</span><br><span class="line"></span><br><span class="line">Commands:</span><br><span class="line">  clean     Removed generated files and cache.</span><br><span class="line">  config    Get or <span class="built_in">set</span> configurations.</span><br><span class="line">  deploy    Deploy your website.</span><br><span class="line">  generate  Generate static files.</span><br><span class="line">  <span class="built_in">help</span>      Get <span class="built_in">help</span> on a command.</span><br><span class="line">  init      Create a new Hexo folder.</span><br><span class="line">  list      List the information of the site</span><br><span class="line">  migrate   Migrate your site from other system to Hexo.</span><br><span class="line">  new       Create a new post.</span><br><span class="line">  publish   Moves a draft post from _drafts to _posts folder.</span><br><span class="line">  render    Render files with renderer plugins.</span><br><span class="line">  server    Start the server.</span><br><span class="line">  version   Display version information.</span><br><span class="line"></span><br><span class="line">Global Options:</span><br><span class="line">  --config  Specify config file instead of using _config.yml</span><br><span class="line">  --cwd     Specify the CWD</span><br><span class="line">  --debug   Display all verbose messages <span class="keyword">in</span> the terminal</span><br><span class="line">  --draft   Display draft posts</span><br><span class="line">  --safe    Disable all plugins and scripts</span><br><span class="line">  --silent  Hide output on console</span><br><span class="line"></span><br><span class="line">For more <span class="built_in">help</span>, you can use <span class="string">'hexo help [command]'</span> <span class="keyword">for</span> the detailed information</span><br><span class="line">or you can check the docs: http://hexo.io/docs/</span><br></pre></td></tr></table></figure>
-<p>总的来说，分为 <code>Commands</code>（命令）和 <code>Options</code>（选项）两种。下面将一一介绍每个 <code>Command</code> 以及 <code>Option</code> 的用法。</p>
-<h2 id="hexo_clean">hexo clean</h2><blockquote>
-<p>名称：清除命令<br>别名：无<br>使用：<code>hexo clean</code><br>参数：无<br>选项：无</p>
-</blockquote>
-<p>用于清除缓存（<code>db.json</code> 文件）和生成的文件（默认是 <code>public</code> 文件夹，根据 <code>_config.yml</code> 中所指定的 <code>public_dir</code> 来清除）。</p>
-<h2 id="hexo_config">hexo config</h2><blockquote>
-<p>名称：配置命令<br>别名：无<br>使用：<code>hexo config [&lt;name&gt; [value]]</code><br>参数：</p>
-<blockquote>
-<p><code>name</code>：配置项名称，如果不指定，则显示所有设置项<br><code>value</code>：设定配置项的值，如果不指定，则显示单个配置项的值<br>选项：无</p>
-</blockquote>
-</blockquote>
-<p>用于查看或者修改配置项（<code>_config.yml</code> 文件）的值，查看时是以 <a href="http://json.org/" target="_blank" rel="external">JSON</a> 格式输出的，而修改时会直接影响 <code>_config.yml</code> 配置文件。</p>
-<h3 id="例子一">例子一</h3><p>查看 <code>hightlight</code> 配置项：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo config highlight</span><br></pre></td></tr></table></figure></p>
-<p>输出：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123; enable: <span class="literal">true</span>,</span><br><span class="line">  line_number: <span class="literal">true</span>,</span><br><span class="line">  auto_detect: <span class="literal">true</span>,</span><br><span class="line">  tab_replace: <span class="literal">true</span> &#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="例子二">例子二</h3><p>设置 <code>highlight</code> 配置项：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo config highlight.enable <span class="literal">false</span></span><br></pre></td></tr></table></figure></p>
-<p>如果配置项是数组（序列）形式的，则使用索引（从 0 开始）的方式：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo config item.<span class="number">0</span></span><br></pre></td></tr></table></figure></p>
-<h2 id="hexo_deploy">hexo deploy</h2><blockquote>
-<p>名称：部署命令<br>别名：<code>hexo d</code><br>使用：<code>hexo deploy [option]</code><br>参数：无<br>选项：</p>
-<blockquote>
-<p><code>--setup</code>：只设置，不部署<br><code>-g</code> or <code>--generate</code>：先生成，再部署（相当于先后执行 <code>generate</code> 和 <code>deploy</code> 两个命令）</p>
-</blockquote>
-</blockquote>
-<p>部署需要另外安装插件 &gt;&gt; <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">部署</a>。<br>暂时不明 <code>--setup</code> 选项的具体用法，官方文档也没任何说明。</p>
-<h2 id="hexo_generate">hexo generate</h2><blockquote>
-<p>名称：生成命令<br>别名：<code>hexo g</code><br>使用：<code>hexo generate [option]</code><br>参数：无<br>选项：</p>
-<blockquote>
-<p><code>-d</code> or <code>--deploy</code>：生成后立刻部署<br><code>-f</code> or <code>--force</code>：强制重新生成<br><code>-w</code> or <code>--watch</code>：监控文件的变化。当修改 <code>source</code> 文件夹的文件时，自动生成。</p>
-</blockquote>
-</blockquote>
-<p>生成静态文档。</p>
-<h2 id="hexo_help">hexo help</h2><blockquote>
-<p>名称：帮助命令<br>别名：<code>hexo h</code><br>使用：<code>hexo help [command]</code><br>参数：</p>
-<blockquote>
-<p><code>command</code>：查看某个命令的使用方法。可以是任意一个 hexo 的命令，如 <code>config</code>、<code>generate</code> 等等。<br>选项：无</p>
-</blockquote>
-</blockquote>
-<h2 id="hexo_init">hexo init</h2><blockquote>
-<p>名称：初始化命令<br>别名：<code>hexo i</code><br>使用：<code>hexo init [destination]</code><br>参数：无<br>选项：</p>
-<blockquote>
-<p><code>destination</code>：目标文件夹，指定要初始化的文件夹，如果不指定，则初始化当前文件夹</p>
-</blockquote>
-</blockquote>
-<p>将某个目录初始化为 hexo 博客的目录。</p>
-<h2 id="hexo_list">hexo list</h2><blockquote>
-<p>名称：列出命令<br>别名：<code>hexo l</code><br>使用：<code>hexo list &lt;type&gt;</code><br>参数：</p>
-<blockquote>
-<p><code>type</code>：可以使用 <code>page</code>（页面），<code>post</code>（文章），<code>route</code>（树状目录），<code>tag</code>（标签）等方式列出信息。</p>
-</blockquote>
-</blockquote>
-<p>以各种形式列出博客的信息。</p>
-<h2 id="hexo_migrate">hexo migrate</h2><blockquote>
-<p>名称：迁移命令<br>别名：<code>hexo m</code><br>使用：<code>hexo migrate &lt;type&gt;</code><br>参数：</p>
-<blockquote>
-<p><code>type</code>：迁移的类型，具体类型因插件而异，一般为 <code>rss</code>，<code>wordpress</code>，<code>joomla</code> 等等。</p>
-</blockquote>
-</blockquote>
-<p>迁移需要另外安装插件 &gt;&gt; <a href="https://hexo.io/docs/migration.html" target="_blank" rel="external">迁移</a>。<br>从其他博客系统中迁移文章到 Hexo，支持 RSS，Jekyll，Octopress，WordPress 等等。</p>
-<h2 id="hexo_new">hexo new</h2><blockquote>
-<p>名称：新建命令<br>别名：<code>hexo n</code><br>使用：<code>hexo new [layout] &lt;title&gt;</code><br>参数：</p>
-<blockquote>
-<p><code>layout</code>：指定使用的布局，可以是 <code>post</code>，<code>page</code>，<code>draft</code> 或者任何自定义的布局，不指定则默认为 <code>post</code><br><code>title</code>：文章标题，使用引号 <code>&quot;</code> 或 <code>&#39;</code> 包裹。</p>
-</blockquote>
-<p>选项：</p>
-<blockquote>
-<p><code>-p</code> or <code>--path</code>：自定义文章路径。<br><code>-r</code> or <code>--replace</code>：如果已存在同名文章，则覆盖。<br><code>-s</code> or <code>--slug</code>：跟 <code>--path</code> 类似。</p>
-</blockquote>
-</blockquote>
-<h3 id="例子一-1">例子一</h3><p>以 <code>draft.md</code> 为 <code>layout</code>，在 <code>source/_drafts/aaa/bbb/</code> 目录创建一个名为 <code>ccc.md</code> 的文件，文章标题为 <code>title</code>：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo n draft <span class="string">'title'</span> -p aaa/bbb/ccc</span><br></pre></td></tr></table></figure></p>
-<h3 id="例子二-1">例子二</h3><p>以 <code>post.md</code> 为 <code>layout</code>，在 <code>source/_post/</code> 目录创建一个名为 <code>aaa-bbb-ccc.md</code> 的文件，文章标题为 <code>title123</code>：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo <span class="string">'title123'</span> <span class="operator">-s</span> aaa/bbb/ccc</span><br></pre></td></tr></table></figure></p>
-<p>P.S.1. 在使用简写的 <code>-p</code> 或 <code>-s</code> 或 <code>-r</code> 时，会在文章的 <code>Front-matter</code> 中多出对应的 <code>p: aaa/bbb/ccc</code> 或 <code>s: aaa/bbb/ccc</code> 或 <code>r: true</code>，删了也没影响；而使用 <code>--path</code> 或 <code>--slug</code> 或 <code>--replace</code> 则没有，可能是 BUG。</p>
-<p>P.S.2. <code>path</code> 和 <code>slug</code> 一起用时，只有 <code>path</code> 生效</p>
-<p>P.S.3. <code>path</code> 和 <code>slug</code> 的来源：<a href="https://github.com/hexojs/hexo/issues/379" target="_blank" rel="external">https://github.com/hexojs/hexo/issues/379</a></p>
-<h2 id="hexo_publish">hexo publish</h2><blockquote>
-<p>名称：发表命令<br>别名：<code>hexo p</code><br>使用：<code>hexo publish [layout] &lt;filename&gt;</code><br>参数：</p>
-<blockquote>
-<p><code>layout</code>：指定使用的布局，可以是 <code>post</code>，<code>page</code>，<code>draft</code> 或者任何自定义的布局，不指定则默认为 <code>post</code>。<br><code>filename</code>：草稿文件名，例如 <code>hello-world</code>，不要写 <code>.md</code>。</p>
-</blockquote>
-<p>选项：无</p>
-</blockquote>
-<p>将 <code>source/_drafts</code> 中的草稿文章移动到 <code>source/_post/</code> 目录，可以发表为 <code>page</code> 等。</p>
-<p>P.S.1. 如果使用 <code>hexo new draft --path aa/bb/cc</code> 命令创建的草稿，会比较悲剧，因为 <code>filename</code> 会将输入的斜杠 <code>/</code> 转换成 <code>-</code>，导致找不到文件。（解决方案：手动将整个 <code>aa</code> 目录复制到 <code>source/_post/</code> 目录）</p>
-<p>P.S.2. 虽然 <code>draft</code> 可用，但其实还是移动到 <code>source/_post/</code> 目录。</p>
-<h2 id="hexo_render">hexo render</h2><blockquote>
-<p>名称：渲染命令<br>别名：<code>hexo r</code><br>使用：<code>hexo render &lt;file1&gt; [file2] ...</code><br>参数：</p>
-<blockquote>
-<p><code>file[n]</code>：至少指定一个文件，起始目录是根目录。</p>
-</blockquote>
-<p>选项：</p>
-<blockquote>
-<p><code>--engine</code>：指定渲染引擎。<br><code>--output</code>：输出目标文件，如果不指定，则输出到终端。起始目录是根目录。<br><code>--pretty</code>：美化 JSON 输出。</p>
-</blockquote>
-</blockquote>
-<p>这个命令一般用不到。</p>
-<h2 id="hexo_server">hexo server</h2><blockquote>
-<p>名称：服务命令<br>别名：<code>hexo s</code><br>使用：<code>hexo server [option]</code><br>参数：无<br>选项：</p>
-<blockquote>
-<p><code>-i</code> or <code>--ip</code>：指定服务的 IP 地址，默认绑定所有地址（0.0.0.0）<br><code>-l</code> or <code>--log [format]</code>：按格式输入 log，不指定 <code>format</code> 则默认为 <code>dev</code><br><code>-o</code> or <code>--open</code>：在浏览器中打开 url（需要将 ip 改成 <code>localhost</code> 或 <code>127.0.0.1</code>）<br><code>-p</code> or <code>--port</code>：指定服务端口，默认为 4000<br><code>-s</code> or <code>--static</code>：静态模式，仅使用 <code>public</code> 目录中的静态文档</p>
-</blockquote>
-</blockquote>
-<p>开启服务。</p>
-<p>log 的 format 可选：<code>dev</code>，<code>default</code>，<code>combined</code>，<code>combined</code>，<code>common</code>，<code>short</code>，<code>tiny</code> 之一；<br>也可以自定义，要使用引号 <code>&quot;</code> 或 <code>&#39;</code> 包裹</p>
-<h3 id="例子一-2">例子一</h3><p>请求方法、状态码、URL：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s <span class="operator">-l</span> <span class="string">':method :status :url'</span></span><br></pre></td></tr></table></figure></p>
-<p>输出结果：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">GET <span class="number">200</span> /</span><br><span class="line">GET <span class="number">200</span> /vendors/fancybox/source/jquery.fancybox.css?v=<span class="number">2.1</span><span class="number">.5</span></span><br><span class="line">GET <span class="number">200</span> /css/main.css?v=<span class="number">5.0</span><span class="number">.0</span></span><br><span class="line">GET <span class="number">404</span> /tags/</span><br></pre></td></tr></table></figure></p>
-<p>详情请看 &gt;&gt; <a href="https://github.com/expressjs/morgan#predefined-formats" target="_blank" rel="external">morgan</a></p>
-<h2 id="hexo_version">hexo version</h2><blockquote>
-<p>名称：版本信息命令<br>别名：<code>hexo v</code><br>使用：<code>hexo version</code><br>参数：无<br>选项：无</p>
-</blockquote>
-<h2 id="hexo_–config">hexo –config</h2><blockquote>
-<p>执行命令时，指定一个配置文件，替代默认的 <code>_config.yml</code> 配置文件，不可单独使用，<strong>必须跟命令一起使用</strong>。</p>
-</blockquote>
-<p>有效命令：<br><code>clean</code>、<code>config</code>、<code>deploy</code>、<code>generate</code>、<code>list</code>、<code>migrate</code>、<code>new</code>、<code>publish</code>、<code>render</code>、<code>server</code><br>无效命令：<br><code>help</code>、<code>init</code>、<code>version</code></p>
-<h3 id="例子一-3">例子一</h3><p>使用不同的配置部署到不同的服务器（一个博客，多种风格）：</p>
-<blockquote>
-<p>配置 A：<br><code>public_dir</code>：public-github<br><code>theme</code>：landscape<br><code>deploy</code>：github<br>配置 B：<br><code>public_dir</code>：public-aliyun<br><code>theme</code>：next<br><code>deploy</code>：rsync</p>
-</blockquote>
-<p>分别执行以下命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo d -g --config configA.yml</span><br><span class="line">hexo d -g --config configB.yml</span><br></pre></td></tr></table></figure></p>
-<h2 id="hexo_-cwd">hexo --cwd</h2><blockquote>
-<p>指定“Current Working Directory（当前的工作目录）”<br>用途不明。</p>
-</blockquote>
-<h2 id="hexo_-debug">hexo --debug</h2><blockquote>
-<p>执行命令时，显示 <code>debug</code> 信息。</p>
-</blockquote>
-<p>有效命令：<br><code>init</code>、<code>version</code>、<code>clean</code>、<code>config</code>、<code>deploy</code>、<code>generate</code>、<code>list</code>、<code>migrate</code>、<code>new</code>、<code>publish</code>、<code>render</code>、<code>server</code><br>无效命令：<br><code>help</code></p>
-<h2 id="hexo_-draft">hexo --draft</h2><blockquote>
-<p>显示草稿文章，等同于 <code>_config.yml</code> 中的<a href="#文章&#40;Writing&#41;"><code>render_drafts</code></a>。</p>
-</blockquote>
-<p>有效命令：<br><code>generate</code>、<code>list</code>、<code>server</code><br>无效命令：<br><code>help</code>、<code>init</code>、<code>version</code>、<code>clean</code>、<code>config</code>、<code>deploy</code>、<code>migrate</code>、<code>new</code>、<code>publish</code>、<code>render</code></p>
-<h2 id="hexo_-safe">hexo --safe</h2><blockquote>
-<p>安全模式，可以禁用所有的插件（plugin）和脚本（script）。如果在安装新插件后出现问题，可以在执行命令时加上 <code>--safe</code> 选项。</p>
-</blockquote>
-<p>有效命令：<br><code>deploy</code>、<code>generate</code>、<code>list</code>、<code>migrate</code>、<code>new</code>、<code>publish</code>、<code>render</code>、<code>server</code><br>无效命令：<br><code>help</code>、<code>init</code>、<code>version</code>、<code>clean</code>、<code>config</code></p>
-<h2 id="hexo_-silent">hexo --silent</h2><blockquote>
-<p>安静模式，不提示终端信息，与 <code>--debug</code> 相对应。<br><code>--debug</code> 会输出所有级别的信息（<code>TRACE</code>、<code>DEBUG</code>、<code>INFO</code>、<code>WARN</code>、<code>ERROR</code>、<code>FATAL</code>）<br>默认情况下会输出 <code>INFO</code> 以上信息（<code>INFO</code>、<code>WARN</code>、<code>ERROR</code>、<code>FATAL</code>）<br><code>--silent</code> 则隐藏所有信息</p>
-</blockquote>
-<p>有效命令：<br><code>init</code>、<code>version</code>、<code>clean</code>、<code>config</code>、<code>deploy</code>、<code>generate</code>、<code>list</code>、<code>migrate</code>、<code>new</code>、<code>publish</code>、<code>render</code>、<code>server</code><br>无效命令：<br><code>help</code></p>
-<h1 id="迁移">迁移</h1><p>如果在使用 Hexo 之前，已经有一个运行中的博客了，想迁移到 Hexo，也是非常简单的事情，最多就两条命令：安装插件、迁移命令。</p>
-<h2 id="从_Jekyll_迁移">从 Jekyll 迁移</h2><p>把 Jekyll 的 <code>_posts</code> 文件夹内的所有文档复制到 <code>source/_posts</code> 文件夹，并在 <code>_config.yml</code> 中修改一下 <code>new_post_name</code> 设置项，即可：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">new_post_name: :year-:month-:day-:title.md</span><br></pre></td></tr></table></figure>
-<h2 id="从_Octopress_迁移">从 Octopress 迁移</h2><p>把 Octopress 的 <code>source/_posts</code> 文件夹内的所有文档复制到 <code>source/_posts</code> 文件夹，并在 <code>_config.yml</code> 中修改一下 <code>new_post_name</code> 设置项，即可：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">new_post_name: :year-:month-:day-:title.md</span><br></pre></td></tr></table></figure>
-<h2 id="从_WordPress_迁移">从 WordPress 迁移</h2><p>从 RSS 迁移需要安装 <a href="https://github.com/hexojs/hexo-migrator-wordpress" target="_blank" rel="external">hexo-migrator-wordpress</a> 插件：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-migrator-wordpress --save</span><br></pre></td></tr></table></figure>
-<p>在迁移之前，先要在 WordPress 中导出博客：</p>
-<blockquote>
-<p>在 WordPress 的仪表盘中，打开 “工具” → “导出” → “WordPress”。</p>
-</blockquote>
-<p>然后使用 <code>hexo migrate</code> 命令进行迁移，<code>source</code> 可以是导出的文件，也可以是一个网址：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo migrate wordpress &lt;<span class="built_in">source</span>&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="通过_RSS_迁移">通过 RSS 迁移</h2><p>从 RSS 迁移需要安装 <a href="https://github.com/hexojs/hexo-migrator-rss" target="_blank" rel="external">hexo-migrator-rss</a> 插件：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-migrator-rss --save</span><br></pre></td></tr></table></figure>
-<p>然后使用 <code>hexo migrate</code> 命令进行迁移，<code>source</code> 可以是 <code>RSS</code> 的文件，也可以是一个网址：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo migrate rss &lt;<span class="built_in">source</span>&gt;</span><br></pre></td></tr></table></figure>
-<p>通过 RSS 可以迁移很多博客的文章，只要博客服务商提供了 RSS 订阅功能，就可以很方便地将文章迁移到 Hexo 了。</p>
-<p>目前支持 RSS 的有：<br><a href="http://blog.csdn.net/" target="_blank" rel="external">CSDN</a>、<a href="http://www.cnblogs.com/" target="_blank" rel="external">博客园 cnblogs</a>、<a href="http://www.blogjava.net/" target="_blank" rel="external">JAVA 博客</a>、<a href="http://www.cppblog.com/" target="_blank" rel="external">C++ 博客</a> 等等。</p>
-<h2 id="其他迁移方式">其他迁移方式</h2><p>除了从上述国内主流博客的迁移之外，<a href="https://hexo.io/plugins/#migrator" target="_blank" rel="external">迁移插件列表</a> 还有其他的比如 <a href="https://github.com/hr6r/hexo-migrator-blogger" target="_blank" rel="external">blogger</a>、<a href="https://github.com/Yikun/hexo-migrator-github-issue" target="_blank" rel="external">github-issue</a>、<a href="https://github.com/welksonramos/hexo-migrator-joomla" target="_blank" rel="external">joomla</a> 等迁移方式，国内用得比较少，就不说了。</p>
-<h1 id="结语">结语</h1><p>这一节也太啰嗦了，是我的打开方式不对吗？唠唠叨叨了半天，都还没进入主题！<a href="/201510/01/Hexo-2/" title="下一节——基本操作">下一节——基本操作</a> 将从 Hexo 的写作开始，详细介绍 Hexo 的使用方式。</p></span>
-      
-    </div>
+<figure class="highlight bash">
+  <table>
+    <tr>
+      <td class="gutter"><pre><span class="line">1</span>
+                <br>
+                </pre>
+                </td>
+                <td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td>
+                </tr>
+                </table>
+                </figure>
+                <p>就会在 <code>C:\Users\&lt;用户名&gt;\AppData\Roaming\npm\node_modules</code> 目录安装好 <code>hexo-cli</code> 及其依赖的 packages。
+                  <br>可能会看到一个 <code>WARN</code>，但是不用担心，这不会影响 Hexo 的正常使用。</p>
+                <p>在命令行中输入 <code>hexo v</code>，如果有显示 <code>hexo-cli</code> 的版本号，即表示安装成功：
+                  <br>
+                  <figure class="highlight bash">
+                    <table>
+                      <tr>
+                        <td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td>
+                        <td class="code"><pre><span class="line">F:\&gt;hexo v</span><br><span class="line">hexo-cli: <span class="number">0.1</span>.<span class="number">8</span></span><br><span class="line">os: Windows_NT <span class="number">10.0</span>.<span class="number">10240</span> win32 x64</span><br><span class="line">http_parser: <span class="number">2.5</span>.<span class="number">0</span></span><br><span class="line">node: <span class="number">4.1</span>.<span class="number">1</span></span><br><span class="line">v8: <span class="number">4.5</span>.<span class="number">103.33</span></span><br><span class="line">uv: <span class="number">1.7</span>.<span class="number">4</span></span><br><span class="line">zlib: <span class="number">1.2</span>.<span class="number">8</span></span><br><span class="line">ares: <span class="number">1.10</span>.<span class="number">1</span>-DEV</span><br><span class="line">modules: <span class="number">46</span></span><br><span class="line">openssl: <span class="number">1.0</span>.<span class="number">2</span>d</span><br></pre></td>
+                      </tr>
+                    </table>
+                  </figure>
+                </p>
+                <h2 id="初始化">初始化</h2>
+                <p>在<strong>准备存放 hexo 博客的文件夹</strong>，执行以下命令：
+                  <br>
+                  <figure class="highlight bash">
+                    <table>
+                      <tr>
+                        <td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td>
+                        <td class="code"><pre><span class="line">hexo init          <span class="comment"># 将当前目录初始化为 hexo 目录</span></span><br><span class="line">hexo init &lt;folder&gt; <span class="comment"># 将指定目录初始化为 hexo 目录</span></span><br><span class="line"></span><br><span class="line">F:\&gt; hexo init blog</span><br><span class="line">INFO  Copying data to F:\blog\</span><br><span class="line">INFO  You are almost <span class="keyword">done</span>! Don<span class="string">'t forget to run '</span>npm install<span class="string">' before you start blogging with Hexo!</span></span><br></pre></td>
+                      </tr>
+                    </table>
+                  </figure>
+                </p>
+                <p>初始化后的目录内容为：
+                  <br>
+                  <figure class="highlight bash">
+                    <table>
+                      <tr>
+                        <td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td>
+                        <td class="code"><pre><span class="line">.</span><br><span class="line">├── .gitignore</span><br><span class="line">├── _config.yml</span><br><span class="line">├── package.json</span><br><span class="line">├── scaffolds</span><br><span class="line">|   ├── draft.md</span><br><span class="line">|   ├── page.md</span><br><span class="line">|   └── post.md</span><br><span class="line">├── <span class="built_in">source</span></span><br><span class="line">|   └── _posts</span><br><span class="line">|       └── hello-world.md</span><br><span class="line">└── themes</span><br><span class="line">    └──landscape</span><br></pre></td>
+                      </tr>
+                    </table>
+                  </figure>
+                </p>
+                <p>初始化后的 <code>blog</code> 还不能使用 hexo，因为完整版的 hexo 还没安装，需要进入 blog 目录，执行 <code>npm install</code> 命令，npm 工具就会根据 <code>package.json</code> 文件中记录的 <code>dependencies</code> 去下载安装需要的依赖包（包括完整版的 hexo）：
+                  <br>
+                  <figure class="highlight bash">
+                    <table>
+                      <tr>
+                        <td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td>
+                        <td class="code"><pre><span class="line">F:\&gt; <span class="built_in">cd</span> blog</span><br><span class="line">F:\blog&gt; npm install</span><br></pre></td>
+                      </tr>
+                    </table>
+                  </figure>
+                </p>
+                <blockquote>
+                  <p>P.S. 也可以只安装纯粹的 hexo，不包含任何插件，只需要在初始化后的目录，执行 <code>npm install hexo --save</code> 即可。</p>
+                </blockquote>
+                <p>安装完所有模块后，就可以体验 hexo 了。</p>
+                <h2 id="体验">体验</h2>
+                <p>在 hexo 目录中，执行以下命令（2 个命令是一样的效果）：
+                  <br>
+                  <figure class="highlight bash">
+                    <table>
+                      <tr>
+                        <td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td>
+                        <td class="code"><pre><span class="line">hexo server</span><br><span class="line">hexo s      <span class="comment"># 简化命令</span></span><br></pre></td>
+                      </tr>
+                    </table>
+                  </figure>
+                </p>
+                <p>当看到 <code>INFO  Hexo is running at http://0.0.0.0:4000/. Press Ctrl+C to stop.</code> 就表示 hexo 已经运行了，只要打开浏览器，
+                  <br>在地址栏输入 <code>127.0.0.1:4000</code> 或 <code>localhost:4000</code> 即可访问了。</p>
+                <p>到目前为止，hexo 在本地的基本配置已经结束了。</p>
+                <h1 id="Hexo_目录_&amp;_文件">Hexo 目录 &amp; 文件</h1>
+                <p>参考：<a href="https://hexo.io/docs/setup.html" target="_blank" rel="external">官方文档</a></p>
+                <h2 id="_config-yml">_config.yml</h2>
+                <p>Hexo 的全局配置文件，整个 Hexo 博客的配置都可以在这里进行配置。</p>
+                <h2 id="package-json">package.json</h2>
+                <p>Hexo 应用程序的信息，包括名称、版本、所需的依赖库等等。</p>
+                <h2 id="node_modules_目录">node_modules 目录</h2>
+                <p>Hexo 的依赖库，以及安装的插件都是放这里的。</p>
+                <p>如果会 node，可以自己写插件来对 Hexo 进行扩展，如果写的插件很有用，希望别人也用上你写的插件，可以发布到 npm。</p>
+                <blockquote>
+                  <p>程序比较简单的，建议写成脚本（script），相对来说比较复杂的，建议写成插件（package）。</p>
+                </blockquote>
+                <h2 id="scaffolds_目录">scaffolds 目录</h2>
+                <p>模版 文件夹。当您新建文章时，Hexo 会根据 scaffold 来建立文件。
+                  <br>默认提供 <code>draft.md</code>（草稿）、<code>post.md</code>（文章）、<code>page.md</code>（页面）这三种模版，可以自定义修改，也可以创建自己的模版。</p>
+                <p>例如：
+                  <br>
+                  <figure class="highlight cpp">
+                    <table>
+                      <tr>
+                        <td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td>
+                        <td class="code"><pre><span class="line">hexo <span class="keyword">new</span> post <span class="string">"Hello World"</span> <span class="preprocessor"># 使用 post.md 模版在 source\_posts 目录新建一个 <span class="string">"Hello-World.md"</span> 文件</span></span><br><span class="line">hexo <span class="keyword">new</span> draft uk           <span class="preprocessor"># 使用 draft.md 模版在 source\_drafts 目录新建一个 <span class="string">"uk.md"</span> 文件</span></span><br><span class="line">hexo <span class="keyword">new</span> page <span class="string">"page Test"</span>   <span class="preprocessor"># 使用 page.md 模版在 source\page-Test 目录新建一个 <span class="string">"index.md"</span> 文件</span></span><br></pre></td>
+                      </tr>
+                    </table>
+                  </figure>
+                </p>
+                <blockquote>
+                  <p>P.S. 此模版非彼模版（Template），scaffold 在词典里是“脚手架”的意思，我也不知道该怎么描述（语死早- -）相信只要看看这三个文件，以及分别用这三个文件新建出来的文章文件进行对比，一下子就懂了。
+                    <br>大概就是对该文章的一些描述，比如 Title，Date，Description，Tag，Category 等等，有了这些信息，Hexo 就可以对该文章进行分类。</p>
+                  <blockquote>
+                    <p>详情请看&gt;&gt;<a href="https://hexo.io/docs/front-matter.html" target="_blank" rel="external">Front-matter</a>。</p>
+                  </blockquote>
+                </blockquote>
+                <h2 id="scripts_目录">scripts 目录</h2>
+                <p>脚本文件夹。脚本是扩展 Hexo 最简易的方式，在此文件夹内的 JavaScript 文件会被自动执行。</p>
+                <p>如果会 javascript，可以自己写插件来对 Hexo 进行扩展。</p>
+                <blockquote>
+                  <p>程序比较简单的，建议写成脚本（script），相对来说比较复杂的，建议写成插件（package）。</p>
+                </blockquote>
+                <h2 id="source_目录">source 目录</h2>
+                <p>资源文件夹是存放用户资源的地方。所有的 markdown 文件（文章、草稿、页面等），以及图片、音乐、视频等，都是放在这里的。</p>
+                <p>除 <code>_posts</code> 文件夹之外，其他所有以<strong> <code>_ (下划线)</code> 开头命名的文件和文件夹</strong>以及<strong>隐藏的文件</strong>，在解析成博客时将会被忽略。Markdown 和 HTML 文件会被解析并放到 public 文件夹，而其他文件会被拷贝过去。</p>
+                <h2 id="public_目录">public 目录</h2>
+                <p>发布 文件夹。Hexo 生成出来的完整的博客文件（整个博客的所有文件都在这了），可以将 public 里面的文件上传到 Github、Gitcafe、VPS、Heroku、OpenShift 等服务器上，即可访问。本机可以使用 <code>hexo server -s</code> 命令，也可以直接使用浏览器打开 <code>index.html</code>（不过由于路径问题，无法加载资源）。</p>
+                <h2 id="themes_目录">themes 目录</h2>
+                <p>主题 文件夹。Hexo 会根据主题来生成静态页面。可以到 <a href="https://hexo.io/themes/" target="_blank" rel="external">Hexo 主题站</a> 下载，可惜官方收录的主题比较少，目前只有 19 个。</p>
+                <p>因为 hexo 主题几乎都是开源的，而主题的作者一般都会放在 github 上，这就让我们获取 hexo 的主题变得很简单，只要到<a href="https://github.com/search?utf8=%E2%9C%93&amp;q=hexo+theme" target="_blank" rel="external">搜索一下</a>就可以找到很多优秀的主题了。</p>
+                <blockquote>
+                  <p>补充：<a href="https://github.com/hexojs/hexo/wiki/Themes" target="_blank" rel="external">Wiki 上有个 Theme 列表</a>，虽然已被标记为弃用，但收集的主题还是有相当多的。</p>
+                </blockquote>
+                <h2 id="其他文件">其他文件</h2>
+                <h3 id="-gitignore">.gitignore</h3>
+                <p>git 的忽略文件，可删</p>
+                <h3 id="db-json">db.json</h3>
+                <p>hexo 的 json 数据库文件，可通过 <code>hexo clean</code> 命令清除数据（放心，不会删除文章内容的），也可以直接删掉，但还是会生成的。</p>
+                <h1 id="Hexo_配置">Hexo 配置</h1>
+                <p>Hexo 的配置主要是通过修改 <code>_config.yml</code> 文件进行的，也可以通过使用以下命令对某一项进行设置
+                  <br>
+                  <figure class="highlight accesslog">
+                    <table>
+                      <tr>
+                        <td class="gutter"><pre><span class="line">1</span><br></pre></td>
+                        <td class="code"><pre><span class="line">hexo config <span class="string">[name]</span> <span class="string">[value]</span></span><br></pre></td>
+                      </tr>
+                    </table>
+                  </figure>
+                </p>
+                <p><strong>一定要注意：</strong>yaml 的语法问题，在每一项的冒号后面一定要有<strong>一个空格</strong>，建议修改完配置后，使用一些 YAML 语法检查工具检查一下有没有语法错误（例如：<a href="http://www.yamllint.com/" target="_blank" rel="external">YamlLint</a>）。</p>
+                <h2 id="_config-yml_介绍">_config.yml 介绍</h2>
+                <p><code>_config.yml</code> 中的配置项可以分成几个大类：</p>
+                <p>网站（Site）、地址（URL）、目录（Directory）、文章（Writing）、分类 &amp; 标签（Category &amp; Tag）、日期 / 时间格式（Date / Time format）、分页（Pagination）、扩展（Extensions）、部署（Deployment）。</p>
+                <h2 id="网站_(Site)">网站 (Site)</h2>
+                <table>
+                  <thead>
+                    <tr>
+                      <th>参数</th>
+                      <th>描述</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><code>title</code></td>
+                      <td>网站标题</td>
+                    </tr>
+                    <tr>
+                      <td><code>subtitle</code></td>
+                      <td>网站副标题</td>
+                    </tr>
+                    <tr>
+                      <td><code>description</code></td>
+                      <td>网站描述</td>
+                    </tr>
+                    <tr>
+                      <td><code>author</code></td>
+                      <td>您的名字</td>
+                    </tr>
+                    <tr>
+                      <td><code>language</code></td>
+                      <td>网站使用的语言，使用 <a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes" target="_blank" rel="external">2 个字母表示的 ISO-639-1 码</a></td>
+                    </tr>
+                    <tr>
+                      <td><code>timezone</code></td>
+                      <td>网站时区。Hexo 默认使用您电脑的时区。<a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones" target="_blank" rel="external">时区列表</a>(表中的 <code>TZ</code> 列)，例如 <code>Asia/Shanghai</code> 或 <code>PRC</code> 表示中国时区。</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <h2 id="网址_(URL)">网址 (URL)</h2>
+                <table>
+                  <thead>
+                    <tr>
+                      <th>参数</th>
+                      <th>描述</th>
+                      <th>默认值</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><code>url</code></td>
+                      <td>网址</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td><code>root</code></td>
+                      <td>网站根目录</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td><code>permalink</code></td>
+                      <td>文章的 <a href="https://hexo.io/docs/permalinks.html" target="_blank" rel="external">永久链接</a> 格式</td>
+                      <td><code>:year/:month/:day/:title/</code></td>
+                    </tr>
+                    <tr>
+                      <td><code>permalink_default</code></td>
+                      <td>永久链接中各部分的默认值</td>
+                      <td></td>
+                    </tr>
+                  </tbody>
+                </table>
+                <blockquote>
+                  <p>关于 <code>url</code> 和 <code>root</code>：如果您的网站存放在子目录中，例如 <code>http://domain.com/blog</code>，则请将您的 <code>url</code> 设为 <code>http://yoursite.com/blog</code> 并把 <code>root</code> 设为 <code>/blog/</code>。</p>
+                  <p>关于 <code>permalink</code>：定义文章的 URL 结构，默认的 <code>:year/:month/:day/:title/</code> 所生成的连接就是 <code>2015/10/15/文章标题</code>，详情请看&gt;&gt;<a href="https://hexo.io/docs/permalinks.html#Examples" target="_blank" rel="external">Permalink</a></p>
+                  <p>关于 <code>permalink_default</code>：可以设置一些自定义的用于 <code>permalink</code> 的变量（其实还可以用于其他地方，比如 <code>new_post_name</code> 等，可以自己尝试 ^_^），比如可以这样使用：
+                    <br>
+                    <figure class="highlight http">
+                      <table>
+                        <tr>
+                          <td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td>
+                          <td class="code"><pre><span class="line"><span class="attribute">permalink</span>: <span class="string">:year-:language-:fruit-:title.html</span></span><br><span class="line"><span class="attribute">permalink_defaults</span>: <span class="string"></span></span><br><span class="line">  <span class="attribute">fruit</span>: <span class="string">apple</span></span><br><span class="line">  <span class="attribute">language</span>: <span class="string">zh_cn</span></span><br></pre></td>
+                        </tr>
+                      </table>
+                    </figure>
+                  </p>
+                  <p>则生成的文章 URL 为：<code>http://your.domain.com/2015-zh_cn-apple-文章标题.html</code></p>
+                </blockquote>
+                <h2 id="目录_(Directory)">目录 (Directory)</h2>
+                <table>
+                  <thead>
+                    <tr>
+                      <th>参数</th>
+                      <th>描述</th>
+                      <th>默认值</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><code>source_dir</code></td>
+                      <td>资源文件夹，这个文件夹用来存放内容。</td>
+                      <td>source</td>
+                    </tr>
+                    <tr>
+                      <td><code>public_dir</code></td>
+                      <td>发布文件夹，这个文件夹用于存放生成的站点文件。</td>
+                      <td>public</td>
+                    </tr>
+                    <tr>
+                      <td><code>tag_dir</code></td>
+                      <td>标签文件夹</td>
+                      <td>tags</td>
+                    </tr>
+                    <tr>
+                      <td><code>archive_dir</code></td>
+                      <td>归档文件夹</td>
+                      <td>archives</td>
+                    </tr>
+                    <tr>
+                      <td><code>category_dir</code></td>
+                      <td>分类文件夹</td>
+                      <td>categories</td>
+                    </tr>
+                    <tr>
+                      <td><code>code_dir</code></td>
+                      <td>include code 文件夹（放在 source 文件夹内）</td>
+                      <td>downloads/code</td>
+                    </tr>
+                    <tr>
+                      <td><code>i18n_dir</code></td>
+                      <td>国际化（i18n）文件夹</td>
+                      <td>:lang</td>
+                    </tr>
+                    <tr>
+                      <td><code>skip_render</code></td>
+                      <td>指定不会被渲染的文件（夹），可使用通配符（glob expressions）来配置路径。</td>
+                      <td></td>
+                    </tr>
+                  </tbody>
+                </table>
+                <blockquote>
+                  <p>关于 <code>skip_render</code>：以 <strong><code>source</code></strong> 文件夹为起始路径，感谢 <a href="https://xuanwo.org" target="_blank" rel="external">@xuanwo</a> 的《<a href="https://xuanwo.org/2014/08/14/hexo-usual-problem/#Hexo3-0以上支持" target="_blank" rel="external">Hexo 常见问题解决方案</a>》和《<a href="https://github.com/hexojs/hexo/issues/1146#issuecomment-88380140" target="_blank" rel="external">如何不处理 source 目录下某个子目录的所有文件，仅仅是将其 copy 到 public 目录中对应目录？</a>》：</p>
+                </blockquote>
+                <figure class="highlight bash">
+                  <table>
+                    <tr>
+                      <td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td>
+                      <td class="code"><pre><span class="line">skip_render: README.md   <span class="comment"># 单个文件</span></span><br><span class="line">skip_render: <span class="built_in">test</span>/*      <span class="comment"># 单个文件夹下全部文件</span></span><br><span class="line">skip_render: <span class="built_in">test</span>/*.md   <span class="comment"># 单个文件夹下指定类型文件</span></span><br><span class="line">skip_render: <span class="built_in">test</span>/**     <span class="comment"># 单个文件夹下全部文件以及子目录</span></span><br><span class="line">skip_render: **/*.html   <span class="comment"># 所有文件夹以及子目录下指定类型文件</span></span><br><span class="line"></span><br><span class="line">skip_render:             <span class="comment"># 多个文件夹以及各种复杂情况</span></span><br><span class="line">  - <span class="built_in">test</span>1/*.html</span><br><span class="line">  - <span class="built_in">test</span>2/**</span><br><span class="line">  - boot.js</span><br></pre></td>
+                    </tr>
+                  </table>
+                </figure>
+                <blockquote>
+                  <p>关于 <code>code_dir</code>：<a href="https://hexo.io/docs/tag-plugins.html#Include_Code" target="_blank" rel="external">Include_Code</a>，官网的解释太简单了，<a href="http://octopress.org/docs/plugins/include-code/" target="_blank" rel="external">Octopress 官网</a>有详细的解释，大概意思就是在文章中使用这样的语法在将某个文件（代码，支持语法高亮）的内容显示在文章中：</p>
+                </blockquote>
+                <figure class="highlight clojure">
+                  <table>
+                    <tr>
+                      <td class="gutter"><pre><span class="line">1</span><br></pre></td>
+                      <td class="code"><pre><span class="line"><span class="collection">&#123;&amp;#37; include_code <span class="collection">[title]</span> <span class="collection">[lang:language]</span> path/to/file %&#125;</span></span><br></pre></td>
+                    </tr>
+                  </table>
+                </figure>
+                <blockquote>
+                  <p>关于 <code>i18n_dir</code>：默认值 <code>:lang</code> 是一个变量，详情请看&gt;&gt;<a href="https://hexo.io/docs/permalinks.html#Multi-language_Support" target="_blank" rel="external">Permalink#Multi-language_Support</a>以及<a href="https://hexo.io/docs/internationalization.html" target="_blank" rel="external">i18n</a></p>
+                </blockquote>
+                <h2 id="文章_(Writing)">文章 (Writing)</h2>
+                <table>
+                  <thead>
+                    <tr>
+                      <th>参数</th>
+                      <th>描述</th>
+                      <th>默认值</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><code>new_post_name</code></td>
+                      <td>新建文章的文件名格式</td>
+                      <td>:title.md</td>
+                    </tr>
+                    <tr>
+                      <td><code>default_layout</code></td>
+                      <td>新建文章时的默认布局</td>
+                      <td>post</td>
+                    </tr>
+                    <tr>
+                      <td><del><code>auto_spacing</code></del></td>
+                      <td>在中文和英文之间加入空格</td>
+                      <td><del>false</del></td>
+                    </tr>
+                    <tr>
+                      <td><code>titlecase</code></td>
+                      <td>把标题转换为 title case</td>
+                      <td>false</td>
+                    </tr>
+                    <tr>
+                      <td><code>external_link</code></td>
+                      <td>在新标签中打开链接</td>
+                      <td>true</td>
+                    </tr>
+                    <tr>
+                      <td><code>filename_case</code></td>
+                      <td>把文件名称转换为 (1) 小写或 (2) 大写</td>
+                      <td>0</td>
+                    </tr>
+                    <tr>
+                      <td><code>render_drafts</code></td>
+                      <td>显示草稿文章</td>
+                      <td>false</td>
+                    </tr>
+                    <tr>
+                      <td><code>post_asset_folder</code></td>
+                      <td>开启 asset 文件夹</td>
+                      <td>false</td>
+                    </tr>
+                    <tr>
+                      <td><code>relative_link</code></td>
+                      <td>把链接改为与根目录相对的地址（相对路径）</td>
+                      <td>false</td>
+                    </tr>
+                    <tr>
+                      <td><code>future</code></td>
+                      <td>显示未来的文章</td>
+                      <td>true</td>
+                    </tr>
+                    <tr>
+                      <td><code>highlight</code></td>
+                      <td>代码块的高亮设置</td>
+                      <td></td>
+                    </tr>
+                  </tbody>
+                </table>
+                <blockquote>
+                  <p>关于 <code>new_post_name</code>：自定义文件名的结构，跟 <code>permalink</code> 类似。</p>
+                  <p>关于 <code>auto_spacing</code>：可以增加文章内容的可读性。在 <a href="https://github.com/hexojs/hexo/releases/tag/2.8.2" target="_blank" rel="external">Hexo 2.8.2</a> 版本开始，该功能已独立成一个插件 <a href="https://github.com/hexojs/hexo-filter-auto-spacing" target="_blank" rel="external">hexo-filter-auto-spacing</a>，这个配置项也就去掉了，只要装上插件，就会自动加上空格，不想要自动空格，则删除插件即可。<strong>如果使用了这个插件，当你的标题(h1~h6)有中英文混合时，请手动加上空格，否则在生成目录(TOC)时，目录会失效</strong>，因为标题的 id 也被加上了空格。
+                    <br>效果请看 &gt;&gt; <a href="http://huei90.github.io/pangu.node/" target="_blank" rel="external">来源</a>。</p>
+                  <p>关于 <code>titlecase</code>：文章标题的每个单词的首字母大写（英文单词），体验一下 &gt;&gt; <a href="http://individed.com/code/to-title-case/" target="_blank" rel="external">Convert to Title Case</a></p>
+                  <blockquote>
+                    <p><strong>注意：</strong></p>
+                    <ol>
+                      <li>修改 <code>titlecase</code> 后，需要执行 <code>hexo clean</code> 清除缓存才生效。</li>
+                      <li><code>a|an|and|as|at|but|by|en|for|if|in|nor|of|on|or|per|the|to|vs</code> 等单词的首字母不会被转换为大写。</li>
+                    </ol>
+                  </blockquote>
+                  <p>关于 <code>filename_case</code>：新建文章时的文件名的大小写（仅仅是文件名，跟标题无关）。</p>
+                  <blockquote>
+                    <p><code>0</code> 表示跟输入一致，<code>1</code> 表示全部字母转换成小写，<code>2</code> 表示全部字母转化成大写：
+                      <br>例如：你真是Native，Too young，too Simple啊！
+                      <br>0：<code>你真是Native，Too-young，too-Simple啊！.md</code>
+                      <br>1：<code>你真是native，too-young，too-simple啊！.md</code>
+                      <br>2：<code>你真是NATIVE，TOO-YOUNG，TOO-SIMPLE啊！.md</code></p>
+                  </blockquote>
+                  <p>关于 <code>post_asset_folder</code>：请参考：<a href="https://hexo.io/zh-cn/docs/asset-folders.html" target="_blank" rel="external">官方介绍</a>。把资源放到 asset 文件夹内，使用时只需要文件名就可以了，不需要完整的路径。因为生成博客后，资源跟当前的文章是在同一目录下的（所以你的资源中不能有一个叫 <code>index.html</code>                    的文件，否则会冲突，当然也没人会怎么做- -）。</p>
+                  <blockquote>
+                    <p>{&#37; asset_path filename %}：插入一个资源的路径，就仅仅是显示一个路径
+                      <br>{&#37; asset_img filename [title] %}：插入一张图片，等同于 <code>![title](filename)</code>
+                      <br>{&#37; asset_link filename [title] %}：插入一个资源的链接，点击会在新标签打开</p>
+                  </blockquote>
+                  <p>关于 <code>future</code>：是否显示<strong>日期是未来</strong>的文章。如果有些文章不想马上就发布，等到某个时刻再发布，可以将<a href="https://hexo.io/docs/front-matter.html" target="_blank" rel="external">Front-matter</a>中的日期改为指定的时间，并将 <code>future</code> 设置为 <code>false</code>                    即可。<strong>需要注意的是</strong>：因为是静态博客，不像 WordPress 等动态博客在到了指定时刻会自动发布，Hexo 需要再次发布才会生成文章的页面。</p>
+                </blockquote>
+                <h2 id="分类_&amp;_标签_(Category_&amp;_Tag)">分类 &amp; 标签 (Category &amp; Tag)</h2>
+                <table>
+                  <thead>
+                    <tr>
+                      <th>参数</th>
+                      <th>描述</th>
+                      <th>默认值</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><code>default_category</code></td>
+                      <td>默认分类名称</td>
+                      <td>uncategorized</td>
+                    </tr>
+                    <tr>
+                      <td><code>category_map</code></td>
+                      <td>分类别名</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td><code>tag_map</code></td>
+                      <td>标签别名</td>
+                      <td></td>
+                    </tr>
+                  </tbody>
+                </table>
+                <blockquote>
+                  <p>这 3 项配置都<strong>仅在 Hexo 拼接 URL</strong>时被使用。</p>
+                  <p>关于 <code>default_category</code>：在 <code>permalink</code> 中如果使用了 <code>:category</code> 变量，且当文章没有设置 <code>categories</code> 时，使用该默认分类名称。</p>
+                  <p>关于 <code>category_map</code> 和 <code>tag_map</code>：设置 category 和 tag 的别名，在 url 中将会使用这个“别名”来替代 category 或 tag 名称。（建议 category 或 tag 有中文字符时使用）</p>
+                  <blockquote>
+                    <p>详情请看&gt;&gt;<a href="https://github.com/hexojs/hexo/issues/908" target="_blank" rel="external">如何使用 category_map 这项配置？</a>和 <a href="https://github.com/hexojs/hexo/issues/1162" target="_blank" rel="external">Hexo 分类和标签的路径怎么设置成英文</a></p>
+                  </blockquote>
+                </blockquote>
+                <h2 id="日期_/_时间格式_(Date_/_Time_format)">日期 / 时间格式 (Date / Time format)</h2>
+                <p>Hexo 使用 <a href="http://momentjs.com/" target="_blank" rel="external">Moment.js</a> 来解析和显示时间。可以根据 <a href="http://momentjs.com/docs/#/displaying/format/" target="_blank" rel="external">Moment.js 官方文档</a> 的格式来自定义。</p>
+                <table>
+                  <thead>
+                    <tr>
+                      <th>参数</th>
+                      <th>描述</th>
+                      <th>默认值</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><code>date_format</code></td>
+                      <td>日期格式</td>
+                      <td>YYYY-MM-DD</td>
+                    </tr>
+                    <tr>
+                      <td><code>time_format</code></td>
+                      <td>时间格式</td>
+                      <td>H:mm:ss</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <h2 id="分页_(Pagination)">分页 (Pagination)</h2>
+                <table>
+                  <thead>
+                    <tr>
+                      <th>参数</th>
+                      <th>描述</th>
+                      <th>默认值</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><code>per_page</code></td>
+                      <td>每页显示的文章量（0 = 关闭分页功能）</td>
+                      <td>10</td>
+                    </tr>
+                    <tr>
+                      <td><code>pagination_dir</code></td>
+                      <td>分页目录（保存分页的文件夹名称）</td>
+                      <td>page</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <blockquote>
+                  <p>此分页设置是全局的，包括主页、Archives 页、Categeries 页和 Tags 页，如果只想主页进行分页，可设置全局 <code>per_page: 0</code>，主页 <code>per_page: 10</code>，其他不设置。</p>
+                  <p>P.S. 默认的 <code>landscape</code> 主题有个 BUG，在 <code>/archives/</code> 页面里，只显示第一页的文章，不能导航到其他分页。</p>
+                </blockquote>
+                <figure class="highlight http">
+                  <table>
+                    <tr>
+                      <td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td>
+                      <td class="code"><pre><span class="line"><span class="attribute">per_page</span>: <span class="string">3             # 全局</span></span><br><span class="line"><span class="attribute">pagination_dir</span>: <span class="string">page    # 分页目录</span></span><br><span class="line"></span><br><span class="line"><span class="cpp"><span class="preprocessor">########################################</span></span><br><span class="line"></span><br><span class="line">archive_generator:      <span class="preprocessor"># 文章列表分页设置</span></span><br><span class="line">  yearly: <span class="literal">true</span>          <span class="preprocessor"># 按年份</span></span><br><span class="line">  monthly: <span class="literal">true</span>         <span class="preprocessor"># 按月份</span></span><br><span class="line">  per_page: <span class="number">0</span></span><br><span class="line"></span><br><span class="line">index_generator:        <span class="preprocessor"># 主页分页设置</span></span><br><span class="line">  per_page: <span class="number">0</span></span><br><span class="line"></span><br><span class="line">category_generator:     <span class="preprocessor"># 分类分页设置</span></span><br><span class="line">  per_page: <span class="number">0</span></span><br><span class="line"></span><br><span class="line">tag_generator:          <span class="preprocessor"># 标签分页设置</span></span><br><span class="line">   per_page: <span class="number">0</span></span></span><br></pre></td>
+                    </tr>
+                  </table>
+                </figure>
+                <h2 id="扩展_(Extensions)">扩展 (Extensions)</h2>
+                <table>
+                  <thead>
+                    <tr>
+                      <th>参数</th>
+                      <th>描述</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><code>theme</code></td>
+                      <td>当前主题名称</td>
+                    </tr>
+                    <tr>
+                      <td><code>deploy</code></td>
+                      <td>部署</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <blockquote>
+                  <p>关于 <code>deploy</code>：部署的配置项，配置好就可以一键（命令）部署到各种服务器环境，比如：<a href="https://github.com/" target="_blank" rel="external">github</a>、<a href="https://gitcafe.com/" target="_blank" rel="external">gitcafe</a>、<a href="https://www.heroku.com/" target="_blank" rel="external">Heroku</a>、<a href="https://www.openshift.com/" target="_blank" rel="external">OpenShift</a> 等，或通过 FTP、Rsync 等同步到远程服务器上。
+                  </p>
+                  <blockquote>
+                    <p>详情请看&gt;&gt;<a href="https://hexo.io/zh-tw/docs/deployment.html" target="_blank" rel="external">官方文档-部署</a></p>
+                  </blockquote>
+                </blockquote>
+                <h2 id="其他配置">其他配置</h2>
+                <p>还有一个 server 项是默认没有在 <code>_config.yml</code> 中的，如果不想使用默认的 <code>4000</code> 端口，又嫌每次开启服务都要输入 <code>-p 80</code> 指定端口，那么可以在 <code>_config.yml</code> 中添加（这是默认配置，可自行修改，也可只写其中一项）：
+                  <br>
+                  <figure class="highlight less">
+                    <table>
+                      <tr>
+                        <td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td>
+                        <td class="code"><pre><span class="line"><span class="attribute">server</span>:</span><br><span class="line">  <span class="attribute">ip</span>: <span class="string">'0.0.0.0'</span></span><br><span class="line">  <span class="attribute">port</span>: <span class="number">4000</span></span><br><span class="line">  <span class="attribute">log</span>: false</span><br></pre></td>
+                      </tr>
+                    </table>
+                  </figure>
+                </p>
+                <h1 id="Hexo_命令">Hexo 命令</h1>
+                <p>在 blog 目录中，输入 <code>hexo</code> 命令，可以查看 <code>hexo</code> 命令的帮助信息：</p>
+                <figure class="highlight bash">
+                  <table>
+                    <tr>
+                      <td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td>
+                      <td class="code"><pre><span class="line">Usage: hexo &lt;<span class="built_in">command</span>&gt;</span><br><span class="line"></span><br><span class="line">Commands:</span><br><span class="line">  clean     Removed generated files and cache.</span><br><span class="line">  config    Get or <span class="built_in">set</span> configurations.</span><br><span class="line">  deploy    Deploy your website.</span><br><span class="line">  generate  Generate static files.</span><br><span class="line">  <span class="built_in">help</span>      Get <span class="built_in">help</span> on a command.</span><br><span class="line">  init      Create a new Hexo folder.</span><br><span class="line">  list      List the information of the site</span><br><span class="line">  migrate   Migrate your site from other system to Hexo.</span><br><span class="line">  new       Create a new post.</span><br><span class="line">  publish   Moves a draft post from _drafts to _posts folder.</span><br><span class="line">  render    Render files with renderer plugins.</span><br><span class="line">  server    Start the server.</span><br><span class="line">  version   Display version information.</span><br><span class="line"></span><br><span class="line">Global Options:</span><br><span class="line">  --config  Specify config file instead of using _config.yml</span><br><span class="line">  --cwd     Specify the CWD</span><br><span class="line">  --debug   Display all verbose messages <span class="keyword">in</span> the terminal</span><br><span class="line">  --draft   Display draft posts</span><br><span class="line">  --safe    Disable all plugins and scripts</span><br><span class="line">  --silent  Hide output on console</span><br><span class="line"></span><br><span class="line">For more <span class="built_in">help</span>, you can use <span class="string">'hexo help [command]'</span> <span class="keyword">for</span> the detailed information</span><br><span class="line">or you can check the docs: http://hexo.io/docs/</span><br></pre></td>
+                    </tr>
+                  </table>
+                </figure>
+                <p>总的来说，分为 <code>Commands</code>（命令）和 <code>Options</code>（选项）两种。下面将一一介绍每个 <code>Command</code> 以及 <code>Option</code> 的用法。</p>
+                <h2 id="hexo_clean">hexo clean</h2>
+                <blockquote>
+                  <p>名称：清除命令
+                    <br>别名：无
+                    <br>使用：<code>hexo clean</code>
+                    <br>参数：无
+                    <br>选项：无</p>
+                </blockquote>
+                <p>用于清除缓存（<code>db.json</code> 文件）和生成的文件（默认是 <code>public</code> 文件夹，根据 <code>_config.yml</code> 中所指定的 <code>public_dir</code> 来清除）。</p>
+                <h2 id="hexo_config">hexo config</h2>
+                <blockquote>
+                  <p>名称：配置命令
+                    <br>别名：无
+                    <br>使用：<code>hexo config [&lt;name&gt; [value]]</code>
+                    <br>参数：</p>
+                  <blockquote>
+                    <p><code>name</code>：配置项名称，如果不指定，则显示所有设置项
+                      <br><code>value</code>：设定配置项的值，如果不指定，则显示单个配置项的值
+                      <br>选项：无</p>
+                  </blockquote>
+                </blockquote>
+                <p>用于查看或者修改配置项（<code>_config.yml</code> 文件）的值，查看时是以 <a href="http://json.org/" target="_blank" rel="external">JSON</a> 格式输出的，而修改时会直接影响 <code>_config.yml</code> 配置文件。</p>
+                <h3 id="例子一">例子一</h3>
+                <p>查看 <code>hightlight</code> 配置项：
+                  <br>
+                  <figure class="highlight bash">
+                    <table>
+                      <tr>
+                        <td class="gutter"><pre><span class="line">1</span><br></pre></td>
+                        <td class="code"><pre><span class="line">hexo config highlight</span><br></pre></td>
+                      </tr>
+                    </table>
+                  </figure>
+                </p>
+                <p>输出：
+                  <br>
+                  <figure class="highlight js">
+                    <table>
+                      <tr>
+                        <td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td>
+                        <td class="code"><pre><span class="line">&#123; enable: <span class="literal">true</span>,</span><br><span class="line">  line_number: <span class="literal">true</span>,</span><br><span class="line">  auto_detect: <span class="literal">true</span>,</span><br><span class="line">  tab_replace: <span class="literal">true</span> &#125;</span><br></pre></td>
+                      </tr>
+                    </table>
+                  </figure>
+                </p>
+                <h3 id="例子二">例子二</h3>
+                <p>设置 <code>highlight</code> 配置项：
+                  <br>
+                  <figure class="highlight bash">
+                    <table>
+                      <tr>
+                        <td class="gutter"><pre><span class="line">1</span><br></pre></td>
+                        <td class="code"><pre><span class="line">hexo config highlight.enable <span class="literal">false</span></span><br></pre></td>
+                      </tr>
+                    </table>
+                  </figure>
+                </p>
+                <p>如果配置项是数组（序列）形式的，则使用索引（从 0 开始）的方式：
+                  <br>
+                  <figure class="highlight bash">
+                    <table>
+                      <tr>
+                        <td class="gutter"><pre><span class="line">1</span><br></pre></td>
+                        <td class="code"><pre><span class="line">hexo config item.<span class="number">0</span></span><br></pre></td>
+                      </tr>
+                    </table>
+                  </figure>
+                </p>
+                <h2 id="hexo_deploy">hexo deploy</h2>
+                <blockquote>
+                  <p>名称：部署命令
+                    <br>别名：<code>hexo d</code>
+                    <br>使用：<code>hexo deploy [option]</code>
+                    <br>参数：无
+                    <br>选项：</p>
+                  <blockquote>
+                    <p><code>--setup</code>：只设置，不部署
+                      <br><code>-g</code> or <code>--generate</code>：先生成，再部署（相当于先后执行 <code>generate</code> 和 <code>deploy</code> 两个命令）</p>
+                  </blockquote>
+                </blockquote>
+                <p>部署需要另外安装插件 &gt;&gt; <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">部署</a>。
+                  <br>暂时不明 <code>--setup</code> 选项的具体用法，官方文档也没任何说明。</p>
+                <h2 id="hexo_generate">hexo generate</h2>
+                <blockquote>
+                  <p>名称：生成命令
+                    <br>别名：<code>hexo g</code>
+                    <br>使用：<code>hexo generate [option]</code>
+                    <br>参数：无
+                    <br>选项：</p>
+                  <blockquote>
+                    <p><code>-d</code> or <code>--deploy</code>：生成后立刻部署
+                      <br><code>-f</code> or <code>--force</code>：强制重新生成
+                      <br><code>-w</code> or <code>--watch</code>：监控文件的变化。当修改 <code>source</code> 文件夹的文件时，自动生成。</p>
+                  </blockquote>
+                </blockquote>
+                <p>生成静态文档。</p>
+                <h2 id="hexo_help">hexo help</h2>
+                <blockquote>
+                  <p>名称：帮助命令
+                    <br>别名：<code>hexo h</code>
+                    <br>使用：<code>hexo help [command]</code>
+                    <br>参数：</p>
+                  <blockquote>
+                    <p><code>command</code>：查看某个命令的使用方法。可以是任意一个 hexo 的命令，如 <code>config</code>、<code>generate</code> 等等。
+                      <br>选项：无</p>
+                  </blockquote>
+                </blockquote>
+                <h2 id="hexo_init">hexo init</h2>
+                <blockquote>
+                  <p>名称：初始化命令
+                    <br>别名：<code>hexo i</code>
+                    <br>使用：<code>hexo init [destination]</code>
+                    <br>参数：无
+                    <br>选项：</p>
+                  <blockquote>
+                    <p><code>destination</code>：目标文件夹，指定要初始化的文件夹，如果不指定，则初始化当前文件夹</p>
+                  </blockquote>
+                </blockquote>
+                <p>将某个目录初始化为 hexo 博客的目录。</p>
+                <h2 id="hexo_list">hexo list</h2>
+                <blockquote>
+                  <p>名称：列出命令
+                    <br>别名：<code>hexo l</code>
+                    <br>使用：<code>hexo list &lt;type&gt;</code>
+                    <br>参数：</p>
+                  <blockquote>
+                    <p><code>type</code>：可以使用 <code>page</code>（页面），<code>post</code>（文章），<code>route</code>（树状目录），<code>tag</code>（标签）等方式列出信息。</p>
+                  </blockquote>
+                </blockquote>
+                <p>以各种形式列出博客的信息。</p>
+                <h2 id="hexo_migrate">hexo migrate</h2>
+                <blockquote>
+                  <p>名称：迁移命令
+                    <br>别名：<code>hexo m</code>
+                    <br>使用：<code>hexo migrate &lt;type&gt;</code>
+                    <br>参数：</p>
+                  <blockquote>
+                    <p><code>type</code>：迁移的类型，具体类型因插件而异，一般为 <code>rss</code>，<code>wordpress</code>，<code>joomla</code> 等等。</p>
+                  </blockquote>
+                </blockquote>
+                <p>迁移需要另外安装插件 &gt;&gt; <a href="https://hexo.io/docs/migration.html" target="_blank" rel="external">迁移</a>。
+                  <br>从其他博客系统中迁移文章到 Hexo，支持 RSS，Jekyll，Octopress，WordPress 等等。</p>
+                <h2 id="hexo_new">hexo new</h2>
+                <blockquote>
+                  <p>名称：新建命令
+                    <br>别名：<code>hexo n</code>
+                    <br>使用：<code>hexo new [layout] &lt;title&gt;</code>
+                    <br>参数：</p>
+                  <blockquote>
+                    <p><code>layout</code>：指定使用的布局，可以是 <code>post</code>，<code>page</code>，<code>draft</code> 或者任何自定义的布局，不指定则默认为 <code>post</code>
+                      <br><code>title</code>：文章标题，使用引号 <code>&quot;</code> 或 <code>&#39;</code> 包裹。</p>
+                  </blockquote>
+                  <p>选项：</p>
+                  <blockquote>
+                    <p><code>-p</code> or <code>--path</code>：自定义文章路径。
+                      <br><code>-r</code> or <code>--replace</code>：如果已存在同名文章，则覆盖。
+                      <br><code>-s</code> or <code>--slug</code>：跟 <code>--path</code> 类似。</p>
+                  </blockquote>
+                </blockquote>
+                <h3 id="例子一-1">例子一</h3>
+                <p>以 <code>draft.md</code> 为 <code>layout</code>，在 <code>source/_drafts/aaa/bbb/</code> 目录创建一个名为 <code>ccc.md</code> 的文件，文章标题为 <code>title</code>：
+                  <br>
+                  <figure class="highlight bash">
+                    <table>
+                      <tr>
+                        <td class="gutter"><pre><span class="line">1</span><br></pre></td>
+                        <td class="code"><pre><span class="line">hexo n draft <span class="string">'title'</span> -p aaa/bbb/ccc</span><br></pre></td>
+                      </tr>
+                    </table>
+                  </figure>
+                </p>
+                <h3 id="例子二-1">例子二</h3>
+                <p>以 <code>post.md</code> 为 <code>layout</code>，在 <code>source/_post/</code> 目录创建一个名为 <code>aaa-bbb-ccc.md</code> 的文件，文章标题为 <code>title123</code>：
+                  <br>
+                  <figure class="highlight bash">
+                    <table>
+                      <tr>
+                        <td class="gutter"><pre><span class="line">1</span><br></pre></td>
+                        <td class="code"><pre><span class="line">hexo <span class="string">'title123'</span> <span class="operator">-s</span> aaa/bbb/ccc</span><br></pre></td>
+                      </tr>
+                    </table>
+                  </figure>
+                </p>
+                <p>P.S.1. 在使用简写的 <code>-p</code> 或 <code>-s</code> 或 <code>-r</code> 时，会在文章的 <code>Front-matter</code> 中多出对应的 <code>p: aaa/bbb/ccc</code> 或 <code>s: aaa/bbb/ccc</code> 或 <code>r: true</code>，删了也没影响；而使用 <code>--path</code> 或 <code>--slug</code>                  或 <code>--replace</code> 则没有，可能是 BUG。</p>
+                <p>P.S.2. <code>path</code> 和 <code>slug</code> 一起用时，只有 <code>path</code> 生效</p>
+                <p>P.S.3. <code>path</code> 和 <code>slug</code> 的来源：<a href="https://github.com/hexojs/hexo/issues/379" target="_blank" rel="external">https://github.com/hexojs/hexo/issues/379</a></p>
+                <h2 id="hexo_publish">hexo publish</h2>
+                <blockquote>
+                  <p>名称：发表命令
+                    <br>别名：<code>hexo p</code>
+                    <br>使用：<code>hexo publish [layout] &lt;filename&gt;</code>
+                    <br>参数：</p>
+                  <blockquote>
+                    <p><code>layout</code>：指定使用的布局，可以是 <code>post</code>，<code>page</code>，<code>draft</code> 或者任何自定义的布局，不指定则默认为 <code>post</code>。
+                      <br><code>filename</code>：草稿文件名，例如 <code>hello-world</code>，不要写 <code>.md</code>。</p>
+                  </blockquote>
+                  <p>选项：无</p>
+                </blockquote>
+                <p>将 <code>source/_drafts</code> 中的草稿文章移动到 <code>source/_post/</code> 目录，可以发表为 <code>page</code> 等。</p>
+                <p>P.S.1. 如果使用 <code>hexo new draft --path aa/bb/cc</code> 命令创建的草稿，会比较悲剧，因为 <code>filename</code> 会将输入的斜杠 <code>/</code> 转换成 <code>-</code>，导致找不到文件。（解决方案：手动将整个 <code>aa</code> 目录复制到 <code>source/_post/</code> 目录）</p>
+                <p>P.S.2. 虽然 <code>draft</code> 可用，但其实还是移动到 <code>source/_post/</code> 目录。</p>
+                <h2 id="hexo_render">hexo render</h2>
+                <blockquote>
+                  <p>名称：渲染命令
+                    <br>别名：<code>hexo r</code>
+                    <br>使用：<code>hexo render &lt;file1&gt; [file2] ...</code>
+                    <br>参数：</p>
+                  <blockquote>
+                    <p><code>file[n]</code>：至少指定一个文件，起始目录是根目录。</p>
+                  </blockquote>
+                  <p>选项：</p>
+                  <blockquote>
+                    <p><code>--engine</code>：指定渲染引擎。
+                      <br><code>--output</code>：输出目标文件，如果不指定，则输出到终端。起始目录是根目录。
+                      <br><code>--pretty</code>：美化 JSON 输出。</p>
+                  </blockquote>
+                </blockquote>
+                <p>这个命令一般用不到。</p>
+                <h2 id="hexo_server">hexo server</h2>
+                <blockquote>
+                  <p>名称：服务命令
+                    <br>别名：<code>hexo s</code>
+                    <br>使用：<code>hexo server [option]</code>
+                    <br>参数：无
+                    <br>选项：</p>
+                  <blockquote>
+                    <p><code>-i</code> or <code>--ip</code>：指定服务的 IP 地址，默认绑定所有地址（0.0.0.0）
+                      <br><code>-l</code> or <code>--log [format]</code>：按格式输入 log，不指定 <code>format</code> 则默认为 <code>dev</code>
+                      <br><code>-o</code> or <code>--open</code>：在浏览器中打开 url（需要将 ip 改成 <code>localhost</code> 或 <code>127.0.0.1</code>）
+                      <br><code>-p</code> or <code>--port</code>：指定服务端口，默认为 4000
+                      <br><code>-s</code> or <code>--static</code>：静态模式，仅使用 <code>public</code> 目录中的静态文档</p>
+                  </blockquote>
+                </blockquote>
+                <p>开启服务。</p>
+                <p>log 的 format 可选：<code>dev</code>，<code>default</code>，<code>combined</code>，<code>combined</code>，<code>common</code>，<code>short</code>，<code>tiny</code> 之一；
+                  <br>也可以自定义，要使用引号 <code>&quot;</code> 或 <code>&#39;</code> 包裹</p>
+                <h3 id="例子一-2">例子一</h3>
+                <p>请求方法、状态码、URL：
+                  <br>
+                  <figure class="highlight bash">
+                    <table>
+                      <tr>
+                        <td class="gutter"><pre><span class="line">1</span><br></pre></td>
+                        <td class="code"><pre><span class="line">hexo s <span class="operator">-l</span> <span class="string">':method :status :url'</span></span><br></pre></td>
+                      </tr>
+                    </table>
+                  </figure>
+                </p>
+                <p>输出结果：
+                  <br>
+                  <figure class="highlight cpp">
+                    <table>
+                      <tr>
+                        <td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td>
+                        <td class="code"><pre><span class="line">GET <span class="number">200</span> /</span><br><span class="line">GET <span class="number">200</span> /vendors/fancybox/source/jquery.fancybox.css?v=<span class="number">2.1</span><span class="number">.5</span></span><br><span class="line">GET <span class="number">200</span> /css/main.css?v=<span class="number">5.0</span><span class="number">.0</span></span><br><span class="line">GET <span class="number">404</span> /tags/</span><br></pre></td>
+                      </tr>
+                    </table>
+                  </figure>
+                </p>
+                <p>详情请看 &gt;&gt; <a href="https://github.com/expressjs/morgan#predefined-formats" target="_blank" rel="external">morgan</a></p>
+                <h2 id="hexo_version">hexo version</h2>
+                <blockquote>
+                  <p>名称：版本信息命令
+                    <br>别名：<code>hexo v</code>
+                    <br>使用：<code>hexo version</code>
+                    <br>参数：无
+                    <br>选项：无</p>
+                </blockquote>
+                <h2 id="hexo_–config">hexo –config</h2>
+                <blockquote>
+                  <p>执行命令时，指定一个配置文件，替代默认的 <code>_config.yml</code> 配置文件，不可单独使用，<strong>必须跟命令一起使用</strong>。</p>
+                </blockquote>
+                <p>有效命令：
+                  <br><code>clean</code>、<code>config</code>、<code>deploy</code>、<code>generate</code>、<code>list</code>、<code>migrate</code>、<code>new</code>、<code>publish</code>、<code>render</code>、<code>server</code>
+                  <br>无效命令：
+                  <br><code>help</code>、<code>init</code>、<code>version</code></p>
+                <h3 id="例子一-3">例子一</h3>
+                <p>使用不同的配置部署到不同的服务器（一个博客，多种风格）：</p>
+                <blockquote>
+                  <p>配置 A：
+                    <br><code>public_dir</code>：public-github
+                    <br><code>theme</code>：landscape
+                    <br><code>deploy</code>：github
+                    <br>配置 B：
+                    <br><code>public_dir</code>：public-aliyun
+                    <br><code>theme</code>：next
+                    <br><code>deploy</code>：rsync</p>
+                </blockquote>
+                <p>分别执行以下命令：
+                  <br>
+                  <figure class="highlight bash">
+                    <table>
+                      <tr>
+                        <td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td>
+                        <td class="code"><pre><span class="line">hexo d -g --config configA.yml</span><br><span class="line">hexo d -g --config configB.yml</span><br></pre></td>
+                      </tr>
+                    </table>
+                  </figure>
+                </p>
+                <h2 id="hexo_-cwd">hexo --cwd</h2>
+                <blockquote>
+                  <p>指定“Current Working Directory（当前的工作目录）”
+                    <br>用途不明。</p>
+                </blockquote>
+                <h2 id="hexo_-debug">hexo --debug</h2>
+                <blockquote>
+                  <p>执行命令时，显示 <code>debug</code> 信息。</p>
+                </blockquote>
+                <p>有效命令：
+                  <br><code>init</code>、<code>version</code>、<code>clean</code>、<code>config</code>、<code>deploy</code>、<code>generate</code>、<code>list</code>、<code>migrate</code>、<code>new</code>、<code>publish</code>、<code>render</code>、<code>server</code>
+                  <br>无效命令：
+                  <br><code>help</code></p>
+                <h2 id="hexo_-draft">hexo --draft</h2>
+                <blockquote>
+                  <p>显示草稿文章，等同于 <code>_config.yml</code> 中的<a href="#文章&#40;Writing&#41;"><code>render_drafts</code></a>。</p>
+                </blockquote>
+                <p>有效命令：
+                  <br><code>generate</code>、<code>list</code>、<code>server</code>
+                  <br>无效命令：
+                  <br><code>help</code>、<code>init</code>、<code>version</code>、<code>clean</code>、<code>config</code>、<code>deploy</code>、<code>migrate</code>、<code>new</code>、<code>publish</code>、<code>render</code></p>
+                <h2 id="hexo_-safe">hexo --safe</h2>
+                <blockquote>
+                  <p>安全模式，可以禁用所有的插件（plugin）和脚本（script）。如果在安装新插件后出现问题，可以在执行命令时加上 <code>--safe</code> 选项。</p>
+                </blockquote>
+                <p>有效命令：
+                  <br><code>deploy</code>、<code>generate</code>、<code>list</code>、<code>migrate</code>、<code>new</code>、<code>publish</code>、<code>render</code>、<code>server</code>
+                  <br>无效命令：
+                  <br><code>help</code>、<code>init</code>、<code>version</code>、<code>clean</code>、<code>config</code></p>
+                <h2 id="hexo_-silent">hexo --silent</h2>
+                <blockquote>
+                  <p>安静模式，不提示终端信息，与 <code>--debug</code> 相对应。
+                    <br><code>--debug</code> 会输出所有级别的信息（<code>TRACE</code>、<code>DEBUG</code>、<code>INFO</code>、<code>WARN</code>、<code>ERROR</code>、<code>FATAL</code>）
+                    <br>默认情况下会输出 <code>INFO</code> 以上信息（<code>INFO</code>、<code>WARN</code>、<code>ERROR</code>、<code>FATAL</code>）
+                    <br><code>--silent</code> 则隐藏所有信息</p>
+                </blockquote>
+                <p>有效命令：
+                  <br><code>init</code>、<code>version</code>、<code>clean</code>、<code>config</code>、<code>deploy</code>、<code>generate</code>、<code>list</code>、<code>migrate</code>、<code>new</code>、<code>publish</code>、<code>render</code>、<code>server</code>
+                  <br>无效命令：
+                  <br><code>help</code></p>
+                <h1 id="迁移">迁移</h1>
+                <p>如果在使用 Hexo 之前，已经有一个运行中的博客了，想迁移到 Hexo，也是非常简单的事情，最多就两条命令：安装插件、迁移命令。</p>
+                <h2 id="从_Jekyll_迁移">从 Jekyll 迁移</h2>
+                <p>把 Jekyll 的 <code>_posts</code> 文件夹内的所有文档复制到 <code>source/_posts</code> 文件夹，并在 <code>_config.yml</code> 中修改一下 <code>new_post_name</code> 设置项，即可：</p>
+                <figure class="highlight bash">
+                  <table>
+                    <tr>
+                      <td class="gutter"><pre><span class="line">1</span><br></pre></td>
+                      <td class="code"><pre><span class="line">new_post_name: :year-:month-:day-:title.md</span><br></pre></td>
+                    </tr>
+                  </table>
+                </figure>
+                <h2 id="从_Octopress_迁移">从 Octopress 迁移</h2>
+                <p>把 Octopress 的 <code>source/_posts</code> 文件夹内的所有文档复制到 <code>source/_posts</code> 文件夹，并在 <code>_config.yml</code> 中修改一下 <code>new_post_name</code> 设置项，即可：</p>
+                <figure class="highlight bash">
+                  <table>
+                    <tr>
+                      <td class="gutter"><pre><span class="line">1</span><br></pre></td>
+                      <td class="code"><pre><span class="line">new_post_name: :year-:month-:day-:title.md</span><br></pre></td>
+                    </tr>
+                  </table>
+                </figure>
+                <h2 id="从_WordPress_迁移">从 WordPress 迁移</h2>
+                <p>从 RSS 迁移需要安装 <a href="https://github.com/hexojs/hexo-migrator-wordpress" target="_blank" rel="external">hexo-migrator-wordpress</a> 插件：</p>
+                <figure class="highlight bash">
+                  <table>
+                    <tr>
+                      <td class="gutter"><pre><span class="line">1</span><br></pre></td>
+                      <td class="code"><pre><span class="line">npm install hexo-migrator-wordpress --save</span><br></pre></td>
+                    </tr>
+                  </table>
+                </figure>
+                <p>在迁移之前，先要在 WordPress 中导出博客：</p>
+                <blockquote>
+                  <p>在 WordPress 的仪表盘中，打开 “工具” → “导出” → “WordPress”。</p>
+                </blockquote>
+                <p>然后使用 <code>hexo migrate</code> 命令进行迁移，<code>source</code> 可以是导出的文件，也可以是一个网址：</p>
+                <figure class="highlight bash">
+                  <table>
+                    <tr>
+                      <td class="gutter"><pre><span class="line">1</span><br></pre></td>
+                      <td class="code"><pre><span class="line">hexo migrate wordpress &lt;<span class="built_in">source</span>&gt;</span><br></pre></td>
+                    </tr>
+                  </table>
+                </figure>
+                <h2 id="通过_RSS_迁移">通过 RSS 迁移</h2>
+                <p>从 RSS 迁移需要安装 <a href="https://github.com/hexojs/hexo-migrator-rss" target="_blank" rel="external">hexo-migrator-rss</a> 插件：</p>
+                <figure class="highlight bash">
+                  <table>
+                    <tr>
+                      <td class="gutter"><pre><span class="line">1</span><br></pre></td>
+                      <td class="code"><pre><span class="line">npm install hexo-migrator-rss --save</span><br></pre></td>
+                    </tr>
+                  </table>
+                </figure>
+                <p>然后使用 <code>hexo migrate</code> 命令进行迁移，<code>source</code> 可以是 <code>RSS</code> 的文件，也可以是一个网址：</p>
+                <figure class="highlight bash">
+                  <table>
+                    <tr>
+                      <td class="gutter"><pre><span class="line">1</span><br></pre></td>
+                      <td class="code"><pre><span class="line">hexo migrate rss &lt;<span class="built_in">source</span>&gt;</span><br></pre></td>
+                    </tr>
+                  </table>
+                </figure>
+                <p>通过 RSS 可以迁移很多博客的文章，只要博客服务商提供了 RSS 订阅功能，就可以很方便地将文章迁移到 Hexo 了。</p>
+                <p>目前支持 RSS 的有：
+                  <br><a href="http://blog.csdn.net/" target="_blank" rel="external">CSDN</a>、<a href="http://www.cnblogs.com/" target="_blank" rel="external">博客园 cnblogs</a>、<a href="http://www.blogjava.net/" target="_blank" rel="external">JAVA 博客</a>、
+                  <a href="http://www.cppblog.com/" target="_blank" rel="external">C++ 博客</a> 等等。</p>
+                <h2 id="其他迁移方式">其他迁移方式</h2>
+                <p>除了从上述国内主流博客的迁移之外，<a href="https://hexo.io/plugins/#migrator" target="_blank" rel="external">迁移插件列表</a> 还有其他的比如 <a href="https://github.com/hr6r/hexo-migrator-blogger" target="_blank" rel="external">blogger</a>、<a href="https://github.com/Yikun/hexo-migrator-github-issue" target="_blank" rel="external">github-issue</a>、<a href="https://github.com/welksonramos/hexo-migrator-joomla" target="_blank" rel="external">joomla</a> 等迁移方式，国内用得比较少，就不说了。</p>
+                <h1 id="结语">结语</h1>
+                <p>这一节也太啰嗦了，是我的打开方式不对吗？唠唠叨叨了半天，都还没进入主题！<a href="/201510/01/Hexo-2/" title="下一节——基本操作">下一节——基本操作</a> 将从 Hexo 的写作开始，详细介绍 Hexo 的使用方式。</p>
+                </span>
 
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/blog/" rel="tag">#blog</a>
-          
-            <a href="/tags/guide/" rel="tag">#guide</a>
-          
-            <a href="/tags/hexo/" rel="tag">#hexo</a>
-          
-        </div>
-      
+              </div>
 
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/201510/01/Hexo-0/" rel="next" title="Hexo 博客搭建指南（零）—— 开始之前">
-                <i class="fa fa-chevron-left"></i> Hexo 博客搭建指南（零）—— 开始之前
-              </a>
-            
-          </div>
+              <footer class="post-footer">
 
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/201511/09/Android-Support-Library-vs-Repository/" rel="prev" title="Android Support Library 和 Support Repository 的区别">
+                <div class="post-tags">
+
+                  <a href="/tags/blog/" rel="tag">#blog</a>
+
+                  <a href="/tags/guide/" rel="tag">#guide</a>
+
+                  <a href="/tags/hexo/" rel="tag">#hexo</a>
+
+                </div>
+
+
+
+                <div class="post-nav">
+                  <div class="post-nav-next post-nav-item">
+
+                    <a href="/201510/01/Hexo-0/" rel="next" title="Hexo 博客搭建指南（零）—— 开始之前">
+                      <i class="fa fa-chevron-left"></i> Hexo 博客搭建指南（零）—— 开始之前
+                    </a>
+
+                  </div>
+
+                  <div class="post-nav-prev post-nav-item">
+
+                    <a href="/201511/09/Android-Support-Library-vs-Repository/" rel="prev" title="Android Support Library 和 Support Repository 的区别">
                 Android Support Library 和 Support Repository 的区别 <i class="fa fa-chevron-right"></i>
               </a>
-            
+
+                  </div>
+                </div>
+
+
+
+
+              </footer>
+            </article>
+
+
+
+            <div class="post-spread">
+
+            </div>
           </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </article>
-
-
-
-    <div class="post-spread">
-      
-    </div>
-  </div>
 
 
         </div>
 
-        
 
 
-        
-  <div class="comments" id="comments">
-    
-      <div class="ds-thread" data-thread-key="201510/01/Hexo-1/" data-title="Hexo 博客搭建指南（一）—— 开始使用" data-url="http://tanjm.ml/201510/01/Hexo-1/">
+
+
+        <div class="comments" id="comments">
+
+          <div class="ds-thread" data-thread-key="201510/01/Hexo-1/" data-title="Hexo 博客搭建指南（一）—— 开始使用" data-url="http://tanjm.ml/201510/01/Hexo-1/">
+          </div>
+
+        </div>
+
+
       </div>
-    
-  </div>
 
 
+
+
+      <div class="sidebar-toggle">
+        <div class="sidebar-toggle-line-wrap">
+          <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+          <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+          <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+        </div>
       </div>
 
-      
-        
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
+      <aside id="sidebar" class="sidebar">
+        <div class="sidebar-inner">
 
-  <aside id="sidebar" class="sidebar">
-    <div class="sidebar-inner">
 
-      
 
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" src="http://tp2.sinaimg.cn/2728550353/180/5631710584/1" alt="Genment" itemprop="image">
-          <p class="site-author-name" itemprop="name">Genment</p>
-        </div>
-        <p class="site-description motion-element" itemprop="description"></p>
-        <nav class="site-state motion-element">
-          <div class="site-state-item site-state-posts">
-            <a href="/archives">
-              <span class="site-state-item-count">8</span>
-              <span class="site-state-item-name">日志</span>
-            </a>
-          </div>
+          <ul class="sidebar-nav motion-element">
+            <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+              文章目录
+            </li>
+            <li class="sidebar-nav-overview" data-target="site-overview">
+              站点概览
+            </li>
+          </ul>
 
-          <div class="site-state-item site-state-categories">
-            <a href="/categories">
-              <span class="site-state-item-count">9</span>
-              <span class="site-state-item-name">分类</span>
-              </a>
-          </div>
 
-          <div class="site-state-item site-state-tags">
-            <a href="/tags">
-              <span class="site-state-item-count">14</span>
-              <span class="site-state-item-name">标签</span>
-              </a>
-          </div>
+          <section class="site-overview sidebar-panel">
+            <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+              <img class="site-author-image" src="http://tp2.sinaimg.cn/2728550353/180/5631710584/1" alt="Genment" itemprop="image">
+              <p class="site-author-name" itemprop="name">Genment</p>
+            </div>
+            <p class="site-description motion-element" itemprop="description"></p>
+            <nav class="site-state motion-element">
+              <div class="site-state-item site-state-posts">
+                <a href="/archives">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
 
-        </nav>
+              <div class="site-state-item site-state-categories">
+                <a href="/categories">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
 
-        
+              <div class="site-state-item site-state-tags">
+                <a href="/tags">
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
 
-        <div class="links-of-author motion-element">
-          
-            
+            </nav>
+
+
+
+            <div class="links-of-author motion-element">
+
+
               <span class="links-of-author-item">
                 <a href="https://github.com/genment" target="_blank">
                   
@@ -992,7 +1426,7 @@ hexo：完整版的 hexo，安装在 hexo 博客的目">
                   
                 </a>
               </span>
-            
+
               <span class="links-of-author-item">
                 <a href="https://twitter.com/q8515620" target="_blank">
                   
@@ -1000,7 +1434,7 @@ hexo：完整版的 hexo，安装在 hexo 博客的目">
                   
                 </a>
               </span>
-            
+
               <span class="links-of-author-item">
                 <a href="http://weibo.com/2728550353" target="_blank">
                   
@@ -1008,7 +1442,7 @@ hexo：完整版的 hexo，安装在 hexo 博客的目">
                   
                 </a>
               </span>
-            
+
               <span class="links-of-author-item">
                 <a href="http://www.zhihu.com/people/genment" target="_blank">
                   
@@ -1016,96 +1450,189 @@ hexo：完整版的 hexo，安装在 hexo 博客的目">
                   
                 </a>
               </span>
-            
-          
-        </div>
 
-        
-        
-          <div class="cc-license motion-element" itemprop="license">
-            <a href="http://creativecommons.org/licenses/by-nc-sa/4.0" class="cc-opacity" target="_blank">
-              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons">
-            </a>
-          </div>
-        
 
-        <div class="links-of-author motion-element">
-          
-            <p class="site-author-name">基链</p>
-            
+            </div>
+
+
+
+            <div class="cc-license motion-element" itemprop="license">
+              <a href="http://creativecommons.org/licenses/by-nc-sa/4.0" class="cc-opacity" target="_blank">
+                <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons">
+              </a>
+            </div>
+
+
+            <div class="links-of-author motion-element">
+
+              <p class="site-author-name">基链</p>
+
               <span class="links-of-author-item">
                 <a href="http://http://theme-next.iissnan.com/" target="_blank">Theme-NexT</a>
               </span>
-            
+
               <span class="links-of-author-item">
                 <a href="https://teddysun.com/358.html" target="_blank">一键SS</a>
               </span>
-            
+
               <span class="links-of-author-item">
                 <a href="http://www.vpser.net/security/linux-ssh-authorized-keys-login.html" target="_blank">SSH登录验证</a>
               </span>
-            
+
               <span class="links-of-author-item">
                 <a href="http://gitimmersion.com/lab_01.html" target="_blank">Git Immersion</a>
               </span>
-            
+
               <span class="links-of-author-item">
                 <a href="http://marklodato.github.com/visual-git-guide/" target="_blank">visual-git-guide</a>
               </span>
-            
-          
+
+
+            </div>
+
+          </section>
+
+
+          <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+            <div class="post-toc-indicator-top post-toc-indicator">
+              <i class="fa fa-angle-double-up"></i>
+            </div>
+            <div class="post-toc">
+
+
+
+
+              <div class="post-toc-content">
+                <ol class="nav">
+                  <li class="nav-item nav-level-1"><a class="nav-link" href="#安装_Hexo"><span class="nav-number">1.</span> <span class="nav-text">安装 Hexo</span></a>
+                    <ol class="nav-child">
+                      <li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">1.1.</span> <span class="nav-text">安装</span></a></li>
+                      <li class="nav-item nav-level-2"><a class="nav-link" href="#初始化"><span class="nav-number">1.2.</span> <span class="nav-text">初始化</span></a></li>
+                      <li class="nav-item nav-level-2"><a class="nav-link" href="#体验"><span class="nav-number">1.3.</span> <span class="nav-text">体验</span></a></li>
+                    </ol>
+                  </li>
+                  <li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo_目录_&_文件"><span class="nav-number">2.</span> <span class="nav-text">Hexo 目录 & 文件</span></a>
+                    <ol class="nav-child">
+                      <li class="nav-item nav-level-2"><a class="nav-link" href="#_config-yml"><span class="nav-number">2.1.</span> <span class="nav-text">_config.yml</span></a></li>
+                      <li class="nav-item nav-level-2"><a class="nav-link" href="#package-json"><span class="nav-number">2.2.</span> <span class="nav-text">package.json</span></a></li>
+                      <li class="nav-item nav-level-2"><a class="nav-link" href="#node_modules_目录"><span class="nav-number">2.3.</span> <span class="nav-text">node_modules 目录</span></a></li>
+                      <li class="nav-item nav-level-2"><a class="nav-link" href="#scaffolds_目录"><span class="nav-number">2.4.</span> <span class="nav-text">scaffolds 目录</span></a></li>
+                      <li class="nav-item nav-level-2"><a class="nav-link" href="#scripts_目录"><span class="nav-number">2.5.</span> <span class="nav-text">scripts 目录</span></a></li>
+                      <li class="nav-item nav-level-2"><a class="nav-link" href="#source_目录"><span class="nav-number">2.6.</span> <span class="nav-text">source 目录</span></a></li>
+                      <li class="nav-item nav-level-2"><a class="nav-link" href="#public_目录"><span class="nav-number">2.7.</span> <span class="nav-text">public 目录</span></a></li>
+                      <li class="nav-item nav-level-2"><a class="nav-link" href="#themes_目录"><span class="nav-number">2.8.</span> <span class="nav-text">themes 目录</span></a></li>
+                      <li class="nav-item nav-level-2"><a class="nav-link" href="#其他文件"><span class="nav-number">2.9.</span> <span class="nav-text">其他文件</span></a>
+                        <ol class="nav-child">
+                          <li class="nav-item nav-level-3"><a class="nav-link" href="#-gitignore"><span class="nav-number">2.9.1.</span> <span class="nav-text">.gitignore</span></a></li>
+                          <li class="nav-item nav-level-3"><a class="nav-link" href="#db-json"><span class="nav-number">2.9.2.</span> <span class="nav-text">db.json</span></a></li>
+                        </ol>
+                      </li>
+                    </ol>
+                  </li>
+                  <li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo_配置"><span class="nav-number">3.</span> <span class="nav-text">Hexo 配置</span></a>
+                    <ol class="nav-child">
+                      <li class="nav-item nav-level-2"><a class="nav-link" href="#_config-yml_介绍"><span class="nav-number">3.1.</span> <span class="nav-text">_config.yml 介绍</span></a></li>
+                      <li class="nav-item nav-level-2"><a class="nav-link" href="#网站_(Site)"><span class="nav-number">3.2.</span> <span class="nav-text">网站 (Site)</span></a></li>
+                      <li class="nav-item nav-level-2"><a class="nav-link" href="#网址_(URL)"><span class="nav-number">3.3.</span> <span class="nav-text">网址 (URL)</span></a></li>
+                      <li class="nav-item nav-level-2"><a class="nav-link" href="#目录_(Directory)"><span class="nav-number">3.4.</span> <span class="nav-text">目录 (Directory)</span></a></li>
+                      <li class="nav-item nav-level-2"><a class="nav-link" href="#文章_(Writing)"><span class="nav-number">3.5.</span> <span class="nav-text">文章 (Writing)</span></a></li>
+                      <li class="nav-item nav-level-2"><a class="nav-link" href="#分类_&_标签_(Category_&_Tag)"><span class="nav-number">3.6.</span> <span class="nav-text">分类 & 标签 (Category & Tag)</span></a></li>
+                      <li class="nav-item nav-level-2"><a class="nav-link" href="#日期_/_时间格式_(Date_/_Time_format)"><span class="nav-number">3.7.</span> <span class="nav-text">日期 / 时间格式 (Date / Time format)</span></a></li>
+                      <li class="nav-item nav-level-2"><a class="nav-link" href="#分页_(Pagination)"><span class="nav-number">3.8.</span> <span class="nav-text">分页 (Pagination)</span></a></li>
+                      <li class="nav-item nav-level-2"><a class="nav-link" href="#扩展_(Extensions)"><span class="nav-number">3.9.</span> <span class="nav-text">扩展 (Extensions)</span></a></li>
+                      <li class="nav-item nav-level-2"><a class="nav-link" href="#其他配置"><span class="nav-number">3.10.</span> <span class="nav-text">其他配置</span></a></li>
+                    </ol>
+                  </li>
+                  <li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo_命令"><span class="nav-number">4.</span> <span class="nav-text">Hexo 命令</span></a>
+                    <ol class="nav-child">
+                      <li class="nav-item nav-level-2"><a class="nav-link" href="#hexo_clean"><span class="nav-number">4.1.</span> <span class="nav-text">hexo clean</span></a></li>
+                      <li class="nav-item nav-level-2"><a class="nav-link" href="#hexo_config"><span class="nav-number">4.2.</span> <span class="nav-text">hexo config</span></a>
+                        <ol class="nav-child">
+                          <li class="nav-item nav-level-3"><a class="nav-link" href="#例子一"><span class="nav-number">4.2.1.</span> <span class="nav-text">例子一</span></a></li>
+                          <li class="nav-item nav-level-3"><a class="nav-link" href="#例子二"><span class="nav-number">4.2.2.</span> <span class="nav-text">例子二</span></a></li>
+                        </ol>
+                      </li>
+                      <li class="nav-item nav-level-2"><a class="nav-link" href="#hexo_deploy"><span class="nav-number">4.3.</span> <span class="nav-text">hexo deploy</span></a></li>
+                      <li class="nav-item nav-level-2"><a class="nav-link" href="#hexo_generate"><span class="nav-number">4.4.</span> <span class="nav-text">hexo generate</span></a></li>
+                      <li class="nav-item nav-level-2"><a class="nav-link" href="#hexo_help"><span class="nav-number">4.5.</span> <span class="nav-text">hexo help</span></a></li>
+                      <li class="nav-item nav-level-2"><a class="nav-link" href="#hexo_init"><span class="nav-number">4.6.</span> <span class="nav-text">hexo init</span></a></li>
+                      <li class="nav-item nav-level-2"><a class="nav-link" href="#hexo_list"><span class="nav-number">4.7.</span> <span class="nav-text">hexo list</span></a></li>
+                      <li class="nav-item nav-level-2"><a class="nav-link" href="#hexo_migrate"><span class="nav-number">4.8.</span> <span class="nav-text">hexo migrate</span></a></li>
+                      <li class="nav-item nav-level-2"><a class="nav-link" href="#hexo_new"><span class="nav-number">4.9.</span> <span class="nav-text">hexo new</span></a>
+                        <ol class="nav-child">
+                          <li class="nav-item nav-level-3"><a class="nav-link" href="#例子一-1"><span class="nav-number">4.9.1.</span> <span class="nav-text">例子一</span></a></li>
+                          <li class="nav-item nav-level-3"><a class="nav-link" href="#例子二-1"><span class="nav-number">4.9.2.</span> <span class="nav-text">例子二</span></a></li>
+                        </ol>
+                      </li>
+                      <li class="nav-item nav-level-2"><a class="nav-link" href="#hexo_publish"><span class="nav-number">4.10.</span> <span class="nav-text">hexo publish</span></a></li>
+                      <li class="nav-item nav-level-2"><a class="nav-link" href="#hexo_render"><span class="nav-number">4.11.</span> <span class="nav-text">hexo render</span></a></li>
+                      <li class="nav-item nav-level-2"><a class="nav-link" href="#hexo_server"><span class="nav-number">4.12.</span> <span class="nav-text">hexo server</span></a>
+                        <ol class="nav-child">
+                          <li class="nav-item nav-level-3"><a class="nav-link" href="#例子一-2"><span class="nav-number">4.12.1.</span> <span class="nav-text">例子一</span></a></li>
+                        </ol>
+                      </li>
+                      <li class="nav-item nav-level-2"><a class="nav-link" href="#hexo_version"><span class="nav-number">4.13.</span> <span class="nav-text">hexo version</span></a></li>
+                      <li class="nav-item nav-level-2"><a class="nav-link" href="#hexo_–config"><span class="nav-number">4.14.</span> <span class="nav-text">hexo –config</span></a>
+                        <ol class="nav-child">
+                          <li class="nav-item nav-level-3"><a class="nav-link" href="#例子一-3"><span class="nav-number">4.14.1.</span> <span class="nav-text">例子一</span></a></li>
+                        </ol>
+                      </li>
+                      <li class="nav-item nav-level-2"><a class="nav-link" href="#hexo_-cwd"><span class="nav-number">4.15.</span> <span class="nav-text">hexo --cwd</span></a></li>
+                      <li class="nav-item nav-level-2"><a class="nav-link" href="#hexo_-debug"><span class="nav-number">4.16.</span> <span class="nav-text">hexo --debug</span></a></li>
+                      <li class="nav-item nav-level-2"><a class="nav-link" href="#hexo_-draft"><span class="nav-number">4.17.</span> <span class="nav-text">hexo --draft</span></a></li>
+                      <li class="nav-item nav-level-2"><a class="nav-link" href="#hexo_-safe"><span class="nav-number">4.18.</span> <span class="nav-text">hexo --safe</span></a></li>
+                      <li class="nav-item nav-level-2"><a class="nav-link" href="#hexo_-silent"><span class="nav-number">4.19.</span> <span class="nav-text">hexo --silent</span></a></li>
+                    </ol>
+                  </li>
+                  <li class="nav-item nav-level-1"><a class="nav-link" href="#迁移"><span class="nav-number">5.</span> <span class="nav-text">迁移</span></a>
+                    <ol class="nav-child">
+                      <li class="nav-item nav-level-2"><a class="nav-link" href="#从_Jekyll_迁移"><span class="nav-number">5.1.</span> <span class="nav-text">从 Jekyll 迁移</span></a></li>
+                      <li class="nav-item nav-level-2"><a class="nav-link" href="#从_Octopress_迁移"><span class="nav-number">5.2.</span> <span class="nav-text">从 Octopress 迁移</span></a></li>
+                      <li class="nav-item nav-level-2"><a class="nav-link" href="#从_WordPress_迁移"><span class="nav-number">5.3.</span> <span class="nav-text">从 WordPress 迁移</span></a></li>
+                      <li class="nav-item nav-level-2"><a class="nav-link" href="#通过_RSS_迁移"><span class="nav-number">5.4.</span> <span class="nav-text">通过 RSS 迁移</span></a></li>
+                      <li class="nav-item nav-level-2"><a class="nav-link" href="#其他迁移方式"><span class="nav-number">5.5.</span> <span class="nav-text">其他迁移方式</span></a></li>
+                    </ol>
+                  </li>
+                  <li class="nav-item nav-level-1"><a class="nav-link" href="#结语"><span class="nav-number">6.</span> <span class="nav-text">结语</span></a></li>
+                </ol>
+              </div>
+
+            </div>
+            <div class="post-toc-indicator-bottom post-toc-indicator">
+              <i class="fa fa-angle-double-down"></i>
+            </div>
+          </section>
+
+
         </div>
-
-      </section>
-
-      
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc-indicator-top post-toc-indicator">
-            <i class="fa fa-angle-double-up"></i>
-          </div>
-          <div class="post-toc">
-            
-              
-            
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#安装_Hexo"><span class="nav-number">1.</span> <span class="nav-text">安装 Hexo</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">1.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#初始化"><span class="nav-number">1.2.</span> <span class="nav-text">初始化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#体验"><span class="nav-number">1.3.</span> <span class="nav-text">体验</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo_目录_&_文件"><span class="nav-number">2.</span> <span class="nav-text">Hexo 目录 & 文件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#_config-yml"><span class="nav-number">2.1.</span> <span class="nav-text">_config.yml</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#package-json"><span class="nav-number">2.2.</span> <span class="nav-text">package.json</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#node_modules_目录"><span class="nav-number">2.3.</span> <span class="nav-text">node_modules 目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#scaffolds_目录"><span class="nav-number">2.4.</span> <span class="nav-text">scaffolds 目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#scripts_目录"><span class="nav-number">2.5.</span> <span class="nav-text">scripts 目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#source_目录"><span class="nav-number">2.6.</span> <span class="nav-text">source 目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#public_目录"><span class="nav-number">2.7.</span> <span class="nav-text">public 目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#themes_目录"><span class="nav-number">2.8.</span> <span class="nav-text">themes 目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他文件"><span class="nav-number">2.9.</span> <span class="nav-text">其他文件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#-gitignore"><span class="nav-number">2.9.1.</span> <span class="nav-text">.gitignore</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#db-json"><span class="nav-number">2.9.2.</span> <span class="nav-text">db.json</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo_配置"><span class="nav-number">3.</span> <span class="nav-text">Hexo 配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#_config-yml_介绍"><span class="nav-number">3.1.</span> <span class="nav-text">_config.yml 介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网站_(Site)"><span class="nav-number">3.2.</span> <span class="nav-text">网站 (Site)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网址_(URL)"><span class="nav-number">3.3.</span> <span class="nav-text">网址 (URL)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#目录_(Directory)"><span class="nav-number">3.4.</span> <span class="nav-text">目录 (Directory)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文章_(Writing)"><span class="nav-number">3.5.</span> <span class="nav-text">文章 (Writing)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分类_&_标签_(Category_&_Tag)"><span class="nav-number">3.6.</span> <span class="nav-text">分类 & 标签 (Category & Tag)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#日期_/_时间格式_(Date_/_Time_format)"><span class="nav-number">3.7.</span> <span class="nav-text">日期 / 时间格式 (Date / Time format)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分页_(Pagination)"><span class="nav-number">3.8.</span> <span class="nav-text">分页 (Pagination)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#扩展_(Extensions)"><span class="nav-number">3.9.</span> <span class="nav-text">扩展 (Extensions)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他配置"><span class="nav-number">3.10.</span> <span class="nav-text">其他配置</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo_命令"><span class="nav-number">4.</span> <span class="nav-text">Hexo 命令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo_clean"><span class="nav-number">4.1.</span> <span class="nav-text">hexo clean</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo_config"><span class="nav-number">4.2.</span> <span class="nav-text">hexo config</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#例子一"><span class="nav-number">4.2.1.</span> <span class="nav-text">例子一</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#例子二"><span class="nav-number">4.2.2.</span> <span class="nav-text">例子二</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo_deploy"><span class="nav-number">4.3.</span> <span class="nav-text">hexo deploy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo_generate"><span class="nav-number">4.4.</span> <span class="nav-text">hexo generate</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo_help"><span class="nav-number">4.5.</span> <span class="nav-text">hexo help</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo_init"><span class="nav-number">4.6.</span> <span class="nav-text">hexo init</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo_list"><span class="nav-number">4.7.</span> <span class="nav-text">hexo list</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo_migrate"><span class="nav-number">4.8.</span> <span class="nav-text">hexo migrate</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo_new"><span class="nav-number">4.9.</span> <span class="nav-text">hexo new</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#例子一-1"><span class="nav-number">4.9.1.</span> <span class="nav-text">例子一</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#例子二-1"><span class="nav-number">4.9.2.</span> <span class="nav-text">例子二</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo_publish"><span class="nav-number">4.10.</span> <span class="nav-text">hexo publish</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo_render"><span class="nav-number">4.11.</span> <span class="nav-text">hexo render</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo_server"><span class="nav-number">4.12.</span> <span class="nav-text">hexo server</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#例子一-2"><span class="nav-number">4.12.1.</span> <span class="nav-text">例子一</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo_version"><span class="nav-number">4.13.</span> <span class="nav-text">hexo version</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo_–config"><span class="nav-number">4.14.</span> <span class="nav-text">hexo –config</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#例子一-3"><span class="nav-number">4.14.1.</span> <span class="nav-text">例子一</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo_-cwd"><span class="nav-number">4.15.</span> <span class="nav-text">hexo --cwd</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo_-debug"><span class="nav-number">4.16.</span> <span class="nav-text">hexo --debug</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo_-draft"><span class="nav-number">4.17.</span> <span class="nav-text">hexo --draft</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo_-safe"><span class="nav-number">4.18.</span> <span class="nav-text">hexo --safe</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo_-silent"><span class="nav-number">4.19.</span> <span class="nav-text">hexo --silent</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#迁移"><span class="nav-number">5.</span> <span class="nav-text">迁移</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#从_Jekyll_迁移"><span class="nav-number">5.1.</span> <span class="nav-text">从 Jekyll 迁移</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#从_Octopress_迁移"><span class="nav-number">5.2.</span> <span class="nav-text">从 Octopress 迁移</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#从_WordPress_迁移"><span class="nav-number">5.3.</span> <span class="nav-text">从 WordPress 迁移</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#通过_RSS_迁移"><span class="nav-number">5.4.</span> <span class="nav-text">通过 RSS 迁移</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他迁移方式"><span class="nav-number">5.5.</span> <span class="nav-text">其他迁移方式</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#结语"><span class="nav-number">6.</span> <span class="nav-text">结语</span></a></li></ol></div>
-            
-          </div>
-          <div class="post-toc-indicator-bottom post-toc-indicator">
-            <i class="fa fa-angle-double-down"></i>
-          </div>
-        </section>
-      
-
-    </div>
-  </aside>
+      </aside>
 
 
-      
+
     </main>
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
         <div class="copyright">
-  
-  &copy; 
-  <span itemprop="copyrightYear">2015</span>
-  <span class="with-love">
+
+          &copy;
+          <span itemprop="copyrightYear">2015</span>
+          <span class="with-love">
     <i class="icon-next-heart fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">Genment</span>
-</div>
+          <span class="author" itemprop="copyrightHolder">Genment</span>
+        </div>
 
-<div class="powered-by">
-  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
-</div>
+        <div class="powered-by">
+          由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+        </div>
 
-<div class="theme-info">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+        <div class="theme-info">
+          主题 -
+          <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
     NexT.Mist
   </a>
-</div>
+        </div>
 
 
 
@@ -1117,244 +1644,247 @@ hexo：完整版的 hexo，安装在 hexo 博客的目">
 
   <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
 
-  
-  
 
-  
-    
 
-  
-    
-  
+
+
+
+
+
+
+
 
   <script type="text/javascript">
-    var duoshuoQuery = {short_name:"tanjm"};
+    var duoshuoQuery = {
+      short_name: "tanjm"
+    };
     (function() {
       var ds = document.createElement('script');
-      ds.type = 'text/javascript';ds.async = true;
+      ds.type = 'text/javascript';
+      ds.async = true;
       ds.id = 'duoshuo-script';
       ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
       ds.charset = 'UTF-8';
-      (document.getElementsByTagName('head')[0]
-      || document.getElementsByTagName('body')[0]).appendChild(ds);
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
     })();
   </script>
-    
-     
 
 
-    
-  
 
-  
+
+
+
+
+
   <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
   <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.2"></script>
 
 
   <script type="text/javascript" src="/js/helpers.js?v=0.4.5.2"></script>
   <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
-<script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
 
-<script type="text/javascript" src="/js/motion.js?v=0.4.5.2" id="motion.global"></script>
+  <script type="text/javascript" src="/js/motion.js?v=0.4.5.2" id="motion.global"></script>
 
 
   <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
   <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
 
-  
-  
-<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.2" id="bootstrap.scrollspy.custom"></script>
 
 
-<script type="text/javascript" id="sidebar.toc.highlight">
-  $(document).ready(function () {
-    var tocSelector = '.post-toc';
-    var $tocSelector = $(tocSelector);
-    var activeCurrentSelector = '.active-current';
+  <script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.2" id="bootstrap.scrollspy.custom"></script>
 
-    $tocSelector
-      .on('activate.bs.scrollspy', function () {
-        var $currentActiveElement = $(tocSelector + ' .active').last();
 
-        removeCurrentActiveClass();
-        $currentActiveElement.addClass('active-current');
+  <script type="text/javascript" id="sidebar.toc.highlight">
+    $(document).ready(function() {
+      var tocSelector = '.post-toc';
+      var $tocSelector = $(tocSelector);
+      var activeCurrentSelector = '.active-current';
 
-        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
-      })
-      .on('clear.bs.scrollspy', function () {
-        removeCurrentActiveClass();
+      $tocSelector
+        .on('activate.bs.scrollspy', function() {
+          var $currentActiveElement = $(tocSelector + ' .active').last();
+
+          removeCurrentActiveClass();
+          $currentActiveElement.addClass('active-current');
+
+          $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+        })
+        .on('clear.bs.scrollspy', function() {
+          removeCurrentActiveClass();
+        });
+
+      function removeCurrentActiveClass() {
+        $(tocSelector + ' ' + activeCurrentSelector)
+          .removeClass(activeCurrentSelector.substring(1));
+      }
+
+      function processTOC() {
+        getTOCMaxHeight();
+        toggleTOCOverflowIndicators();
+      }
+
+      function getTOCMaxHeight() {
+        var height = $('.sidebar').height() -
+          $tocSelector.position().top -
+          $('.post-toc-indicator-bottom').height();
+
+        $tocSelector.css('height', height);
+
+        return height;
+      }
+
+      function toggleTOCOverflowIndicators() {
+        tocOverflowIndicator(
+          '.post-toc-indicator-top',
+          $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+        );
+
+        tocOverflowIndicator(
+          '.post-toc-indicator-bottom',
+          $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+        )
+      }
+
+      $(document).on('sidebar.motion.complete', function() {
+        processTOC();
       });
 
-    function removeCurrentActiveClass () {
-      $(tocSelector + ' ' + activeCurrentSelector)
-        .removeClass(activeCurrentSelector.substring(1));
-    }
+      $('body').scrollspy({
+        target: tocSelector
+      });
+      $(window).on('resize', function() {
+        if ($('.sidebar').hasClass('sidebar-active')) {
+          processTOC();
+        }
+      });
 
-    function processTOC () {
-      getTOCMaxHeight();
-      toggleTOCOverflowIndicators();
-    }
+      onScroll($tocSelector);
 
-    function getTOCMaxHeight () {
-      var height = $('.sidebar').height() -
-                   $tocSelector.position().top -
-                   $('.post-toc-indicator-bottom').height();
-
-      $tocSelector.css('height', height);
-
-      return height;
-    }
-
-    function toggleTOCOverflowIndicators () {
-      tocOverflowIndicator(
-        '.post-toc-indicator-top',
-        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
-      );
-
-      tocOverflowIndicator(
-        '.post-toc-indicator-bottom',
-        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
-      )
-    }
-
-    $(document).on('sidebar.motion.complete', function () {
-      processTOC();
-    });
-
-    $('body').scrollspy({ target: tocSelector });
-    $(window).on('resize', function () {
-      if ( $('.sidebar').hasClass('sidebar-active') ) {
-        processTOC();
-      }
-    });
-
-    onScroll($tocSelector);
-
-    function onScroll (element) {
-      element.on('mousewheel DOMMouseScroll', function (event) {
+      function onScroll(element) {
+        element.on('mousewheel DOMMouseScroll', function(event) {
           var oe = event.originalEvent;
           var delta = oe.wheelDelta || -oe.detail;
 
-          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          this.scrollTop += (delta < 0 ? 1 : -1) * 30;
           event.preventDefault();
 
           toggleTOCOverflowIndicators();
-      });
-    }
-
-    function tocOverflowIndicator (indicator, action) {
-      var $indicator = $(indicator);
-      var opacity = action === 'show' ? 1 : 0;
-      $indicator.velocity ?
-        $indicator.velocity('stop').velocity({
-          opacity: opacity
-        }, { duration: 100 }) :
-        $indicator.stop().animate({
-          opacity: opacity
-        }, 100);
-    }
-
-  });
-</script>
-
-<script type="text/javascript" id="sidebar.nav">
-  $(document).ready(function () {
-    var html = $('html');
-    var TAB_ANIMATE_DURATION = 200;
-    var hasVelocity = $.isFunction(html.velocity);
-
-    $('.sidebar-nav li').on('click', function () {
-      var item = $(this);
-      var activeTabClassName = 'sidebar-nav-active';
-      var activePanelClassName = 'sidebar-panel-active';
-      if (item.hasClass(activeTabClassName)) {
-        return;
-      }
-
-      var currentTarget = $('.' + activePanelClassName);
-      var target = $('.' + item.data('target'));
-
-      hasVelocity ?
-        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
-          target
-            .velocity('stop')
-            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
-            .addClass(activePanelClassName);
-        }) :
-        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
-          currentTarget.hide();
-          target
-            .stop()
-            .css({'opacity': 0, 'display': 'block'})
-            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
-              currentTarget.removeClass(activePanelClassName);
-              target.addClass(activePanelClassName);
-            });
         });
-
-      item.siblings().removeClass(activeTabClassName);
-      item.addClass(activeTabClassName);
-    });
-
-    $('.post-toc a').on('click', function (e) {
-      e.preventDefault();
-      var targetSelector = escapeSelector(this.getAttribute('href'));
-      var offset = $(targetSelector).offset().top;
-      hasVelocity ?
-        html.velocity('stop').velocity('scroll', {
-          offset: offset  + 'px',
-          mobileHA: false
-        }) :
-        $('html, body').stop().animate({
-          scrollTop: offset
-        }, 500);
-    });
-
-    // Expand sidebar on post detail page by default, when post has a toc.
-    motionMiddleWares.sidebar = function () {
-      var $tocContent = $('.post-toc-content');
-      if (CONFIG.sidebar === 'post') {
-        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
-          displaySidebar();
-        }
       }
-    };
-  });
-</script>
+
+      function tocOverflowIndicator(indicator, action) {
+        var $indicator = $(indicator);
+        var opacity = action === 'show' ? 1 : 0;
+        $indicator.velocity ?
+          $indicator.velocity('stop').velocity({
+            opacity: opacity
+          }, {
+            duration: 100
+          }) :
+          $indicator.stop().animate({
+            opacity: opacity
+          }, 100);
+      }
+
+    });
+  </script>
+
+  <script type="text/javascript" id="sidebar.nav">
+    $(document).ready(function() {
+      var html = $('html');
+      var TAB_ANIMATE_DURATION = 200;
+      var hasVelocity = $.isFunction(html.velocity);
+
+      $('.sidebar-nav li').on('click', function() {
+        var item = $(this);
+        var activeTabClassName = 'sidebar-nav-active';
+        var activePanelClassName = 'sidebar-panel-active';
+        if (item.hasClass(activeTabClassName)) {
+          return;
+        }
+
+        var currentTarget = $('.' + activePanelClassName);
+        var target = $('.' + item.data('target'));
+
+        hasVelocity ?
+          currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function() {
+            target
+              .velocity('stop')
+              .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+              .addClass(activePanelClassName);
+          }) :
+          currentTarget.animate({
+            opacity: 0
+          }, TAB_ANIMATE_DURATION, function() {
+            currentTarget.hide();
+            target
+              .stop()
+              .css({
+                'opacity': 0,
+                'display': 'block'
+              })
+              .animate({
+                opacity: 1
+              }, TAB_ANIMATE_DURATION, function() {
+                currentTarget.removeClass(activePanelClassName);
+                target.addClass(activePanelClassName);
+              });
+          });
+
+        item.siblings().removeClass(activeTabClassName);
+        item.addClass(activeTabClassName);
+      });
+
+      $('.post-toc a').on('click', function(e) {
+        e.preventDefault();
+        var targetSelector = escapeSelector(this.getAttribute('href'));
+        var offset = $(targetSelector).offset().top;
+        hasVelocity ?
+          html.velocity('stop').velocity('scroll', {
+            offset: offset + 'px',
+            mobileHA: false
+          }) :
+          $('html, body').stop().animate({
+            scrollTop: offset
+          }, 500);
+      });
+
+      // Expand sidebar on post detail page by default, when post has a toc.
+      motionMiddleWares.sidebar = function() {
+        var $tocContent = $('.post-toc-content');
+        if (CONFIG.sidebar === 'post') {
+          if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+            displaySidebar();
+          }
+        }
+      };
+    });
+  </script>
 
 
 
   <script type="text/javascript" src="/js/bootstrap.js"></script>
 
-  
-  
+
+
   <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-        processEscapes: true,
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-      }
-    });
+    MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], processEscapes: true, skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] } });
   </script>
 
   <script type="text/x-mathjax-config">
-    MathJax.Hub.Queue(function() {
-      var all = MathJax.Hub.getAllJax(), i;
-      for (i=0; i < all.length; i += 1) {
-        all[i].SourceElement().parentNode.className += ' has-jax';
-      }
-    });
-  </script>
-
-  
-    <script type="text/javascript" src="http://cdn.staticfile.org/mathjax/2.4.0/MathJax.js"></script>
-    <script type="text/javascript" src="http://cdn.staticfile.org/mathjax/2.4.0/config/TeX-AMS-MML_HTMLorMML.js"></script>
-  
+    MathJax.Hub.Queue(function() { var all = MathJax.Hub.getAllJax(), i; for (i=0; i
+    < all.length; i +=1 ) { all[i].SourceElement().parentNode.className +=' has-jax' ; } }); </script>
 
 
-  
-  
+      <script type="text/javascript" src="http://cdn.staticfile.org/mathjax/2.4.0/MathJax.js"></script>
+      <script type="text/javascript" src="http://cdn.staticfile.org/mathjax/2.4.0/config/TeX-AMS-MML_HTMLorMML.js"></script>
+
+
+
+
+
 
 </body>
+
 </html>
