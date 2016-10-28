@@ -37,7 +37,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Android,Toolbar,Menu," />
+  <meta name="keywords" content="blog,hexo,guide," />
 
 
 
@@ -53,39 +53,55 @@
 
 
 
-<meta name="description" content="今天在使用 Toolbar 时，需要在 Toolbar 上显示 Menu，但是遇到一些问题，记录一下。
-究竟是用哪个方法来 inflate Menu 呢？
+<meta name="description" content="宗旨超级详细的官方文档。
 
-在 onCreate 中调用 Toolbar 的 inflateMenu() 方法？
-Toolbar.inflateMenu(int menuResId);
+前言
+这是一个系列文章，根据官方文档的分类，按顺序进行详细介绍。
+我是刚刚接触 hexo 的，但我保证每一个内容都是我亲自操作所得到的结果，但是也难免有些内容我可能会理解有误，甚至不理解的，请提出来，谢谢！
+部分内容参考一下文章：
+Hexo 官方文档
+史上最详细的 Hexo 博客搭建图文教程
+hexo 你的博客
+Hexo 静态博客使用指南
 
 
-在 onCreateOptionsMenu 中调用 Activity 的 get">
+
+Hexo 诞生之初Hex">
 <meta property="og:type" content="article">
-<meta property="og:title" content="在 Toolbar 中显示 Menu">
-<meta property="og:url" content="http://tanjm.ml/201511/24/Toolbar-menu/index.html">
+<meta property="og:title" content="Hexo 博客搭建指南（零）—— 开始之前">
+<meta property="og:url" content="http://tanjm.ml/201509/30/Hexo-0/index.html">
 <meta property="og:site_name" content="Genment's Note">
-<meta property="og:description" content="今天在使用 Toolbar 时，需要在 Toolbar 上显示 Menu，但是遇到一些问题，记录一下。
-究竟是用哪个方法来 inflate Menu 呢？
+<meta property="og:description" content="宗旨超级详细的官方文档。
 
-在 onCreate 中调用 Toolbar 的 inflateMenu() 方法？
-Toolbar.inflateMenu(int menuResId);
+前言
+这是一个系列文章，根据官方文档的分类，按顺序进行详细介绍。
+我是刚刚接触 hexo 的，但我保证每一个内容都是我亲自操作所得到的结果，但是也难免有些内容我可能会理解有误，甚至不理解的，请提出来，谢谢！
+部分内容参考一下文章：
+Hexo 官方文档
+史上最详细的 Hexo 博客搭建图文教程
+hexo 你的博客
+Hexo 静态博客使用指南
 
 
-在 onCreateOptionsMenu 中调用 Activity 的 get">
-<meta property="og:image" content="http://tanjm.ml/201511/24/Toolbar-menu/prepare_menu.png">
-<meta property="og:updated_time" content="2015-11-24T15:23:30.000Z">
+
+Hexo 诞生之初Hex">
+<meta property="og:updated_time" content="2015-10-29T18:47:34.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="在 Toolbar 中显示 Menu">
-<meta name="twitter:description" content="今天在使用 Toolbar 时，需要在 Toolbar 上显示 Menu，但是遇到一些问题，记录一下。
-究竟是用哪个方法来 inflate Menu 呢？
+<meta name="twitter:title" content="Hexo 博客搭建指南（零）—— 开始之前">
+<meta name="twitter:description" content="宗旨超级详细的官方文档。
 
-在 onCreate 中调用 Toolbar 的 inflateMenu() 方法？
-Toolbar.inflateMenu(int menuResId);
+前言
+这是一个系列文章，根据官方文档的分类，按顺序进行详细介绍。
+我是刚刚接触 hexo 的，但我保证每一个内容都是我亲自操作所得到的结果，但是也难免有些内容我可能会理解有误，甚至不理解的，请提出来，谢谢！
+部分内容参考一下文章：
+Hexo 官方文档
+史上最详细的 Hexo 博客搭建图文教程
+hexo 你的博客
+Hexo 静态博客使用指南
 
 
-在 onCreateOptionsMenu 中调用 Activity 的 get">
-<meta name="twitter:image" content="http://tanjm.ml/201511/24/Toolbar-menu/prepare_menu.png">
+
+Hexo 诞生之初Hex">
 
 
 
@@ -97,7 +113,7 @@ Toolbar.inflateMenu(int menuResId);
   };
 </script>
 
-  <title> 在 Toolbar 中显示 Menu | Genment's Note </title>
+  <title> Hexo 博客搭建指南（零）—— 开始之前 | Genment's Note </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -266,7 +282,7 @@ Toolbar.inflateMenu(int menuResId);
             
             
               
-                在 Toolbar 中显示 Menu
+                Hexo 博客搭建指南（零）—— 开始之前
               
             
           </h1>
@@ -275,8 +291,8 @@ Toolbar.inflateMenu(int menuResId);
         <div class="post-meta">
           <span class="post-time">
             发表于
-            <time itemprop="dateCreated" datetime="2015-11-24T02:47:05-05:00" content="2015-11-24">
-              2015-11-24
+            <time itemprop="dateCreated" datetime="2015-10-01T00:00:00+08:00" content="2015-10-01">
+              2015-10-01
             </time>
           </span>
 
@@ -285,8 +301,8 @@ Toolbar.inflateMenu(int menuResId);
               &nbsp; | &nbsp; 分类于
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index">
-                    <span itemprop="name">Android</span>
+                  <a href="/categories/guide/" itemprop="url" rel="index">
+                    <span itemprop="name">guide</span>
                   </a>
                 </span>
 
@@ -297,8 +313,8 @@ Toolbar.inflateMenu(int menuResId);
 
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Android/Widget/" itemprop="url" rel="index">
-                    <span itemprop="name">Widget</span>
+                  <a href="/categories/guide/hexo/" itemprop="url" rel="index">
+                    <span itemprop="name">hexo</span>
                   </a>
                 </span>
 
@@ -313,8 +329,8 @@ Toolbar.inflateMenu(int menuResId);
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/201511/24/Toolbar-menu/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="201511/24/Toolbar-menu/" itemprop="commentsCount"></span>
+                <a href="/201509/30/Hexo-0/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="201509/30/Hexo-0/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -333,25 +349,37 @@ Toolbar.inflateMenu(int menuResId);
       
 
       
-        <span itemprop="articleBody"><p>今天在使用 Toolbar 时，需要在 Toolbar 上显示 Menu，但是遇到一些问题，记录一下。</p>
-<p>究竟是用哪个方法来 inflate Menu 呢？</p>
+        <span itemprop="articleBody"><h1 id="宗旨"><a href="#宗旨" class="headerlink" title="宗旨"></a>宗旨</h1><blockquote class="blockquote-center"><p>超级详细的官方文档。</p>
+</blockquote>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><ul>
+<li>这是一个系列文章，根据<a href="https://hexo.io/docs/" target="_blank" rel="external">官方文档</a>的分类，按顺序进行详细介绍。</li>
+<li>我是刚刚接触 hexo 的，但我保证每一个内容都是我亲自操作所得到的结果，但是也难免有些内容我可能会理解有误，甚至不理解的，请提出来，谢谢！</li>
+<li>部分内容参考一下文章：<ul>
+<li><a href="https://hexo.io/docs/" target="_blank" rel="external">Hexo 官方文档</a></li>
+<li><a href="https://xuanwo.org/2015/03/26/hexo-intor/" target="_blank" rel="external">史上最详细的 Hexo 博客搭建图文教程</a></li>
+<li><a href="http://ibruce.info/2013/11/22/hexo-your-blog/" target="_blank" rel="external">hexo 你的博客</a></li>
+<li><a href="http://segmentfault.com/a/1190000002538363" target="_blank" rel="external">Hexo 静态博客使用指南</a></li>
+</ul>
+</li>
+</ul>
+<h1 id="Hexo-诞生之初"><a href="#Hexo-诞生之初" class="headerlink" title="Hexo 诞生之初"></a>Hexo 诞生之初</h1><p><a href="https://github.com/hexojs/hexo" target="_blank" rel="external">Hexo</a>是台湾的大牛<a href="http://twitter.com/tommy351" target="_blank" rel="external">tommy351</a>在大学时期开始写的作品，缘由是觉得 <a href="http://octopress.org/" target="_blank" rel="external">Octopress</a> 生成文档的速度太慢！然后就基于 <a href="https://nodejs.org/" target="_blank" rel="external">Node.js</a> 自己写了一个 Hexo，真会玩！</p>
+<p>请看故事 &gt;&gt; <a href="http://zespia.tw/blog/2012/10/11/hexo-debut" target="_blank" rel="external">Hexo 颯爽登場！</a></p>
+<h1 id="Node-js-amp-npm"><a href="#Node-js-amp-npm" class="headerlink" title="Node.js &amp; npm"></a>Node.js &amp; npm</h1><p>Hexo 是基于 Node.js 的，所以在开始使用 Hexo 之前，肯定要安装好 Node.js 的环境才可以使用 Hexo 的，而 npm 是包含在 Node.js 的安装包中的。</p>
+<p>请自行下载 &gt;&gt; <a href="https://nodejs.org/" target="_blank" rel="external">Node.js</a></p>
+<h1 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h1><p><a href="https://git-scm.com/" target="_blank" rel="external">Git</a> 不是必须的，如果有 VPS 或者云服务器或一切可以存放网站的服务的话。Git 主要是用于将网站上传到 <a href="https://github.com" target="_blank" rel="external">Github</a> 或 <a href="https://gitcafe.com" target="_blank" rel="external">Gitcafe</a> 等源代码托管网站的。</p>
+<p>也请自行下载 &gt;&gt; <a href="https://git-scm.com/" target="_blank" rel="external">Git</a></p>
+<h2 id="Github（Page）配置"><a href="#Github（Page）配置" class="headerlink" title="Github（Page）配置"></a>Github（Page）配置</h2><p>如果需要的话，请先注册 <a href="https://github.com" target="_blank" rel="external">Github</a> 账号，然后进行一下操作，创建一个仓库：</p>
 <ol>
-<li>在 onCreate 中调用 Toolbar 的 inflateMenu() 方法？<ul>
-<li>Toolbar.inflateMenu(int menuResId);</li>
-</ul>
-</li>
-<li>在 onCreateOptionsMenu 中调用 Activity 的 getMenuInflater().inflate() 方法？<ul>
-<li>Activity.onCreateOptionsMenu(Menu menu)</li>
-</ul>
-</li>
+<li>新建一个名称为 <code>&lt;用户名&gt;.github.io</code> 的 Repository</li>
+<li>在新建的 Repository 的主界面，点击右侧的 <code>Settings</code>，在设置界面下方，点击即可开启 Github Page 功能</li>
+<li>过一会，就可以通过 <code>&lt;用户名&gt;.github.io</code> 访问了</li>
 </ol>
-<p>答案在 <a href="http://stackoverflow.com/questions/26511981/toolbar-inflatemenu-seems-to-do-nothing" target="_blank" rel="external">stackoverflow</a> 这里。</p>
-<p>当你将 Toolbar 作为普通的布局控件（View）来使用时，使用第一种：Toolbar.inflateMenu(int menuResId)。<br>这时候 Toolbar 仅仅是 Activity 中一个普通的独立 View，就像 Button、RelativeLayout 一样的 View 而已，并不是一个 Actionbar。这就跟 Activity 本身不存在任何联系，所以不能通过 Activity 中的方法进行 inflate menu，只能使用 Toolbar 自身的 inflateMenu() 方法。</p>
-<p>当你将 Toolbar 作为 ActionBar （调用了 setActionBar() 或 setSupportActionBar()）时，使用 Toolbar 的 inflateMenu() 方法是无效的，只能使用第二种方法，而这也是推荐使用的方法。</p>
-<h1 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h1><p>在使用 Toolbar 时，有很多方法在调用时，都需要注意上面所说的两种情况。比如：</p>
-<p>Toolbar 上的点击事件，Toolbar 提供是 (setNavigationOnClickListener)[] 和 (setOnMenuItemClickListener)[] 来分别监听<strong>导航按钮</strong>和<strong>菜单项</strong>的点击事件，而 Activity 也给 ActionBar 提供了 (onOptionsItemSelected)[] 回调方法。<br>但是 Toolbar 提供的两个方法和 Activity 的方法是不能公用的，只能选择其一，要么使用 Toolbar 的两个方法，要么使用 <code>onOptionsItemSelected()</code>。</p>
-<img src="/201511/24/Toolbar-menu/prepare_menu.png" alt="onPrepareOptionsMenu" title="onPrepareOptionsMenu">
-<p>另外，ActionBar 不是继承自 View 的，它是直接继承自 Object 的一个抽象类。</p>
+<h2 id="Gitcafe（Page）配置"><a href="#Gitcafe（Page）配置" class="headerlink" title="Gitcafe（Page）配置"></a>Gitcafe（Page）配置</h2><p><a href="https://help.gitcafe.com/manuals/help/pages-services" target="_blank" rel="external">官方帮助文档</a> 已经非常详细了。</p>
+<h1 id="官网主页上的几个命令"><a href="#官网主页上的几个命令" class="headerlink" title="官网主页上的几个命令"></a>官网主页上的几个命令</h1><blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">npm install hexo-cli -g</div><div class="line">hexo init blog</div><div class="line"><span class="built_in">cd</span> blog</div><div class="line">npm install</div><div class="line">hexo server</div></pre></td></tr></table></figure>
+</blockquote>
+<p>没错！就是这么简单，如果懒得折腾的话，就这么几句命令，就可以将一个 Hexo 博客搭建起来了。</p>
+<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p><a href="/201509/30/Hexo-1/" title="下一节">下一节</a> 将从 Hexo 的安装开始，详细介绍 Hexo。</p>
 </span>
       
     </div>
@@ -360,11 +388,11 @@ Toolbar.inflateMenu(int menuResId);
       
         <div class="post-tags">
           
-            <a href="/tags/Android/" rel="tag">#Android</a>
+            <a href="/tags/blog/" rel="tag">#blog</a>
           
-            <a href="/tags/Toolbar/" rel="tag">#Toolbar</a>
+            <a href="/tags/hexo/" rel="tag">#hexo</a>
           
-            <a href="/tags/Menu/" rel="tag">#Menu</a>
+            <a href="/tags/guide/" rel="tag">#guide</a>
           
         </div>
       
@@ -373,16 +401,16 @@ Toolbar.inflateMenu(int menuResId);
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/201511/10/some-articles/" rel="next" title="一些文章">
-                <i class="fa fa-chevron-left"></i> 一些文章
+              <a href="/201509/26/Markdowm-Test/" rel="next" title="StackEdit 语法测试">
+                <i class="fa fa-chevron-left"></i> StackEdit 语法测试
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/201511/30/Detect_and_Hang_Up_Incoming_Calling/" rel="prev" title="检测与拦截来电">
-                检测与拦截来电 <i class="fa fa-chevron-right"></i>
+              <a href="/201509/30/Hexo-1/" rel="prev" title="Hexo 博客搭建指南（一）—— 开始使用">
+                Hexo 博客搭建指南（一）—— 开始使用 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -410,8 +438,8 @@ Toolbar.inflateMenu(int menuResId);
         
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="201511/24/Toolbar-menu/"
-           data-title="在 Toolbar 中显示 Menu" data-url="http://tanjm.ml/201511/24/Toolbar-menu/">
+      <div class="ds-thread" data-thread-key="201509/30/Hexo-0/"
+           data-title="Hexo 博客搭建指南（零）—— 开始之前" data-url="http://tanjm.ml/201509/30/Hexo-0/">
       </div>
     
   </div>
@@ -564,7 +592,7 @@ Toolbar.inflateMenu(int menuResId);
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#注意事项"><span class="nav-number">1.</span> <span class="nav-text">注意事项</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#宗旨"><span class="nav-number">1.</span> <span class="nav-text">宗旨</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">2.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo-诞生之初"><span class="nav-number">3.</span> <span class="nav-text">Hexo 诞生之初</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Node-js-amp-npm"><span class="nav-number">4.</span> <span class="nav-text">Node.js & npm</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Git"><span class="nav-number">5.</span> <span class="nav-text">Git</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Github（Page）配置"><span class="nav-number">5.1.</span> <span class="nav-text">Github（Page）配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Gitcafe（Page）配置"><span class="nav-number">5.2.</span> <span class="nav-text">Gitcafe（Page）配置</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#官网主页上的几个命令"><span class="nav-number">6.</span> <span class="nav-text">官网主页上的几个命令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#结语"><span class="nav-number">7.</span> <span class="nav-text">结语</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">

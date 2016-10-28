@@ -37,7 +37,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Android,Toolbar,Menu," />
+  <meta name="keywords" content="Android,widget,TextView," />
 
 
 
@@ -53,39 +53,25 @@
 
 
 
-<meta name="description" content="今天在使用 Toolbar 时，需要在 Toolbar 上显示 Menu，但是遇到一些问题，记录一下。
-究竟是用哪个方法来 inflate Menu 呢？
-
-在 onCreate 中调用 Toolbar 的 inflateMenu() 方法？
-Toolbar.inflateMenu(int menuResId);
-
-
-在 onCreateOptionsMenu 中调用 Activity 的 get">
+<meta name="description" content="故事背景在需要展示数据的时候，经常会遇到“图片+文字”的效果，而在 ListView 、 GridView 或者 Spinner 这些 AdapterView 中尤为常见。
+一般情况下，都是使用布局文件来定义 Item 的布局的，当使用 Android Studio 写下如下代码时，Lint 会发出警告提示：
+1234567891011121314&amp;lt;?xml version=&quot;1.0&quot; en">
 <meta property="og:type" content="article">
-<meta property="og:title" content="在 Toolbar 中显示 Menu">
-<meta property="og:url" content="http://tanjm.ml/201511/24/Toolbar-menu/index.html">
+<meta property="og:title" content="给 TextView 设置图片">
+<meta property="og:url" content="http://tanjm.ml/201512/17/Set-images-to-the-TextView/index.html">
 <meta property="og:site_name" content="Genment's Note">
-<meta property="og:description" content="今天在使用 Toolbar 时，需要在 Toolbar 上显示 Menu，但是遇到一些问题，记录一下。
-究竟是用哪个方法来 inflate Menu 呢？
-
-在 onCreate 中调用 Toolbar 的 inflateMenu() 方法？
-Toolbar.inflateMenu(int menuResId);
-
-
-在 onCreateOptionsMenu 中调用 Activity 的 get">
-<meta property="og:image" content="http://tanjm.ml/201511/24/Toolbar-menu/prepare_menu.png">
-<meta property="og:updated_time" content="2015-11-24T15:23:30.000Z">
+<meta property="og:description" content="故事背景在需要展示数据的时候，经常会遇到“图片+文字”的效果，而在 ListView 、 GridView 或者 Spinner 这些 AdapterView 中尤为常见。
+一般情况下，都是使用布局文件来定义 Item 的布局的，当使用 Android Studio 写下如下代码时，Lint 会发出警告提示：
+1234567891011121314&amp;lt;?xml version=&quot;1.0&quot; en">
+<meta property="og:image" content="http://tanjm.ml/201512/17/Set-images-to-the-TextView/Lint-Tip.png">
+<meta property="og:image" content="http://tanjm.ml/201512/17/Set-images-to-the-TextView/textview-compound.png">
+<meta property="og:updated_time" content="2015-12-17T11:54:24.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="在 Toolbar 中显示 Menu">
-<meta name="twitter:description" content="今天在使用 Toolbar 时，需要在 Toolbar 上显示 Menu，但是遇到一些问题，记录一下。
-究竟是用哪个方法来 inflate Menu 呢？
-
-在 onCreate 中调用 Toolbar 的 inflateMenu() 方法？
-Toolbar.inflateMenu(int menuResId);
-
-
-在 onCreateOptionsMenu 中调用 Activity 的 get">
-<meta name="twitter:image" content="http://tanjm.ml/201511/24/Toolbar-menu/prepare_menu.png">
+<meta name="twitter:title" content="给 TextView 设置图片">
+<meta name="twitter:description" content="故事背景在需要展示数据的时候，经常会遇到“图片+文字”的效果，而在 ListView 、 GridView 或者 Spinner 这些 AdapterView 中尤为常见。
+一般情况下，都是使用布局文件来定义 Item 的布局的，当使用 Android Studio 写下如下代码时，Lint 会发出警告提示：
+1234567891011121314&amp;lt;?xml version=&quot;1.0&quot; en">
+<meta name="twitter:image" content="http://tanjm.ml/201512/17/Set-images-to-the-TextView/Lint-Tip.png">
 
 
 
@@ -97,7 +83,7 @@ Toolbar.inflateMenu(int menuResId);
   };
 </script>
 
-  <title> 在 Toolbar 中显示 Menu | Genment's Note </title>
+  <title> 给 TextView 设置图片 | Genment's Note </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -266,7 +252,7 @@ Toolbar.inflateMenu(int menuResId);
             
             
               
-                在 Toolbar 中显示 Menu
+                给 TextView 设置图片
               
             
           </h1>
@@ -275,8 +261,8 @@ Toolbar.inflateMenu(int menuResId);
         <div class="post-meta">
           <span class="post-time">
             发表于
-            <time itemprop="dateCreated" datetime="2015-11-24T02:47:05-05:00" content="2015-11-24">
-              2015-11-24
+            <time itemprop="dateCreated" datetime="2015-12-17T18:02:00+08:00" content="2015-12-17">
+              2015-12-17
             </time>
           </span>
 
@@ -292,18 +278,6 @@ Toolbar.inflateMenu(int menuResId);
 
                 
                 
-                  ， 
-                
-
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Android/Widget/" itemprop="url" rel="index">
-                    <span itemprop="name">Widget</span>
-                  </a>
-                </span>
-
-                
-                
 
               
             </span>
@@ -313,8 +287,8 @@ Toolbar.inflateMenu(int menuResId);
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/201511/24/Toolbar-menu/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="201511/24/Toolbar-menu/" itemprop="commentsCount"></span>
+                <a href="/201512/17/Set-images-to-the-TextView/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="201512/17/Set-images-to-the-TextView/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -333,25 +307,43 @@ Toolbar.inflateMenu(int menuResId);
       
 
       
-        <span itemprop="articleBody"><p>今天在使用 Toolbar 时，需要在 Toolbar 上显示 Menu，但是遇到一些问题，记录一下。</p>
-<p>究竟是用哪个方法来 inflate Menu 呢？</p>
+        <span itemprop="articleBody"><h1 id="故事背景"><a href="#故事背景" class="headerlink" title="故事背景"></a>故事背景</h1><p>在需要展示数据的时候，经常会遇到“图片+文字”的效果，而在 ListView 、 GridView 或者 Spinner 这些 AdapterView 中尤为常见。</p>
+<p>一般情况下，都是使用布局文件来定义 Item 的布局的，当使用 Android Studio 写下如下代码时，Lint 会发出警告提示：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="php"><span class="meta">&lt;?</span>xml version=<span class="string">"1.0"</span> encoding=<span class="string">"utf-8"</span><span class="meta">?&gt;</span></span></div><div class="line"><span class="tag">&lt;<span class="name">LinearLayout</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span></div><div class="line">    <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">    <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span></div><div class="line">    <span class="attr">android:orientation</span>=<span class="string">"horizontal"</span>&gt;</div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">ImageView</span></span></div><div class="line">        <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></div><div class="line">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span> /&gt;</div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">TextView</span></span></div><div class="line">        <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></div><div class="line">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span> /&gt;</div><div class="line"><span class="tag">&lt;/<span class="name">LinearLayout</span>&gt;</span></div></pre></td></tr></table></figure>
+<img src="/201512/17/Set-images-to-the-TextView/Lint-Tip.png" alt="Lint 提示" title="Lint 提示">
+<p>意思是说，目前的整个布局可以使用一个 <code>&lt;TextView/&gt;</code> 和 一个 <code>compound drawable</code> 来实现。</p>
+<p>完整的提示如下：</p>
+<blockquote>
+<p>This tag and its children can be replaced by one <code>&lt;TextView/&gt;</code> and a <code>compound drawable</code>.<br>A <code>LinearLayout</code> which contains an <code>ImageView</code> and a <code>TextView</code> can be more efficiently handled as a compound drawable (a single <code>TextView</code>, using the <code>drawableTop</code>, <code>drawableLeft</code>, <code>drawableRight</code> and/or <code>drawableBottom</code> attributes to draw one or more images adjacent to the text).  If the two widgets are offset from each other with margins, this can be replaced with a <code>drawablePadding</code> attribute.</p>
+</blockquote>
+<h1 id="修改布局"><a href="#修改布局" class="headerlink" title="修改布局"></a>修改布局</h1><p>修改布局如下：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="php"><span class="meta">&lt;?</span>xml version=<span class="string">"1.0"</span> encoding=<span class="string">"utf-8"</span><span class="meta">?&gt;</span></span></div><div class="line"><span class="tag">&lt;<span class="name">LinearLayout</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span></div><div class="line">    <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">    <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span>&gt;</div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">TextView</span></span></div><div class="line">        <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></div><div class="line">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></div><div class="line">        <span class="attr">android:drawableLeft</span>=<span class="string">"@mipmap/ic_launcher"</span></div><div class="line">        <span class="attr">android:drawablePadding</span>=<span class="string">"16dp"</span></div><div class="line">        <span class="attr">android:gravity</span>=<span class="string">"center"</span></div><div class="line">        <span class="attr">android:text</span>=<span class="string">"你好"</span> /&gt;</div><div class="line"><span class="tag">&lt;/<span class="name">LinearLayout</span>&gt;</span></div></pre></td></tr></table></figure>
+<img src="/201512/17/Set-images-to-the-TextView/textview-compound.png" alt="修改后的效果" title="修改后的效果">
+<h1 id="修改代码"><a href="#修改代码" class="headerlink" title="修改代码"></a>修改代码</h1><p>仅仅修改布局，是不能满足业务需求的，往往在展示数据时，图片都是会根据数据的变化而变化的，这就需要在代码中对图片进行设置。</p>
+<p>在 <code>TextView</code>类中，可以使用以下 6 种方法设置 <code>compound drawable</code>.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Added in API level 1</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setCompoundDrawables</span> <span class="params">(Drawable left, Drawable top, Drawable right, Drawable bottom)</span></span></div><div class="line"></div><div class="line"><span class="comment">// Added in API level 1</span></div><div class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setCompoundDrawablesWithIntrinsicBounds</span> <span class="params">(Drawable left, Drawable top, Drawable right, Drawable bottom)</span></div><div class="line"></div><div class="line"><span class="comment">// Added in API level 3</span></div><div class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setCompoundDrawablesWithIntrinsicBounds</span> <span class="params">(<span class="keyword">int</span> left, <span class="keyword">int</span> top, <span class="keyword">int</span> right, <span class="keyword">int</span> bottom)</span></div><div class="line"></div><div class="line"><span class="comment">// Added in API level 17</span></div><div class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setCompoundDrawablesRelative</span> <span class="params">(Drawable start, Drawable top, Drawable end, Drawable bottom)</span></div><div class="line"></div><div class="line"><span class="comment">// Added in API level 17</span></div><div class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setCompoundDrawablesRelativeWithIntrinsicBounds</span> <span class="params">(Drawable start, Drawable top, Drawable end, Drawable bottom)</span></div><div class="line"></div><div class="line"><span class="comment">// Added in API level 17</span></div><div class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setCompoundDrawablesRelativeWithIntrinsicBounds</span> <span class="params">(<span class="keyword">int</span> start, <span class="keyword">int</span> top, <span class="keyword">int</span> end, <span class="keyword">int</span> bottom)</span></div></pre></td></tr></table></figure>
+<p>如果按 API Level 来区分，旧 API 是没有 <code>Relative</code> 的，而新 API 是有 <code>Relative</code> 的，其实区别可以从参数中看出来：<br>letf  -&gt; start<br>right -&gt; end</p>
+<p>经常写布局时，都会发现，如果设置了 <code>layout_marginLeft</code> 会提示让你加上 <code>layout_marginStart</code>，以更好地支持“right-to-left”布局。<br>这个“right-to-left”布局是 Android 4.2 (API Level 17) 新增的特性，因为有些国家/地区的阅读/书写顺序是从右到左的。</p>
+<p>而为了兼容低版本，所以使用低版本的方法即可。</p>
+<p>当然，也可以这样使用：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (Build.VERSION.SDK_INT &gt;= <span class="number">17</span>) &#123;</div><div class="line">    item.setCompoundDrawablesRelativeWithIntrinsicBounds(<span class="number">0</span>, R.drawable.picture, <span class="number">0</span>, <span class="number">0</span>);</div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">    item.setCompoundDrawablesWithIntrinsicBounds(<span class="number">0</span>, R.drawable.picture, <span class="number">0</span>, <span class="number">0</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>新旧 API 的 3 个方法是一一对应的，其内部实现也是类似的。</p>
+<p>3 个方法的使用方式的区别：</p>
 <ol>
-<li>在 onCreate 中调用 Toolbar 的 inflateMenu() 方法？<ul>
-<li>Toolbar.inflateMenu(int menuResId);</li>
+<li>setCompoundDrawables(Drawable left, Drawable top, Drawable right, Drawable bottom)<ul>
+<li>调用该方法前，需要手动调用 <code>Drawable.setBound()</code> 进行绑定。</li>
 </ul>
 </li>
-<li>在 onCreateOptionsMenu 中调用 Activity 的 getMenuInflater().inflate() 方法？<ul>
-<li>Activity.onCreateOptionsMenu(Menu menu)</li>
+<li>setCompoundDrawablesWithIntrinsicBounds(Drawable left, Drawable top, Drawable right, Drawable bottom)<ul>
+<li>无需手动绑定，内部进行绑定后，会调用 <code>setCompoundDrawables()</code>。</li>
+</ul>
+</li>
+<li>setCompoundDrawablesWithIntrinsicBounds(int left, int top, int right, int bottom)<ul>
+<li>无需手动绑定，内部将资源 id 转成对应的 Drawable 后，会调用 <code>setCompoundDrawablesWithIntrinsicBounds()</code> 进行绑定。</li>
 </ul>
 </li>
 </ol>
-<p>答案在 <a href="http://stackoverflow.com/questions/26511981/toolbar-inflatemenu-seems-to-do-nothing" target="_blank" rel="external">stackoverflow</a> 这里。</p>
-<p>当你将 Toolbar 作为普通的布局控件（View）来使用时，使用第一种：Toolbar.inflateMenu(int menuResId)。<br>这时候 Toolbar 仅仅是 Activity 中一个普通的独立 View，就像 Button、RelativeLayout 一样的 View 而已，并不是一个 Actionbar。这就跟 Activity 本身不存在任何联系，所以不能通过 Activity 中的方法进行 inflate menu，只能使用 Toolbar 自身的 inflateMenu() 方法。</p>
-<p>当你将 Toolbar 作为 ActionBar （调用了 setActionBar() 或 setSupportActionBar()）时，使用 Toolbar 的 inflateMenu() 方法是无效的，只能使用第二种方法，而这也是推荐使用的方法。</p>
-<h1 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h1><p>在使用 Toolbar 时，有很多方法在调用时，都需要注意上面所说的两种情况。比如：</p>
-<p>Toolbar 上的点击事件，Toolbar 提供是 (setNavigationOnClickListener)[] 和 (setOnMenuItemClickListener)[] 来分别监听<strong>导航按钮</strong>和<strong>菜单项</strong>的点击事件，而 Activity 也给 ActionBar 提供了 (onOptionsItemSelected)[] 回调方法。<br>但是 Toolbar 提供的两个方法和 Activity 的方法是不能公用的，只能选择其一，要么使用 Toolbar 的两个方法，要么使用 <code>onOptionsItemSelected()</code>。</p>
-<img src="/201511/24/Toolbar-menu/prepare_menu.png" alt="onPrepareOptionsMenu" title="onPrepareOptionsMenu">
-<p>另外，ActionBar 不是继承自 View 的，它是直接继承自 Object 的一个抽象类。</p>
+<p>可根据需要自行选择。</p>
 </span>
       
     </div>
@@ -362,9 +354,9 @@ Toolbar.inflateMenu(int menuResId);
           
             <a href="/tags/Android/" rel="tag">#Android</a>
           
-            <a href="/tags/Toolbar/" rel="tag">#Toolbar</a>
+            <a href="/tags/widget/" rel="tag">#widget</a>
           
-            <a href="/tags/Menu/" rel="tag">#Menu</a>
+            <a href="/tags/TextView/" rel="tag">#TextView</a>
           
         </div>
       
@@ -373,17 +365,13 @@ Toolbar.inflateMenu(int menuResId);
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/201511/10/some-articles/" rel="next" title="一些文章">
-                <i class="fa fa-chevron-left"></i> 一些文章
+              <a href="/201511/30/Detect_and_Hang_Up_Incoming_Calling/" rel="next" title="检测与拦截来电">
+                <i class="fa fa-chevron-left"></i> 检测与拦截来电
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/201511/30/Detect_and_Hang_Up_Incoming_Calling/" rel="prev" title="检测与拦截来电">
-                检测与拦截来电 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -410,8 +398,8 @@ Toolbar.inflateMenu(int menuResId);
         
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="201511/24/Toolbar-menu/"
-           data-title="在 Toolbar 中显示 Menu" data-url="http://tanjm.ml/201511/24/Toolbar-menu/">
+      <div class="ds-thread" data-thread-key="201512/17/Set-images-to-the-TextView/"
+           data-title="给 TextView 设置图片" data-url="http://tanjm.ml/201512/17/Set-images-to-the-TextView/">
       </div>
     
   </div>
@@ -564,7 +552,7 @@ Toolbar.inflateMenu(int menuResId);
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#注意事项"><span class="nav-number">1.</span> <span class="nav-text">注意事项</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#故事背景"><span class="nav-number">1.</span> <span class="nav-text">故事背景</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#修改布局"><span class="nav-number">2.</span> <span class="nav-text">修改布局</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#修改代码"><span class="nav-number">3.</span> <span class="nav-text">修改代码</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">

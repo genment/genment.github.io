@@ -1,0 +1,877 @@
+<!doctype html>
+<html class="theme-next   use-motion ">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="nxuurW53emUEiNI5nfbrZ6TMnXqB_SPW9YKBejtx34I" />
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Android,来电拦截,拦截来电," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.png?v=0.4.5.2" />
+
+
+
+
+
+
+<meta name="description" content="要实现电话拦截，肯定要先对电话的状态进行监听，当有来电时，检测该来电是否需要进行拦截。
+监听首先，是对电话的状态进行监听，有两种方式：
+
+实现广播接收者，监听 android.intent.action.PHONE_STATE 和 android.intent.action.NEW_OUTGOING_CALL 这两个 Action
+给 TelephonyManager 设置 PhoneStateL">
+<meta property="og:type" content="article">
+<meta property="og:title" content="检测与拦截来电">
+<meta property="og:url" content="http://tanjm.ml/201511/30/Detect_and_Hang_Up_Incoming_Calling/index.html">
+<meta property="og:site_name" content="Genment's Note">
+<meta property="og:description" content="要实现电话拦截，肯定要先对电话的状态进行监听，当有来电时，检测该来电是否需要进行拦截。
+监听首先，是对电话的状态进行监听，有两种方式：
+
+实现广播接收者，监听 android.intent.action.PHONE_STATE 和 android.intent.action.NEW_OUTGOING_CALL 这两个 Action
+给 TelephonyManager 设置 PhoneStateL">
+<meta property="og:image" content="http://tanjm.ml/201511/30/Detect_and_Hang_Up_Incoming_Calling/incomingNumber.png">
+<meta property="og:updated_time" content="2015-12-01T15:16:34.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="检测与拦截来电">
+<meta name="twitter:description" content="要实现电话拦截，肯定要先对电话的状态进行监听，当有来电时，检测该来电是否需要进行拦截。
+监听首先，是对电话的状态进行监听，有两种方式：
+
+实现广播接收者，监听 android.intent.action.PHONE_STATE 和 android.intent.action.NEW_OUTGOING_CALL 这两个 Action
+给 TelephonyManager 设置 PhoneStateL">
+<meta name="twitter:image" content="http://tanjm.ml/201511/30/Detect_and_Hang_Up_Incoming_Calling/incomingNumber.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: 'post',
+    motion: true
+  };
+</script>
+
+  <title> 检测与拦截来电 | Genment's Note </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-69961767-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?15b0e5327936d08188fdb714fab02a92";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Genment's Note</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">生活,技术</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-git">
+          <a href="/visual-git-guide" rel="section">
+            
+              <i class="menu-item-icon fa fa-question-circle fa-fw"></i> <br />
+            
+            图解Git
+          </a>
+        </li>
+      
+
+      
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content">
+          
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                检测与拦截来电
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2015-12-01T12:00:00+08:00" content="2015-12-01">
+              2015-12-01
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分类于
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/201511/30/Detect_and_Hang_Up_Incoming_Calling/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="201511/30/Detect_and_Hang_Up_Incoming_Calling/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <span itemprop="articleBody"><p>要实现电话拦截，肯定要先对电话的状态进行监听，当有来电时，检测该来电是否需要进行拦截。</p>
+<h1 id="监听"><a href="#监听" class="headerlink" title="监听"></a>监听</h1><p>首先，是对电话的状态进行监听，有两种方式：</p>
+<ol>
+<li>实现广播接收者，监听 <code>android.intent.action.PHONE_STATE</code> 和 <code>android.intent.action.NEW_OUTGOING_CALL</code> 这两个 Action</li>
+<li>给 <code>TelephonyManager</code> 设置 <code>PhoneStateListener</code> 监听，重写 <code>PhoneStateListener.onCallStateChanged(int state, String incomingNumber)</code> 方法。</li>
+</ol>
+<h2 id="通过接收广播的方式"><a href="#通过接收广播的方式" class="headerlink" title="通过接收广播的方式"></a>通过接收广播的方式</h2><p>经过我在模拟器中拨打了无数次电话，终于搞清楚 <code>PHONE_STATE</code> 和 <code>NEW_OUTGOING_CALL</code> 这两个 Action 分别是在什么时候触发：</p>
+<blockquote>
+<p>外拨情况（有 2 种状态）：<br>1’ 外拨电话时，会收到两次广播(<code>onReceive()</code>被执行2次)：先接收 <code>NEW_OUTGOING_CALL</code>，再接收 <code>PHONE_STATE</code>。<br>x’（对方接通时，本机没有任何状态的改变。）<br>2’ 任何一方挂断时，接收到 <code>PHONE_STATE</code>。</p>
+<p>来电情况（有 3 种状态）：<br>1’ 响铃时，接收到 <code>PHONE_STATE</code>。<br>2’ 通话时，接收到 <code>PHONE_STATE</code>。（不接听 or 对方直接挂断时，没有这一步）<br>3’ 任何一方挂断时，接收到 <code>PHONE_STATE</code>。</p>
+</blockquote>
+<p>对于这种状态的变化，可以想象成有一台固定电话（括号中数字对应上面的状态）：</p>
+<blockquote>
+<p>当要拨打电话时，拿起话筒(外拨1)，不管对方接不接电话，本机都是“拿起话筒”的状态(外拨x，无变化)，当任何一方挂断电话(外拨2)，状态才发生改变。<br>来电时，响铃(来电1)是一种状态，本机接通电话，拿起话筒(来电2)，通话结束后放下话筒(来电3)或者对方直接挂断(来电3)，这些情况下状态就会发生变化。</p>
+</blockquote>
+<p><del>结论：当 Action 为 <code>PHONE_STATE</code> 时，只能监听状态发生变化，但却不知道当前是哪个状态，究竟是从哪个状态变化到哪个状态？根本没办法知道！</del><br>可以获取当前状态，使用 <code>intent.getStringExtra(TelephonyManager.EXTRA_STATE)</code> 即可，状态为：<br><code>TelephonyManager.EXTRA_STATE_IDLE</code>（值为<code>&quot;IDLE&quot;</code>）<br><code>TelephonyManager.EXTRA_STATE_RINGING</code>（值为<code>&quot;RINGING&quot;</code>）<br><code>TelephonyManager.EXTRA_STATE_OFFHOOK</code>（值为<code>&quot;OFFHOOK&quot;</code>）<br>其中之一。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CallingReceiver</span> <span class="keyword">extends</span> <span class="title">BroadcastReceiver</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onReceive</span><span class="params">(Context context, Intent intent)</span> </span>&#123;</div><div class="line">        String action = intent.getAction();</div><div class="line"></div><div class="line">        <span class="keyword">if</span> (Intent.ACTION_NEW_OUTGOING_CALL.equals(action)) &#123;</div><div class="line">            Log.i(<span class="string">"CallingReceiver"</span>, <span class="string">"onReceive: NEW_OUTGOING_CALL, outNumber = "</span></div><div class="line">                    + intent.getStringExtra(Intent.EXTRA_PHONE_NUMBER));</div><div class="line"></div><div class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (TelephonyManager.ACTION_PHONE_STATE_CHANGED.equals(action)) &#123;</div><div class="line"></div><div class="line">            <span class="keyword">if</span> (TelephonyManager.EXTRA_STATE_RINGING.equals(intent.getStringExtra(TelephonyManager.EXTRA_STATE))) &#123;</div><div class="line">                <span class="comment">// 进行拦截操作</span></div><div class="line">                Log.i(<span class="string">"CallingReceiver"</span>, <span class="string">"onReceive: PHONE_STATE, inNumber = "</span></div><div class="line">                        + intent.getStringExtra(TelephonyManager.EXTRA_INCOMING_NUMBER));</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>需要权限：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">uses-permission</span> <span class="attr">android:name</span>=<span class="string">"android.permission.PROCESS_OUTGOING_CALLS"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">uses-permission</span> <span class="attr">android:name</span>=<span class="string">"android.permission.READ_PHONE_STATE"</span> /&gt;</span></div></pre></td></tr></table></figure></p>
+<h2 id="通过设置监听的方式"><a href="#通过设置监听的方式" class="headerlink" title="通过设置监听的方式"></a>通过设置监听的方式</h2><p>设置监听的方法相比接收广播有个好处，就是<strong>监听是优先于广播的</strong>（可以分别在<code>onReceive()</code> 和 <code>onCallStateChanged()</code> 中输出 Log 验证）</p>
+<p>设置监听很简单，先获取 <code>TelephonyManager</code> 对象，然后调用 <code>listen(PhoneStateListener listener, int events)</code> 方法：<br>第一个参数是 <code>PhoneStateListener</code> 对象，需要继承该类重写 <code>onCallStateChanged()</code> 方法，如果需要监听多个事件，还要重写其他方法；<br>第二个参数是需要监听的事件，如果需要监听多个事件，使用 <code>|</code> “或”一下就行。</p>
+<p>监听的状态有三种，分别是<br><code>TelephonyManager.CALL_STATE_IDLE</code>（值为<code>0</code>，空闲状态，挂断电话时的状态）<br><code>TelephonyManager.CALL_STATE_RINGING</code>（值为<code>1</code>，响铃状态，有来电时的状态）<br><code>TelephonyManager.CALL_STATE_OFFHOOK</code>（值为<code>2</code>，通话状态，拨打电话、接听电话时的状态）</p>
+<p><code>onCallStateChanged(int state, String incomingNumber)</code> 方法有 2 个参数，<br><code>state</code> 表示当前的状态，<br><code>incomingNumber</code> 表示来电的号码（<em>监听的方式无法获取外拨电话的号码</em>）</p>
+<p><em><code>incomingNumber</code></em> 不是任何时候都有值的，经过我在模拟器中拨打了无数次的电话，发现一下规律（状态跟 <code>PHONE_STATE</code> 广播是一致的）：<br>外拨：2种状态都没有incomingNumber（这不是废话么！）<br>来电（看图）：<br><img src="/201511/30/Detect_and_Hang_Up_Incoming_Calling/incomingNumber.png" alt="incomingNumber.png" title=""></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">InterceptingService</span> <span class="keyword">extends</span> <span class="title">Service</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> TelephonyManager mTelephonyManager;</div><div class="line">    </div><div class="line">    <span class="comment">/**</span></div><div class="line">     * 注册监听</div><div class="line">     */</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">()</span> </span>&#123;</div><div class="line">        mTelephonyManager = (TelephonyManager) getSystemService(TELEPHONY_SERVICE);</div><div class="line">        mTelephonyManager.listen(mPhoneStateListener, PhoneStateListener.LISTEN_CALL_STATE);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * 注销监听</div><div class="line">     */</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onDestroy</span><span class="params">()</span> </span>&#123;</div><div class="line">        mTelephonyManager.listen(mPhoneStateListener, PhoneStateListener.LISTEN_NONE);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    PhoneStateListener mPhoneStateListener = <span class="keyword">new</span> PhoneStateListener() &#123;</div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCallStateChanged</span><span class="params">(<span class="keyword">int</span> state, String incomingNumber)</span> </span>&#123;</div><div class="line"></div><div class="line">            <span class="keyword">switch</span> (state) &#123;</div><div class="line"></div><div class="line">                <span class="comment">// 1.来电不接: 有号码 2.来电接: 无号码 3.去电: 无号码</span></div><div class="line">                <span class="keyword">case</span> TelephonyManager.CALL_STATE_IDLE: &#123;</div><div class="line">                    <span class="keyword">break</span>;</div><div class="line">                &#125;</div><div class="line">                <span class="comment">// 肯定是来电，而且有号码</span></div><div class="line">                <span class="keyword">case</span> TelephonyManager.CALL_STATE_RINGING: &#123;</div><div class="line">                    <span class="comment">// 进行拦截操作</span></div><div class="line">                    <span class="keyword">break</span>;</div><div class="line">                &#125;</div><div class="line">                <span class="comment">// 要么是去电，要么是通话中，都没有号码</span></div><div class="line">                <span class="keyword">case</span> TelephonyManager.CALL_STATE_OFFHOOK: &#123;</div><div class="line">                    <span class="comment">// Nothing to do.</span></div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="需要注意的地方"><a href="#需要注意的地方" class="headerlink" title="需要注意的地方"></a>需要注意的地方</h2><p>从上面的代码可以看到，在 <code>onDestroy</code> 中又给 <code>TelephonyManager</code> 设置了一次 listen，监听的事件是 <code>LISTEN_NONE</code>。</p>
+<p>对系统服务设置监听，在不需要的时候，一定要注销掉，否则会一直占用系统资源。既然 <code>TelephonyManager</code> 也是一个系统服务，又可以对其设置监听，那应该也是有提供注销的方式。而注销 <code>TelephonyManager</code> 监听的方式，就是这个 <code>LISTEN_NONE</code>。 </p>
+<p>这个 <code>LISTEN_NONE</code> 就是一个用于取消监听的事件，<a href="http://developer.android.com/intl/zh-cn/reference/android/telephony/TelephonyManager.html#listen(android.telephony.PhoneStateListener, int&#41;" target="_blank" rel="external">官方文档</a>描述如下：</p>
+<blockquote>
+<p>To unregister a listener, pass the listener object and set the events argument to LISTEN_NONE (0).</p>
+</blockquote>
+<p>在做此功能之前，Google 了一下，发现网上大多数文章，发现了两点严重的问题：</p>
+<ol>
+<li>都说什么<em>不是外拨就是来电</em>（估计很多都是相互抄袭的），其实上面也说了，外拨是会发送两种广播的，所以当接收到 <code>PHONE_STATE</code> 时，它可能是一个外拨电话的事件。</li>
+<li>都是采取了在 <code>onReceive()</code> 中设置监听的方式，这种方式非常恶心，下面是我的测试代码：</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onReceive</span><span class="params">(Context context, Intent intent)</span> </span>&#123;</div><div class="line">    String action = intent.getAction();</div><div class="line"></div><div class="line">    <span class="keyword">if</span> (Intent.ACTION_NEW_OUTGOING_CALL.equals(action)) &#123;</div><div class="line">        <span class="comment">// 外拨电话</span></div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        <span class="comment">// 来电监听</span></div><div class="line">        TelephonyManager tm = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);</div><div class="line">        tm.listen(<span class="keyword">new</span> PhoneStateListener()&#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCallStateChanged</span><span class="params">(<span class="keyword">int</span> state, String incomingNumber)</span> </span>&#123;</div><div class="line">                System.out.println(<span class="string">"onCallStateChanged  "</span> + <span class="keyword">this</span>); <span class="comment">// 输出 onCallStateChanged 被调用的次数，和 PhoneStateListener 对象</span></div><div class="line">            &#125;</div><div class="line">        &#125;,PhoneStateListener.LISTEN_CALL_STATE);</div><div class="line">        System.out.println(tm + <span class="string">"  "</span> + <span class="keyword">this</span>); <span class="comment">// 输出 TelephonyManager 对象和 BroadcastReceiver 对象</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>测试结果：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 第一次来电</span></div><div class="line">I/System.out: android.telephony.TelephonyManager<span class="meta">@b</span>3faecc0  gmt.mobileguard.receiver.CallingReceiver<span class="meta">@b</span>3fae8a8</div><div class="line">I/System.out: onCallStateChanged  gmt.mobileguard.receiver.CallingReceiver$<span class="number">1</span><span class="meta">@b</span>3faf250</div><div class="line"><span class="comment">// 第一次挂断</span></div><div class="line">I/System.out: onCallStateChanged  gmt.mobileguard.receiver.CallingReceiver$<span class="number">1</span><span class="meta">@b</span>3faf250</div><div class="line">I/System.out: android.telephony.TelephonyManager<span class="meta">@b</span>3faecc0  gmt.mobileguard.receiver.CallingReceiver<span class="meta">@b</span>39db0e8</div><div class="line">I/System.out: onCallStateChanged  gmt.mobileguard.receiver.CallingReceiver$<span class="number">1</span><span class="meta">@b</span>39db2a8</div><div class="line"><span class="comment">// 第二次来电</span></div><div class="line">I/System.out: onCallStateChanged  gmt.mobileguard.receiver.CallingReceiver$<span class="number">1</span><span class="meta">@b</span>3faf250</div><div class="line">I/System.out: onCallStateChanged  gmt.mobileguard.receiver.CallingReceiver$<span class="number">1</span><span class="meta">@b</span>39db2a8</div><div class="line">I/System.out: android.telephony.TelephonyManager<span class="meta">@b</span>3faecc0  gmt.mobileguard.receiver.CallingReceiver<span class="meta">@b</span>3f56900</div><div class="line">I/System.out: onCallStateChanged  gmt.mobileguard.receiver.CallingReceiver$<span class="number">1</span><span class="meta">@b</span>3f54870</div><div class="line"><span class="comment">// 第二次挂断</span></div><div class="line">I/System.out: onCallStateChanged  gmt.mobileguard.receiver.CallingReceiver$<span class="number">1</span><span class="meta">@b</span>3faf250</div><div class="line">I/System.out: onCallStateChanged  gmt.mobileguard.receiver.CallingReceiver$<span class="number">1</span><span class="meta">@b</span>39db2a8</div><div class="line">I/System.out: onCallStateChanged  gmt.mobileguard.receiver.CallingReceiver$<span class="number">1</span><span class="meta">@b</span>3f54870</div><div class="line">I/System.out: android.telephony.TelephonyManager<span class="meta">@b</span>3faecc0  gmt.mobileguard.receiver.CallingReceiver<span class="meta">@b</span>39e9618</div><div class="line">I/System.out: onCallStateChanged  gmt.mobileguard.receiver.CallingReceiver$<span class="number">1</span><span class="meta">@b</span>39e63b0</div></pre></td></tr></table></figure></p>
+<p>看看测试结果：<br>比较长的那行，每次都状态改变，都执行一次。但是！<code>onCallStateChanged</code> 每次都会多执行一次。</p>
+<p>然后再看看每个对象的情况：<br><code>TelephonyManager</code>: 输出了4次，每次输出的 hashCode 都是 b3faecc0，说明每次都是同一个对象<br><code>BroadcastReceiver</code>: 输出了4次，每次输出的 hashCode <strong>都不一样</strong>，说明每次都是一个新的对象，一共有4个<br><code>PhoneStateListener</code>: 输出了10次，仔细观察每一次输出的 hashCode，发现每次都会有一个新的对象加入到输出的队伍，一共有4个</p>
+<p>解释一下：<br><code>TelephonyManager</code>: 系统服务在每个进程中都是单例的，所以每次 <code>getSystemService</code> 得到的都是同一个 <code>TelephonyManager</code>。<br><code>BroadcastReceiver</code>: 每次接收广播时，都是一个新的对象。<br><code>PhoneStateListener</code>: 就更不用说了，每次都 new 一个新的，然后投入到 <code>TelephonyManager</code> 的温暖的怀抱，老大 <code>TelephonyManager</code> 日益壮大起来。</p>
+<p>还有些文章，将 <code>PhoneStateListener</code> 作为 <code>BroadcastReceiver</code> 的成员变量，但是，这有区别么？？结果却还是一样的，因为每次接受到的广播，都是一个新的 <code>BroadcastReceiver</code> 对象。</p>
+<h2 id="最终解决方案"><a href="#最终解决方案" class="headerlink" title="最终解决方案"></a>最终解决方案</h2><p>然而，这两种方式都是有局限性的。广播执行次数太多了，而且无法判断究竟是什么状态。服务需要开启，还有被 kill 的可能性。</p>
+<p>终上所述，决定两种方式相结合。</p>
+<p>由于 <code>PHONE_STATE</code> 不管是外拨还是来电，都会被接收多次。所以当 Action 是 <code>PHONE_STATE</code> 时，相对来说比较适合开启拦截服务（多次<code>startService()</code>并无影响，只回调<code>onStartCommand()</code>）。</p>
+<p>在来电时开启服务，服务中实现了监听，一直在后台运行。除了第一次需要创建服务，会比服务会较晚执行，可能会听到一瞬间的铃声响起之外，之后只要服务没有被 kill，服务中的监听肯定是比广播先执行，所以只要被拦截，就不会再听到来电的铃声了。</p>
+<p>代码基本上都在上面给出来了，就不再重复了。</p>
+<h1 id="拦截"><a href="#拦截" class="headerlink" title="拦截"></a>拦截</h1><h2 id="ITelephony-接口"><a href="#ITelephony-接口" class="headerlink" title="ITelephony 接口"></a>ITelephony 接口</h2><p>要实现拦截，在 <code>ITelephony</code> 接口中有一个 <code>endCall()</code> 方法，但是很遗憾，很久很久以前（不知道哪个版本，听说是 Android 1.5）开始，这个方法就不能直接调用啦。<br>不过！这个方法一直都存在的，至于为什么不能直接调用，那是因为 Google 出于安全考虑，给隐藏起来啦。<br>但是！在Java中没什么是不可能滴。因为我们有终极武器——反射！只要你存在，不管你在哪，都可以把你挖出来！！哈哈哈！！！</p>
+<p>首先，要知道 <code>ITelephony</code> 这个接口在哪里。呃。。这个在SDK中是没有的啦，要到 Android 的源码库去找（庆幸 Android 是开源的）。<br><code>ITelephony</code> 是一个 AIDL 文件，在 <a href="https://android.googlesource.com/platform/frameworks/base/+/master/telephony/java/com/android/internal/telephony/ITelephony.aidl" target="_blank" rel="external">这里（Google源码）</a> 或者 <a href="https://github.com/android/platform_frameworks_base/blob/master/telephony/java/com/android/internal/telephony/ITelephony.aidl" target="_blank" rel="external">这里（Github镜像）</a> 可以得到。</p>
+<p>如果使用 Android Studio，在项目中的 <code>main</code> 文件夹里新建一个 <code>aidl</code> 文件夹，然后再在 <code>aidl</code> 文件夹中，按照包名 <code>com.android.internal.telephony</code> 依次创建文件夹，再把 <code>ITelephony.aidl</code> 文件放进去。（其实直接在 AS 中使用图形化界面创建会更快更方便，先创建 <code>aidl</code> 文件夹，再创建包，再复制文件）<br>如果使用 Eclipse，<em>好像</em>是不用新建 <code>aidl</code> 文件夹的，直接在 <code>src</code> 文件夹下创建包的路径，方法同 AS。</p>
+<h2 id="获取-ITelephony-对象"><a href="#获取-ITelephony-对象" class="headerlink" title="获取 ITelephony 对象"></a>获取 ITelephony 对象</h2><p>由于 <code>endCall()</code> 方法是在 <code>ITelephony</code> 接口中的，要调用此方法，就必须先得到实现 <code>ITelephony</code> 接口的对象。</p>
+<p>获取的方法（过程）有很多，但是归根到底都是围绕着一个方法，就是 <code>TelephonyManager</code> 中有一个 <code>getITelephony()</code> 的方法，通过这个方法可以得到一个 <code>ITelephony</code> 的对象。但是，这是一个隐藏的、private 的方法，外部无法直接调用。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line">* <span class="doctag">@hide</span></div><div class="line">*/</div><div class="line"><span class="function"><span class="keyword">private</span> ITelephony <span class="title">getITelephony</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">return</span> ITelephony.Stub.asInterface(ServiceManager.getService(Context.TELEPHONY_SERVICE));</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>我们可以通过反射去调用这个 <code>getITelephony()</code> 方法，也可以通过直接实现方法体内的业务逻辑。</p>
+<h3 id="直接通过反射调用-getITelephony"><a href="#直接通过反射调用-getITelephony" class="headerlink" title="直接通过反射调用 getITelephony()"></a>直接通过反射调用 getITelephony()</h3><p><strong>推荐</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">rejectCall</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">try</span> &#123;</div><div class="line">        Class&lt;?&gt; telephonyManagerClass = TelephonyManager.class;</div><div class="line">        Method getITelephonyMethod = telephonyManagerClass.getDeclaredMethod(<span class="string">"getITelephony"</span>, (Class[]) <span class="keyword">null</span>);</div><div class="line">        getITelephonyMethod.setAccessible(<span class="keyword">true</span>);</div><div class="line">        ITelephony iTelephonyObject = (ITelephony) getITelephonyMethod.invoke(mTelephonyManager, (Object[]) <span class="keyword">null</span>);</div><div class="line">        <span class="keyword">return</span> iTelephonyObject.endCall();</div><div class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123;</div><div class="line">        e.printStackTrace();</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="直接实现业务逻辑"><a href="#直接实现业务逻辑" class="headerlink" title="直接实现业务逻辑"></a>直接实现业务逻辑</h3><p><strong>不太推荐</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">rejectCall</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">try</span> &#123;</div><div class="line">        <span class="comment">// ServiceManager</span></div><div class="line">        Class&lt;?&gt; serviceManagerClass = getClassLoader().loadClass(<span class="string">"android.os.ServiceManager"</span>);</div><div class="line">        <span class="comment">// ServiceManager.getService(String name)</span></div><div class="line">        Method getServiceMethod = serviceManagerClass.getDeclaredMethod(<span class="string">"getService"</span>, String.class);</div><div class="line">        <span class="comment">// IBinder</span></div><div class="line">        IBinder iBinderObject = (IBinder) getServiceMethod.invoke(<span class="keyword">null</span>, TELEPHONY_SERVICE);</div><div class="line">        <span class="comment">// ITelephony</span></div><div class="line">        ITelephony iTelephonyObject = ITelephony.Stub.asInterface(iBinderObject);</div><div class="line">        <span class="keyword">return</span> iTelephonyObject.endCall();</div><div class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123;</div><div class="line">        e.printStackTrace();</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>参考: <a href="http://stackoverflow.com/questions/24580508/how-to-import-com-android-internal-telephony-itelephony-to-the-android-applicati" target="_blank" rel="external">How to import com.android.internal.telephony.ITelephony to the Android application</a></p>
+<p>要拦截电话，还需要一下权限：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">uses-permission</span> <span class="attr">android:name</span>=<span class="string">"android.permission.CALL_PHONE"</span> /&gt;</span></div></pre></td></tr></table></figure></p>
+<h2 id="裁剪-ITelephony-aidl"><a href="#裁剪-ITelephony-aidl" class="headerlink" title="裁剪 ITelephony.aidl"></a>裁剪 ITelephony.aidl</h2><p><code>ITelephony.aidl</code> 中提供了很多很多方法，而方法越多，需要 import 的类也就越多，目前最新的 <code>ITelephony.aidl</code> （2015年9月10日更新）有 1000 多行，还 import 了多个其它接口（都是隐藏的），这些接口都要加到 aidl 文件夹中，难免给编译带来了不少麻烦，其实这些都是可以删掉的。</p>
+<p>如果只用到 <code>endCall()</code> 方法，可以删掉其他，只剩下一个 <code>endCall()</code> 的，这完全是没问题的。</p>
+<p>有些文章中说，除了 <code>ITelephony.aidl</code> ，还要添加一个 <code>NeighboringCellInfo.aidl</code>，如果使用的是高版本（没研究，也许是 API Level 19 以上，我现在用的是 23 的）的 SDK，是不需要的，因为这个 API 已经不再是隐藏的了。<br>如果裁剪过的话，只需要一个 <code>ITelephony.aidl</code> 就行，其他什么都不需要。</p>
+<p>P.S. 别忘了 import 也要删掉，要不然 import 找不到类，还是会报错的。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*</span></div><div class="line"> * Copyright (C) 2007 The Android Open Source Project</div><div class="line"> *</div><div class="line"> * Licensed under the Apache License, Version 2.0 (the "License");</div><div class="line"> * you may not use this file except in compliance with the License.</div><div class="line"> * You may obtain a copy of the License at</div><div class="line"> *</div><div class="line"> *      http://www.apache.org/licenses/LICENSE-2.0</div><div class="line"> *</div><div class="line"> * Unless required by applicable law or agreed to in writing, software</div><div class="line"> * distributed under the License is distributed on an "AS IS" BASIS,</div><div class="line"> * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</div><div class="line"> * See the License for the specific language governing permissions and</div><div class="line"> * limitations under the License.</div><div class="line"> */</div><div class="line"></div><div class="line"><span class="keyword">package</span> com.android.internal.telephony;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * Interface used to interact with the phone.  Mostly this is used by the</div><div class="line"> * TelephonyManager class.  A few places are still using this directly.</div><div class="line"> * Please clean them up if possible and use TelephonyManager instead.</div><div class="line"> *</div><div class="line"> * &#123;<span class="doctag">@hide</span>&#125;</div><div class="line"> */</div><div class="line"><span class="class"><span class="keyword">interface</span> <span class="title">ITelephony</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * End call if there is a call in progress, otherwise does nothing.</div><div class="line">     *</div><div class="line">     * <span class="doctag">@return</span> whether it hung up</div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">boolean</span> <span class="title">endCall</span><span class="params">()</span></span>;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></span>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Android/" rel="tag">#Android</a>
+          
+            <a href="/tags/来电拦截/" rel="tag">#来电拦截</a>
+          
+            <a href="/tags/拦截来电/" rel="tag">#拦截来电</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/201511/24/Toolbar-menu/" rel="next" title="在 Toolbar 中显示 Menu">
+                <i class="fa fa-chevron-left"></i> 在 Toolbar 中显示 Menu
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/201512/17/Set-images-to-the-TextView/" rel="prev" title="给 TextView 设置图片">
+                给 TextView 设置图片 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+        </div>
+
+        
+
+
+        
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="201511/30/Detect_and_Hang_Up_Incoming_Calling/"
+           data-title="检测与拦截来电" data-url="http://tanjm.ml/201511/30/Detect_and_Hang_Up_Incoming_Calling/">
+      </div>
+    
+  </div>
+
+
+      </div>
+
+      
+        
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="http://tp2.sinaimg.cn/2728550353/180/5631710584/1" alt="Genment" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">Genment</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description"></p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">8</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            <a href="/categories">
+              <span class="site-state-item-count">9</span>
+              <span class="site-state-item-name">分类</span>
+              </a>
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">16</span>
+              <span class="site-state-item-name">标签</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/genment" target="_blank">
+                  
+                    <i class="fa fa-github"></i> GitHub
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/q8515620" target="_blank">
+                  
+                    <i class="fa fa-tt"></i> Twitter
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/2728550353" target="_blank">
+                  
+                    <i class="fa fa-weibo"></i> Weibo
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/genment" target="_blank">
+                  
+                    <i class="fa fa-globe"></i> ZhiHu
+                  
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="http://creativecommons.org/licenses/by-nc-sa/4.0" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            <p class="site-author-name">基链</p>
+            
+              <span class="links-of-author-item">
+                <a href="http://theme-next.iissnan.com/" target="_blank">Theme-NexT</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://teddysun.com/358.html" target="_blank">一键SS</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.vpser.net/security/linux-ssh-authorized-keys-login.html" target="_blank">SSH登录验证</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://gitimmersion.com/lab_01.html" target="_blank">Git Immersion</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://marklodato.github.com/visual-git-guide/" target="_blank">visual-git-guide</a>
+              </span>
+            
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#监听"><span class="nav-number">1.</span> <span class="nav-text">监听</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#通过接收广播的方式"><span class="nav-number">1.1.</span> <span class="nav-text">通过接收广播的方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#通过设置监听的方式"><span class="nav-number">1.2.</span> <span class="nav-text">通过设置监听的方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#需要注意的地方"><span class="nav-number">1.3.</span> <span class="nav-text">需要注意的地方</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最终解决方案"><span class="nav-number">1.4.</span> <span class="nav-text">最终解决方案</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#拦截"><span class="nav-number">2.</span> <span class="nav-text">拦截</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ITelephony-接口"><span class="nav-number">2.1.</span> <span class="nav-text">ITelephony 接口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#获取-ITelephony-对象"><span class="nav-number">2.2.</span> <span class="nav-text">获取 ITelephony 对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#直接通过反射调用-getITelephony"><span class="nav-number">2.2.1.</span> <span class="nav-text">直接通过反射调用 getITelephony()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#直接实现业务逻辑"><span class="nav-number">2.2.2.</span> <span class="nav-text">直接实现业务逻辑</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#裁剪-ITelephony-aidl"><span class="nav-number">2.3.</span> <span class="nav-text">裁剪 ITelephony.aidl</span></a></li></ol></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+      
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="icon-next-heart fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Genment</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+
+  
+    
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"tanjm"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+    
+     
+
+
+    
+  
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.2"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.2"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+<script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+<script type="text/javascript" src="/js/motion.js?v=0.4.5.2" id="motion.global"></script>
+
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.2" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    motionMiddleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+      if (CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  <script type="text/javascript" src="/js/bootstrap.js"></script>
+
+  
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+
+  
+    <script type="text/javascript" src="http://cdn.staticfile.org/mathjax/2.4.0/MathJax.js"></script>
+    <script type="text/javascript" src="http://cdn.staticfile.org/mathjax/2.4.0/config/TeX-AMS-MML_HTMLorMML.js"></script>
+  
+
+
+  
+  
+
+</body>
+</html>

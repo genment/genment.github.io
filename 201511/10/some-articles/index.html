@@ -37,7 +37,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Android,Toolbar,Menu," />
+  <meta name="keywords" content="Android,Java,Hexo,NexT,Life" />
 
 
 
@@ -53,39 +53,16 @@
 
 
 
-<meta name="description" content="今天在使用 Toolbar 时，需要在 Toolbar 上显示 Menu，但是遇到一些问题，记录一下。
-究竟是用哪个方法来 inflate Menu 呢？
-
-在 onCreate 中调用 Toolbar 的 inflateMenu() 方法？
-Toolbar.inflateMenu(int menuResId);
-
-
-在 onCreateOptionsMenu 中调用 Activity 的 get">
+<meta name="description" content="Chrome 的标签栏被几十个网页挤爆了！经常看着某个文章，突然被文中的某个牛逼的名词吸引住了，又去找相关文章去了解，想不到又在这个文章中被作者的参考链接“坑”到另一个网页… 然而我又不想关掉之前的，总是想着某个时刻还会有用（结果表明，这种可能性比中彩票的概率还要低），然后就是这样陷入了一个深不见底的调用栈。不禁感叹一声——学海无涯啊！！学无止境啊！！！好吧，今天就清理了，把标签全部放这里来。（其">
 <meta property="og:type" content="article">
-<meta property="og:title" content="在 Toolbar 中显示 Menu">
-<meta property="og:url" content="http://tanjm.ml/201511/24/Toolbar-menu/index.html">
+<meta property="og:title" content="一些文章">
+<meta property="og:url" content="http://tanjm.ml/201511/10/some-articles/index.html">
 <meta property="og:site_name" content="Genment's Note">
-<meta property="og:description" content="今天在使用 Toolbar 时，需要在 Toolbar 上显示 Menu，但是遇到一些问题，记录一下。
-究竟是用哪个方法来 inflate Menu 呢？
-
-在 onCreate 中调用 Toolbar 的 inflateMenu() 方法？
-Toolbar.inflateMenu(int menuResId);
-
-
-在 onCreateOptionsMenu 中调用 Activity 的 get">
-<meta property="og:image" content="http://tanjm.ml/201511/24/Toolbar-menu/prepare_menu.png">
-<meta property="og:updated_time" content="2015-11-24T15:23:30.000Z">
+<meta property="og:description" content="Chrome 的标签栏被几十个网页挤爆了！经常看着某个文章，突然被文中的某个牛逼的名词吸引住了，又去找相关文章去了解，想不到又在这个文章中被作者的参考链接“坑”到另一个网页… 然而我又不想关掉之前的，总是想着某个时刻还会有用（结果表明，这种可能性比中彩票的概率还要低），然后就是这样陷入了一个深不见底的调用栈。不禁感叹一声——学海无涯啊！！学无止境啊！！！好吧，今天就清理了，把标签全部放这里来。（其">
+<meta property="og:updated_time" content="2015-12-07T18:03:42.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="在 Toolbar 中显示 Menu">
-<meta name="twitter:description" content="今天在使用 Toolbar 时，需要在 Toolbar 上显示 Menu，但是遇到一些问题，记录一下。
-究竟是用哪个方法来 inflate Menu 呢？
-
-在 onCreate 中调用 Toolbar 的 inflateMenu() 方法？
-Toolbar.inflateMenu(int menuResId);
-
-
-在 onCreateOptionsMenu 中调用 Activity 的 get">
-<meta name="twitter:image" content="http://tanjm.ml/201511/24/Toolbar-menu/prepare_menu.png">
+<meta name="twitter:title" content="一些文章">
+<meta name="twitter:description" content="Chrome 的标签栏被几十个网页挤爆了！经常看着某个文章，突然被文中的某个牛逼的名词吸引住了，又去找相关文章去了解，想不到又在这个文章中被作者的参考链接“坑”到另一个网页… 然而我又不想关掉之前的，总是想着某个时刻还会有用（结果表明，这种可能性比中彩票的概率还要低），然后就是这样陷入了一个深不见底的调用栈。不禁感叹一声——学海无涯啊！！学无止境啊！！！好吧，今天就清理了，把标签全部放这里来。（其">
 
 
 
@@ -97,7 +74,7 @@ Toolbar.inflateMenu(int menuResId);
   };
 </script>
 
-  <title> 在 Toolbar 中显示 Menu | Genment's Note </title>
+  <title> 一些文章 | Genment's Note </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -266,7 +243,7 @@ Toolbar.inflateMenu(int menuResId);
             
             
               
-                在 Toolbar 中显示 Menu
+                一些文章
               
             
           </h1>
@@ -275,8 +252,8 @@ Toolbar.inflateMenu(int menuResId);
         <div class="post-meta">
           <span class="post-time">
             发表于
-            <time itemprop="dateCreated" datetime="2015-11-24T02:47:05-05:00" content="2015-11-24">
-              2015-11-24
+            <time itemprop="dateCreated" datetime="2015-11-11T11:27:05+08:00" content="2015-11-11">
+              2015-11-11
             </time>
           </span>
 
@@ -285,8 +262,8 @@ Toolbar.inflateMenu(int menuResId);
               &nbsp; | &nbsp; 分类于
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index">
-                    <span itemprop="name">Android</span>
+                  <a href="/categories/Life/" itemprop="url" rel="index">
+                    <span itemprop="name">Life</span>
                   </a>
                 </span>
 
@@ -297,8 +274,8 @@ Toolbar.inflateMenu(int menuResId);
 
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Android/Widget/" itemprop="url" rel="index">
-                    <span itemprop="name">Widget</span>
+                  <a href="/categories/Life/Note/" itemprop="url" rel="index">
+                    <span itemprop="name">Note</span>
                   </a>
                 </span>
 
@@ -313,8 +290,8 @@ Toolbar.inflateMenu(int menuResId);
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/201511/24/Toolbar-menu/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="201511/24/Toolbar-menu/" itemprop="commentsCount"></span>
+                <a href="/201511/10/some-articles/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="201511/10/some-articles/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -333,56 +310,46 @@ Toolbar.inflateMenu(int menuResId);
       
 
       
-        <span itemprop="articleBody"><p>今天在使用 Toolbar 时，需要在 Toolbar 上显示 Menu，但是遇到一些问题，记录一下。</p>
-<p>究竟是用哪个方法来 inflate Menu 呢？</p>
-<ol>
-<li>在 onCreate 中调用 Toolbar 的 inflateMenu() 方法？<ul>
-<li>Toolbar.inflateMenu(int menuResId);</li>
+        <span itemprop="articleBody"><p>Chrome 的标签栏被几十个网页挤爆了！经常看着某个文章，突然被文中的某个牛逼的名词吸引住了，又去找相关文章去了解，想不到又在这个文章中被作者的参考链接“坑”到另一个网页… 然而我又不想关掉之前的，总是想着某个时刻还会有用（结果表明，这种可能性比中彩票的概率还要低），然后就是这样陷入了一个深不见底的调用栈。不禁感叹一声——学海无涯啊！！学无止境啊！！！好吧，今天就清理了，把标签全部放这里来。<br>（其实我的收藏夹也已经爆满了 - -# ）</p>
+<h1 id="技术文章集合"><a href="#技术文章集合" class="headerlink" title="技术文章集合"></a>技术文章集合</h1><p><a href="http://toutiao.io/" target="_blank" rel="external">开发者头条</a></p>
+<p><a href="http://geek.csdn.net/" target="_blank" rel="external">CSDN极客头条</a></p>
+<ul>
+<li><a href="http://geek.csdn.net/forum/65" target="_blank" rel="external">Android</a><ul>
+<li><a href="http://geek.csdn.net/user/publishlist/bossdarcy" target="_blank" rel="external">技术小黑屋</a></li>
 </ul>
 </li>
-<li>在 onCreateOptionsMenu 中调用 Activity 的 getMenuInflater().inflate() 方法？<ul>
-<li>Activity.onCreateOptionsMenu(Menu menu)</li>
 </ul>
-</li>
-</ol>
-<p>答案在 <a href="http://stackoverflow.com/questions/26511981/toolbar-inflatemenu-seems-to-do-nothing" target="_blank" rel="external">stackoverflow</a> 这里。</p>
-<p>当你将 Toolbar 作为普通的布局控件（View）来使用时，使用第一种：Toolbar.inflateMenu(int menuResId)。<br>这时候 Toolbar 仅仅是 Activity 中一个普通的独立 View，就像 Button、RelativeLayout 一样的 View 而已，并不是一个 Actionbar。这就跟 Activity 本身不存在任何联系，所以不能通过 Activity 中的方法进行 inflate menu，只能使用 Toolbar 自身的 inflateMenu() 方法。</p>
-<p>当你将 Toolbar 作为 ActionBar （调用了 setActionBar() 或 setSupportActionBar()）时，使用 Toolbar 的 inflateMenu() 方法是无效的，只能使用第二种方法，而这也是推荐使用的方法。</p>
-<h1 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h1><p>在使用 Toolbar 时，有很多方法在调用时，都需要注意上面所说的两种情况。比如：</p>
-<p>Toolbar 上的点击事件，Toolbar 提供是 (setNavigationOnClickListener)[] 和 (setOnMenuItemClickListener)[] 来分别监听<strong>导航按钮</strong>和<strong>菜单项</strong>的点击事件，而 Activity 也给 ActionBar 提供了 (onOptionsItemSelected)[] 回调方法。<br>但是 Toolbar 提供的两个方法和 Activity 的方法是不能公用的，只能选择其一，要么使用 Toolbar 的两个方法，要么使用 <code>onOptionsItemSelected()</code>。</p>
-<img src="/201511/24/Toolbar-menu/prepare_menu.png" alt="onPrepareOptionsMenu" title="onPrepareOptionsMenu">
-<p>另外，ActionBar 不是继承自 View 的，它是直接继承自 Object 的一个抽象类。</p>
+<h1 id="Android"><a href="#Android" class="headerlink" title="Android"></a>Android</h1><p><a href="http://www.csdn.net/article/2015-09-08/2825645/2" target="_blank" rel="external">腾讯Bugly干货分享：Android机型适配之痛</a> —— CSDN<br><a href="http://www.infoq.com/cn/articles/how-subject-test-works" target="_blank" rel="external">假如不是BAT，专项测试要怎样做？</a> —— InfoQ<br><a href="http://blog.csdn.net/xwhnew/article/details/40679791" target="_blank" rel="external">Android 5.0(L) ToolBar(替代ActionBar) 实战（三）</a> —— 萧文翰<br><a href="http://blog.csdn.net/lmj623565791/article/details/45303349" target="_blank" rel="external">Android 5.x Theme 与 ToolBar 实战</a> —— 鸿洋_<br><a href="http://angeldevil.me/2014/07/10/custom-actionbar-title-and-menu/" target="_blank" rel="external">自定义ActionBar标题与菜单中的文字样式</a> —— AngelDevil<br><a href="http://www.zhihu.com/question/24696340" target="_blank" rel="external">关于一个fragment之间,以及activity与fragment的消息传递方式的问题?</a> —— 知乎<br><a href="http://hukai.me/android-training-course-in-chinese/index.html" target="_blank" rel="external">Android官方培训课程中文版(v0.9.4)</a> —— hukai.me<br><a href="http://blog.csdn.net/liangtb/article/details/17147035" target="_blank" rel="external">使用ActionBar的Up导航的简介及一个疑问</a> —— 宾仔<br><a href="http://blog.csdn.net/allen315410/article/details/39397445" target="_blank" rel="external">Android自定义控件——侧滑菜单</a> —— vincentdevs<br><a href="http://blog.csdn.net/innost/article/details/48228651" target="_blank" rel="external">深入理解Android之Gradle</a> —— 阿拉神农<br><a href="http://www.cnblogs.com/liaohuqiu/p/3532925.html" target="_blank" rel="external">Android文件存储使用参考</a> —— liaohuqiu<br><a href="http://blog.chengyunfeng.com/?p=458" target="_blank" rel="external">Android 性能分析案例</a> —— 云在千峰<br><a href="http://www.jayfeng.com/2015/11/07/Android%E6%89%93%E5%8C%85%E7%9A%84%E9%82%A3%E4%BA%9B%E4%BA%8B/" target="_blank" rel="external">Android打包的那些事</a> —— </p>
+<h2 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h2><p><a href="http://guides.codepath.com/android" target="_blank" rel="external">CODEPATH</a><br><a href=""></a> ——<br><a href=""></a> ——<br><a href=""></a> —— </p>
+<h2 id="数据存储"><a href="#数据存储" class="headerlink" title="数据存储"></a>数据存储</h2><p><a href="https://realm.io/cn/" target="_blank" rel="external">Realm</a></p>
+<h2 id="Android-Studio"><a href="#Android-Studio" class="headerlink" title="Android Studio"></a>Android Studio</h2><p><a href="http://blog.csdn.net/eclipsexys/article/details/30748339" target="_blank" rel="external">Eclipse，到了说再见的时候了——Android Studio最全解析</a> —— eclipse_xu<br><a href="http://blog.csdn.net/h3c4lenovo/article/details/43404861" target="_blank" rel="external">Android Studio 小窍门#1 (系列1-3)</a> —— 哈希Map<br><a href="http://www.developerphil.com/android-studio-tips-of-the-day-roundup-1/" target="_blank" rel="external">Android Studio Tips Of the Day - Roundup #1 (1-6)</a> —— Philippe Breault<br><a href=""></a> ——<br><a href=""></a> ——<br><a href=""></a> —— </p>
+<h2 id="Material-Design"><a href="#Material-Design" class="headerlink" title="Material Design"></a>Material Design</h2><p><a href="http://blog.csdn.net/crazyman2010/article/details/46560387" target="_blank" rel="external">API21 以下使用 material design 风格的alertdialog</a> —— crazyman2010<br><a href="http://www.jianshu.com/p/1078568e859f" target="_blank" rel="external">Android Design Support Library 的 代码实验——几行代码，让你的 APP 变得花俏</a> —— MrFu<br><a href=""></a> —— </p>
+<h2 id="图标"><a href="#图标" class="headerlink" title="图标"></a>图标</h2><p><a href="https://www.google.com/design/icons/" target="_blank" rel="external">google material icons</a> —— Google<br><a href="https://materialdesignicons.com/" target="_blank" rel="external">material design icons site</a> —— 3th party material design icons site<br><a href=""></a> ——<br><a href=""></a> ——<br><a href=""></a> ——<br><a href=""></a> —— </p>
+<h1 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h1><p><a href="http://blog.jobbole.com/81196/" target="_blank" rel="external">一个成功的 Git 分支模型</a> —— 伯乐在线<br><a href="http://blog.jobbole.com/50603/" target="_blank" rel="external">写给Git初学者的7个建议</a> —— 伯乐在线</p>
+<h1 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h1><p><a href="http://xfeng.me/upgrade-hexo3/" target="_blank" rel="external">升级Hexo3记录</a> —— 小峰网络遨游记<br><a href="http://ibruce.info/2013/11/22/hexo-your-blog/" target="_blank" rel="external">hexo你的博客</a> —— 不如<br><a href="http://segmentfault.com/a/1190000002538363" target="_blank" rel="external">Hexo静态博客使用指南</a> —— 機智的阿卡林醬<br><a href="https://xuanwo.org/2015/03/26/hexo-intor/" target="_blank" rel="external">史上最详细的Hexo博客搭建图文教程</a> —— Xuanwo’s Blog<br><a href="http://godera.org/2015/03/16/Mac%E4%B8%8B%E7%A8%8B%E5%BA%8F%E5%91%98%E5%8D%9A%E5%AE%A2%E4%B9%8BHexo-GitHub-Pages-GitCafe-Pages-DNSPod/" target="_blank" rel="external">Mac下程序员博客之 Hexo + GitHub Pages + GitCafe Pages + DNSPod</a> —— 素墨文胤<br><a href="http://zipperary.com/categories/hexo/" target="_blank" rel="external">Zippera’s blog</a> —— Zippera’s blog<br><a href="http://wsgzao.github.io/post/hexo-guide/" target="_blank" rel="external">使用GitHub和Hexo搭建免费静态Blog</a> —— HelloDog, Keep Calm and Carry On<br><a href="http://bellaciela.com/blog/2015/advanced-hexo/" target="_blank" rel="external">Hexo进阶折腾</a> —— Se7enth Heaven<br><a href="http://blog.sunnyxx.com/2014/03/07/hexo_customize/" target="_blank" rel="external">hexo的私人订制</a> —— sunnyxx</p>
+<h1 id="小米"><a href="#小米" class="headerlink" title="小米"></a>小米</h1><p><a href="http://www.miui.com/thread-2479370-1-1.html" target="_blank" rel="external">小米2S刷MIUI6后，google系列服务不能用的解决办法(实测可用)</a><br><a href="http://tw.miui.com/thread-12283-1-1.html" target="_blank" rel="external">Google基本服務app~給刷開發版的米粉</a></p>
+<h1 id="Other"><a href="#Other" class="headerlink" title="Other"></a>Other</h1><p><a href="http://tieba.baidu.com/p/3982742273" target="_blank" rel="external">点评黑马视频(对比28期,52期)</a> —— tieba</p>
 </span>
       
     </div>
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/Android/" rel="tag">#Android</a>
-          
-            <a href="/tags/Toolbar/" rel="tag">#Toolbar</a>
-          
-            <a href="/tags/Menu/" rel="tag">#Menu</a>
-          
-        </div>
-      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/201511/10/some-articles/" rel="next" title="一些文章">
-                <i class="fa fa-chevron-left"></i> 一些文章
+              <a href="/201511/09/Android-Support-Library-vs-Repository/" rel="next" title="Android Support Library 和 Support Repository 的区别">
+                <i class="fa fa-chevron-left"></i> Android Support Library 和 Support Repository 的区别
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/201511/30/Detect_and_Hang_Up_Incoming_Calling/" rel="prev" title="检测与拦截来电">
-                检测与拦截来电 <i class="fa fa-chevron-right"></i>
+              <a href="/201511/24/Toolbar-menu/" rel="prev" title="在 Toolbar 中显示 Menu">
+                在 Toolbar 中显示 Menu <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -410,8 +377,8 @@ Toolbar.inflateMenu(int menuResId);
         
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="201511/24/Toolbar-menu/"
-           data-title="在 Toolbar 中显示 Menu" data-url="http://tanjm.ml/201511/24/Toolbar-menu/">
+      <div class="ds-thread" data-thread-key="201511/10/some-articles/"
+           data-title="一些文章" data-url="http://tanjm.ml/201511/10/some-articles/">
       </div>
     
   </div>
@@ -564,7 +531,7 @@ Toolbar.inflateMenu(int menuResId);
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#注意事项"><span class="nav-number">1.</span> <span class="nav-text">注意事项</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#技术文章集合"><span class="nav-number">1.</span> <span class="nav-text">技术文章集合</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Android"><span class="nav-number">2.</span> <span class="nav-text">Android</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#教程"><span class="nav-number">2.1.</span> <span class="nav-text">教程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据存储"><span class="nav-number">2.2.</span> <span class="nav-text">数据存储</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Android-Studio"><span class="nav-number">2.3.</span> <span class="nav-text">Android Studio</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Material-Design"><span class="nav-number">2.4.</span> <span class="nav-text">Material Design</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图标"><span class="nav-number">2.5.</span> <span class="nav-text">图标</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Git"><span class="nav-number">3.</span> <span class="nav-text">Git</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo"><span class="nav-number">4.</span> <span class="nav-text">Hexo</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#小米"><span class="nav-number">5.</span> <span class="nav-text">小米</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Other"><span class="nav-number">6.</span> <span class="nav-text">Other</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">

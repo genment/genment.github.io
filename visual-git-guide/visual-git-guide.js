@@ -1,8 +1,7 @@
 // Webkit browsers can't zoom properly with object tags.
 if (navigator.userAgent.indexOf("AppleWebKit") > -1) {
   replacePNG = function(img, src) {
-    var h = img.height,
-      w = img.width;
+    var h = img.height, w = img.width;
     img.src = src;
     img.height = h;
     img.width = w;
@@ -46,10 +45,7 @@ var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-13167645-1']);
 _gaq.push(['_trackPageview']);
 (function() {
-  var ga = document.createElement('script');
-  ga.type = 'text/javascript';
-  ga.async = true;
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-  var s = document.getElementsByTagName('script')[0];
-  s.parentNode.insertBefore(ga, s);
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 })();
