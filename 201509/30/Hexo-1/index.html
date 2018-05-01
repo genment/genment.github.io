@@ -1,5 +1,11 @@
 <!doctype html>
-<html class="theme-next   use-motion ">
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -23,18 +29,45 @@
 
 
 
-  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
 
-  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
 
 
 
 <link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
   <meta name="keywords" content="blog,hexo,guide," />
@@ -46,7 +79,7 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.png?v=0.4.5.2" />
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.png?v=5.0.2" />
 
 
 
@@ -76,27 +109,30 @@ hexo：完整版的 hexo，安装在 hexo 博客的目">
 
 
 <script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
   var CONFIG = {
     scheme: 'Mist',
-    sidebar: 'post',
-    motion: true
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    }
   };
 </script>
+
+
+
+
+  <link rel="canonical" href="http://tanjm.ml/201509/30/Hexo-1/"/>
+
 
   <title> Hexo 博客搭建指南（一）—— 开始使用 | Genment's Note </title>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
 
-  <!--[if lte IE 8]>
-  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
-    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
-      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
-           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
-           style='margin-left:auto;margin-right:auto;display: block;'/>
-    </a>
-  </div>
-<![endif]-->
   
 
 
@@ -123,10 +159,19 @@ hexo：完整版的 hexo，安装在 hexo 博客的目">
 
 
 
-  <div class="container one-column page-post-detail">
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
       <div class="header-inner"><div class="site-meta ">
   
 
@@ -152,13 +197,11 @@ hexo：完整版的 hexo，安装在 hexo 博客的目">
   
 
   
-    <ul id="menu" class="menu ">
+    <ul id="menu" class="menu">
       
         
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
             
             首页
           </a>
@@ -168,8 +211,6 @@ hexo：完整版的 hexo，安装在 hexo 博客的目">
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
-              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
-            
             归档
           </a>
         </li>
@@ -177,8 +218,6 @@ hexo：完整版的 hexo，安装在 hexo 博客的目">
         
         <li class="menu-item menu-item-categories">
           <a href="/categories" rel="section">
-            
-              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
             
             分类
           </a>
@@ -188,8 +227,6 @@ hexo：完整版的 hexo，安装在 hexo 博客的目">
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
             
-              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
-            
             标签
           </a>
         </li>
@@ -197,8 +234,6 @@ hexo：完整版的 hexo，安装在 hexo 博客的目">
         
         <li class="menu-item menu-item-about">
           <a href="/about" rel="section">
-            
-              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
             
             关于
           </a>
@@ -208,14 +243,11 @@ hexo：完整版的 hexo，安装在 hexo 博客的目">
         <li class="menu-item menu-item-git">
           <a href="/visual-git-guide" rel="section">
             
-              <i class="menu-item-icon fa fa-question-circle fa-fw"></i> <br />
-            
             图解Git
           </a>
         </li>
       
 
-      
       
     </ul>
   
@@ -228,8 +260,9 @@ hexo：完整版的 hexo，安装在 hexo 博客的目">
 
     <main id="main" class="main">
       <div class="main-inner">
-        <div id="content" class="content">
-          
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
 
   <div id="posts" class="posts-expand">
     
@@ -241,7 +274,7 @@ hexo：完整版的 hexo，安装在 hexo 博客的目">
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
 
     
       <header class="post-header">
@@ -260,15 +293,22 @@ hexo：完整版的 hexo，安装在 hexo 博客的目">
 
         <div class="post-meta">
           <span class="post-time">
-            发表于
-            <time itemprop="dateCreated" datetime="2015-10-01T01:00:00+08:00" content="2015-10-01">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-09-30T13:00:00-04:00" content="2015-10-01">
               2015-10-01
             </time>
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/guide/" itemprop="url" rel="index">
@@ -308,18 +348,22 @@ hexo：完整版的 hexo，安装在 hexo 博客的目">
 
           
 
+          
+          
+
+          
         </div>
       </header>
     
 
 
-    <div class="post-body">
+    <div class="post-body" itemprop="articleBody">
 
       
       
 
       
-        <span itemprop="articleBody"><h1 id="安装-Hexo"><a href="#安装-Hexo" class="headerlink" title="安装 Hexo"></a>安装 Hexo</h1><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>在安装 Hexo 之前，有一点要<strong>注意</strong>的是，在 <a href="https://github.com/hexojs/hexo/releases/tag/3.0.0-rc.4" target="_blank" rel="external">Hexo 3.0.0-rc.4</a> 版本开始，<a href="https://github.com/hexojs/hexo-cli" target="_blank" rel="external">hexo-cli</a> 就独立出去了，所以 Hexo 其实是有两个程序的：</p>
+        <h1 id="安装-Hexo"><a href="#安装-Hexo" class="headerlink" title="安装 Hexo"></a>安装 Hexo</h1><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>在安装 Hexo 之前，有一点要<strong>注意</strong>的是，在 <a href="https://github.com/hexojs/hexo/releases/tag/3.0.0-rc.4" target="_blank" rel="external">Hexo 3.0.0-rc.4</a> 版本开始，<a href="https://github.com/hexojs/hexo-cli" target="_blank" rel="external">hexo-cli</a> 就独立出去了，所以 Hexo 其实是有两个程序的：</p>
 <ul>
 <li><code>hexo-cli</code>：命令行界面的 hexo，安装在 npm 的 node_modules 目录下，用于初始化 hexo 的环境，已添加到 path 环境变量，全局可用</li>
 <li><code>hexo</code>：完整版的 hexo，安装在 hexo 博客的目录下，用于管理 hexo ，只能在 hexo 博客的目录下使用</li>
@@ -858,7 +902,21 @@ hexo：完整版的 hexo，安装在 hexo 博客的目">
 <p>目前支持 RSS 的有：<br><a href="http://blog.csdn.net/" target="_blank" rel="external">CSDN</a>、<a href="http://www.cnblogs.com/" target="_blank" rel="external">博客园 cnblogs</a>、<a href="http://www.blogjava.net/" target="_blank" rel="external">JAVA 博客</a>、<a href="http://www.cppblog.com/" target="_blank" rel="external">C++ 博客</a> 等等。</p>
 <h2 id="其他迁移方式"><a href="#其他迁移方式" class="headerlink" title="其他迁移方式"></a>其他迁移方式</h2><p>除了从上述国内主流博客的迁移之外，<a href="https://hexo.io/plugins/#migrator" target="_blank" rel="external">迁移插件列表</a> 还有其他的比如 <a href="https://github.com/hr6r/hexo-migrator-blogger" target="_blank" rel="external">blogger</a>、<a href="https://github.com/Yikun/hexo-migrator-github-issue" target="_blank" rel="external">github-issue</a>、<a href="https://github.com/welksonramos/hexo-migrator-joomla" target="_blank" rel="external">joomla</a> 等迁移方式，国内用得比较少，就不说了。</p>
 <h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>这一节也太啰嗦了，是我的打开方式不对吗？唠唠叨叨了半天，都还没进入主题！<a href="/201509/30/Hexo-2/" title="下一节——基本操作">下一节——基本操作</a> 将从 Hexo 的写作开始，详细介绍 Hexo 的使用方式。</p>
-</span>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
       
     </div>
 
@@ -908,12 +966,11 @@ hexo：完整版的 hexo，安装在 hexo 博客的目">
   </div>
 
 
-        </div>
+          </div>
+          
 
-        
 
-
-        
+          
   <div class="comments" id="comments">
     
       <div class="ds-thread" data-thread-key="201509/30/Hexo-1/"
@@ -923,10 +980,9 @@ hexo：完整版的 hexo，安装在 hexo 博客的目">
   </div>
 
 
-      </div>
-
-      
+        </div>
         
+          
   
   <div class="sidebar-toggle">
     <div class="sidebar-toggle-line-wrap">
@@ -953,32 +1009,38 @@ hexo：完整版的 hexo，安装在 hexo 博客的目">
       
 
       <section class="site-overview sidebar-panel ">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" src="http://tp2.sinaimg.cn/2728550353/180/5631710584/1" alt="Genment" itemprop="image"/>
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://tp2.sinaimg.cn/2728550353/180/5631710584/1"
+               alt="Genment" />
           <p class="site-author-name" itemprop="name">Genment</p>
+          <p class="site-description motion-element" itemprop="description"></p>
         </div>
-        <p class="site-description motion-element" itemprop="description"></p>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">8</span>
+              <span class="site-state-item-count">9</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
-          <div class="site-state-item site-state-categories">
-            <a href="/categories">
-              <span class="site-state-item-count">9</span>
-              <span class="site-state-item-name">分类</span>
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">分类</span>
               </a>
-          </div>
+            </div>
+          
 
-          <div class="site-state-item site-state-tags">
-            <a href="/tags">
-              <span class="site-state-item-count">16</span>
-              <span class="site-state-item-name">标签</span>
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-name">标签</span>
               </a>
-          </div>
+            </div>
+          
 
         </nav>
 
@@ -988,34 +1050,38 @@ hexo：完整版的 hexo，安装在 hexo 博客的目">
           
             
               <span class="links-of-author-item">
-                <a href="https://github.com/genment" target="_blank">
+                <a href="https://github.com/genment" target="_blank" title="GitHub">
                   
-                    <i class="fa fa-github"></i> GitHub
+                    <i class="fa fa-fw fa-github"></i>
                   
+                  GitHub
                 </a>
               </span>
             
               <span class="links-of-author-item">
-                <a href="https://twitter.com/q8515620" target="_blank">
+                <a href="https://twitter.com/q8515620" target="_blank" title="Twitter">
                   
-                    <i class="fa fa-tt"></i> Twitter
+                    <i class="fa fa-fw fa-tt"></i>
                   
+                  Twitter
                 </a>
               </span>
             
               <span class="links-of-author-item">
-                <a href="http://weibo.com/2728550353" target="_blank">
+                <a href="http://weibo.com/2728550353" target="_blank" title="Weibo">
                   
-                    <i class="fa fa-weibo"></i> Weibo
+                    <i class="fa fa-fw fa-weibo"></i>
                   
+                  Weibo
                 </a>
               </span>
             
               <span class="links-of-author-item">
-                <a href="http://www.zhihu.com/people/genment" target="_blank">
+                <a href="http://www.zhihu.com/people/genment" target="_blank" title="ZhiHu">
                   
-                    <i class="fa fa-globe"></i> ZhiHu
+                    <i class="fa fa-fw fa-globe"></i>
                   
+                  ZhiHu
                 </a>
               </span>
             
@@ -1025,46 +1091,49 @@ hexo：完整版的 hexo，安装在 hexo 博客的目">
         
         
           <div class="cc-license motion-element" itemprop="license">
-            <a href="http://creativecommons.org/licenses/by-nc-sa/4.0" class="cc-opacity" target="_blank">
+            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
               <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
             </a>
           </div>
         
 
-        <div class="links-of-author motion-element">
-          
-            <p class="site-author-name">基链</p>
-            
-              <span class="links-of-author-item">
-                <a href="http://theme-next.iissnan.com/" target="_blank">Theme-NexT</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://teddysun.com/358.html" target="_blank">一键SS</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.vpser.net/security/linux-ssh-authorized-keys-login.html" target="_blank">SSH登录验证</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://gitimmersion.com/lab_01.html" target="_blank">Git Immersion</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://marklodato.github.com/visual-git-guide/" target="_blank">visual-git-guide</a>
-              </span>
-            
-          
-        </div>
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              基链
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://theme-next.iissnan.com/" title="Theme-NexT" target="_blank">Theme-NexT</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://teddysun.com/358.html" title="一键SS" target="_blank">一键SS</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.vpser.net/security/linux-ssh-authorized-keys-login.html" title="SSH登录验证" target="_blank">SSH登录验证</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://gitimmersion.com/lab_01.html" title="Git Immersion" target="_blank">Git Immersion</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://marklodato.github.com/visual-git-guide/" title="visual-git-guide" target="_blank">visual-git-guide</a>
+                </li>
+              
+            </ul>
+          </div>
+        
 
       </section>
 
       
         <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc-indicator-top post-toc-indicator">
-            <i class="fa fa-angle-double-up"></i>
-          </div>
           <div class="post-toc">
             
               
@@ -1073,9 +1142,6 @@ hexo：完整版的 hexo，安装在 hexo 博客的目">
               <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#安装-Hexo"><span class="nav-number">1.</span> <span class="nav-text">安装 Hexo</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">1.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#初始化"><span class="nav-number">1.2.</span> <span class="nav-text">初始化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#体验"><span class="nav-number">1.3.</span> <span class="nav-text">体验</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo-目录-amp-文件"><span class="nav-number">2.</span> <span class="nav-text">Hexo 目录 & 文件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#config-yml"><span class="nav-number">2.1.</span> <span class="nav-text">_config.yml</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#package-json"><span class="nav-number">2.2.</span> <span class="nav-text">package.json</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#node-modules-目录"><span class="nav-number">2.3.</span> <span class="nav-text">node_modules 目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#scaffolds-目录"><span class="nav-number">2.4.</span> <span class="nav-text">scaffolds 目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#scripts-目录"><span class="nav-number">2.5.</span> <span class="nav-text">scripts 目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#source-目录"><span class="nav-number">2.6.</span> <span class="nav-text">source 目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#public-目录"><span class="nav-number">2.7.</span> <span class="nav-text">public 目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#themes-目录"><span class="nav-number">2.8.</span> <span class="nav-text">themes 目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他文件"><span class="nav-number">2.9.</span> <span class="nav-text">其他文件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#gitignore"><span class="nav-number">2.9.1.</span> <span class="nav-text">.gitignore</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#db-json"><span class="nav-number">2.9.2.</span> <span class="nav-text">db.json</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo-配置"><span class="nav-number">3.</span> <span class="nav-text">Hexo 配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#config-yml-介绍"><span class="nav-number">3.1.</span> <span class="nav-text">_config.yml 介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网站-Site"><span class="nav-number">3.2.</span> <span class="nav-text">网站 (Site)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网址-URL"><span class="nav-number">3.3.</span> <span class="nav-text">网址 (URL)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#目录-Directory"><span class="nav-number">3.4.</span> <span class="nav-text">目录 (Directory)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文章-Writing"><span class="nav-number">3.5.</span> <span class="nav-text">文章 (Writing)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分类-amp-标签-Category-amp-Tag"><span class="nav-number">3.6.</span> <span class="nav-text">分类 & 标签 (Category & Tag)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#日期-时间格式-Date-Time-format"><span class="nav-number">3.7.</span> <span class="nav-text">日期 / 时间格式 (Date / Time format)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分页-Pagination"><span class="nav-number">3.8.</span> <span class="nav-text">分页 (Pagination)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#扩展-Extensions"><span class="nav-number">3.9.</span> <span class="nav-text">扩展 (Extensions)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他配置"><span class="nav-number">3.10.</span> <span class="nav-text">其他配置</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo-命令"><span class="nav-number">4.</span> <span class="nav-text">Hexo 命令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo-clean"><span class="nav-number">4.1.</span> <span class="nav-text">hexo clean</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo-config"><span class="nav-number">4.2.</span> <span class="nav-text">hexo config</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#例子一"><span class="nav-number">4.2.1.</span> <span class="nav-text">例子一</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#例子二"><span class="nav-number">4.2.2.</span> <span class="nav-text">例子二</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo-deploy"><span class="nav-number">4.3.</span> <span class="nav-text">hexo deploy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo-generate"><span class="nav-number">4.4.</span> <span class="nav-text">hexo generate</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo-help"><span class="nav-number">4.5.</span> <span class="nav-text">hexo help</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo-init"><span class="nav-number">4.6.</span> <span class="nav-text">hexo init</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo-list"><span class="nav-number">4.7.</span> <span class="nav-text">hexo list</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo-migrate"><span class="nav-number">4.8.</span> <span class="nav-text">hexo migrate</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo-new"><span class="nav-number">4.9.</span> <span class="nav-text">hexo new</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#例子一-1"><span class="nav-number">4.9.1.</span> <span class="nav-text">例子一</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#例子二-1"><span class="nav-number">4.9.2.</span> <span class="nav-text">例子二</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo-publish"><span class="nav-number">4.10.</span> <span class="nav-text">hexo publish</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo-render"><span class="nav-number">4.11.</span> <span class="nav-text">hexo render</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo-server"><span class="nav-number">4.12.</span> <span class="nav-text">hexo server</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#例子一-2"><span class="nav-number">4.12.1.</span> <span class="nav-text">例子一</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo-version"><span class="nav-number">4.13.</span> <span class="nav-text">hexo version</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo-–config"><span class="nav-number">4.14.</span> <span class="nav-text">hexo –config</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#例子一-3"><span class="nav-number">4.14.1.</span> <span class="nav-text">例子一</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo-cwd"><span class="nav-number">4.15.</span> <span class="nav-text">hexo --cwd</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo-debug"><span class="nav-number">4.16.</span> <span class="nav-text">hexo --debug</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo-draft"><span class="nav-number">4.17.</span> <span class="nav-text">hexo --draft</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo-safe"><span class="nav-number">4.18.</span> <span class="nav-text">hexo --safe</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo-silent"><span class="nav-number">4.19.</span> <span class="nav-text">hexo --silent</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#迁移"><span class="nav-number">5.</span> <span class="nav-text">迁移</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#从-Jekyll-迁移"><span class="nav-number">5.1.</span> <span class="nav-text">从 Jekyll 迁移</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#从-Octopress-迁移"><span class="nav-number">5.2.</span> <span class="nav-text">从 Octopress 迁移</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#从-WordPress-迁移"><span class="nav-number">5.3.</span> <span class="nav-text">从 WordPress 迁移</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#通过-RSS-迁移"><span class="nav-number">5.4.</span> <span class="nav-text">通过 RSS 迁移</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他迁移方式"><span class="nav-number">5.5.</span> <span class="nav-text">其他迁移方式</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#结语"><span class="nav-number">6.</span> <span class="nav-text">结语</span></a></li></ol></div>
             
           </div>
-          <div class="post-toc-indicator-bottom post-toc-indicator">
-            <i class="fa fa-angle-double-down"></i>
-          </div>
         </section>
       
 
@@ -1083,7 +1149,8 @@ hexo：完整版的 hexo，安装在 hexo 博客的目">
   </aside>
 
 
-      
+        
+      </div>
     </main>
 
     <footer id="footer" class="footer">
@@ -1091,15 +1158,15 @@ hexo：完整版的 hexo，安装在 hexo 博客的目">
         <div class="copyright" >
   
   &copy;  2015 - 
-  <span itemprop="copyrightYear">2016</span>
+  <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
-    <i class="icon-next-heart fa fa-heart"></i>
+    <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Genment</span>
 </div>
 
 <div class="powered-by">
-  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
@@ -1109,21 +1176,82 @@ hexo：完整版的 hexo，安装在 hexo 博客的目">
   </a>
 </div>
 
+        
 
-
+        
       </div>
     </footer>
 
-    <div class="back-to-top"></div>
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
   </div>
 
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
   <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
 
   
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
   
 
   
-    
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
 
   
     
@@ -1141,222 +1269,29 @@ hexo：完整版的 hexo，安装在 hexo 博客的目">
       || document.getElementsByTagName('body')[0]).appendChild(ds);
     })();
   </script>
+
+  
     
-     
-
-
-    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
   
 
-  
-  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
-  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.2"></script>
-
-
-  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.2"></script>
-  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
-<script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
-
-<script type="text/javascript" src="/js/motion.js?v=0.4.5.2" id="motion.global"></script>
-
-
-  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  
-<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.2" id="bootstrap.scrollspy.custom"></script>
-
-
-<script type="text/javascript" id="sidebar.toc.highlight">
-  $(document).ready(function () {
-    var tocSelector = '.post-toc';
-    var $tocSelector = $(tocSelector);
-    var activeCurrentSelector = '.active-current';
-
-    $tocSelector
-      .on('activate.bs.scrollspy', function () {
-        var $currentActiveElement = $(tocSelector + ' .active').last();
-
-        removeCurrentActiveClass();
-        $currentActiveElement.addClass('active-current');
-
-        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
-      })
-      .on('clear.bs.scrollspy', function () {
-        removeCurrentActiveClass();
-      });
-
-    function removeCurrentActiveClass () {
-      $(tocSelector + ' ' + activeCurrentSelector)
-        .removeClass(activeCurrentSelector.substring(1));
-    }
-
-    function processTOC () {
-      getTOCMaxHeight();
-      toggleTOCOverflowIndicators();
-    }
-
-    function getTOCMaxHeight () {
-      var height = $('.sidebar').height() -
-                   $tocSelector.position().top -
-                   $('.post-toc-indicator-bottom').height();
-
-      $tocSelector.css('height', height);
-
-      return height;
-    }
-
-    function toggleTOCOverflowIndicators () {
-      tocOverflowIndicator(
-        '.post-toc-indicator-top',
-        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
-      );
-
-      tocOverflowIndicator(
-        '.post-toc-indicator-bottom',
-        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
-      )
-    }
-
-    $(document).on('sidebar.motion.complete', function () {
-      processTOC();
-    });
-
-    $('body').scrollspy({ target: tocSelector });
-    $(window).on('resize', function () {
-      if ( $('.sidebar').hasClass('sidebar-active') ) {
-        processTOC();
-      }
-    });
-
-    onScroll($tocSelector);
-
-    function onScroll (element) {
-      element.on('mousewheel DOMMouseScroll', function (event) {
-          var oe = event.originalEvent;
-          var delta = oe.wheelDelta || -oe.detail;
-
-          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
-          event.preventDefault();
-
-          toggleTOCOverflowIndicators();
-      });
-    }
-
-    function tocOverflowIndicator (indicator, action) {
-      var $indicator = $(indicator);
-      var opacity = action === 'show' ? 1 : 0;
-      $indicator.velocity ?
-        $indicator.velocity('stop').velocity({
-          opacity: opacity
-        }, { duration: 100 }) :
-        $indicator.stop().animate({
-          opacity: opacity
-        }, 100);
-    }
-
-  });
-</script>
-
-<script type="text/javascript" id="sidebar.nav">
-  $(document).ready(function () {
-    var html = $('html');
-    var TAB_ANIMATE_DURATION = 200;
-    var hasVelocity = $.isFunction(html.velocity);
-
-    $('.sidebar-nav li').on('click', function () {
-      var item = $(this);
-      var activeTabClassName = 'sidebar-nav-active';
-      var activePanelClassName = 'sidebar-panel-active';
-      if (item.hasClass(activeTabClassName)) {
-        return;
-      }
-
-      var currentTarget = $('.' + activePanelClassName);
-      var target = $('.' + item.data('target'));
-
-      hasVelocity ?
-        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
-          target
-            .velocity('stop')
-            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
-            .addClass(activePanelClassName);
-        }) :
-        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
-          currentTarget.hide();
-          target
-            .stop()
-            .css({'opacity': 0, 'display': 'block'})
-            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
-              currentTarget.removeClass(activePanelClassName);
-              target.addClass(activePanelClassName);
-            });
-        });
-
-      item.siblings().removeClass(activeTabClassName);
-      item.addClass(activeTabClassName);
-    });
-
-    $('.post-toc a').on('click', function (e) {
-      e.preventDefault();
-      var targetSelector = escapeSelector(this.getAttribute('href'));
-      var offset = $(targetSelector).offset().top;
-      hasVelocity ?
-        html.velocity('stop').velocity('scroll', {
-          offset: offset  + 'px',
-          mobileHA: false
-        }) :
-        $('html, body').stop().animate({
-          scrollTop: offset
-        }, 500);
-    });
-
-    // Expand sidebar on post detail page by default, when post has a toc.
-    motionMiddleWares.sidebar = function () {
-      var $tocContent = $('.post-toc-content');
-      if (CONFIG.sidebar === 'post') {
-        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
-          displaySidebar();
-        }
-      }
-    };
-  });
-</script>
 
 
 
-  <script type="text/javascript" src="/js/bootstrap.js"></script>
-
-  
-  
-  <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-        processEscapes: true,
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-      }
-    });
-  </script>
-
-  <script type="text/x-mathjax-config">
-    MathJax.Hub.Queue(function() {
-      var all = MathJax.Hub.getAllJax(), i;
-      for (i=0; i < all.length; i += 1) {
-        all[i].SourceElement().parentNode.className += ' has-jax';
-      }
-    });
-  </script>
-
-  
-    <script type="text/javascript" src="http://cdn.staticfile.org/mathjax/2.4.0/MathJax.js"></script>
-    <script type="text/javascript" src="http://cdn.staticfile.org/mathjax/2.4.0/config/TeX-AMS-MML_HTMLorMML.js"></script>
-  
 
 
   
   
+
+  
+
+  
+
+  
+
+  
+
 
 </body>
 </html>
